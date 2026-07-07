@@ -1,0 +1,49 @@
+.approach {
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.approach :global(.sec-label) {
+  color: var(--approach-label);
+}
+
+.approach :global(.sec-title) {
+  color: var(--white);
+}
+
+.approachGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.approachGrid p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--approach-text);
+}
+
+.quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--white);
+  border-left: 2px solid var(--crimson);
+  padding-left: 22px;
+  margin: 0 0 16px 0;
+}
+
+.attribution {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  padding-left: 24px;
+}
+
+@media (max-width: 900px) {
+  .approachGrid {
+    grid-template-columns: 1fr;
+  }
+}

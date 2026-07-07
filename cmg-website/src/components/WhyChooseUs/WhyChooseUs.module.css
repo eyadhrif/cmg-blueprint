@@ -1,0 +1,41 @@
+.whyChooseUs {
+  background: var(--paper-dim);
+  border-bottom: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.card {
+  border-left: 2px solid var(--crimson);
+  padding-left: 18px;
+}
+
+.num {
+  font-size: 11px;
+  color: var(--crimson);
+  margin-bottom: 6px;
+}
+
+.cardTitle {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

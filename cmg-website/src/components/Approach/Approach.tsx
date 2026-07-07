@@ -4,7 +4,7 @@ import styles from './Approach.module.css';
 export default function Approach() {
   return (
     <section className={styles.approach} id="approach">
-      <BlueprintFrame>
+      <BlueprintFrame crosshairs={['tl', 'tr', 'bl', 'br']}>
         <div className="section-inner">
           <div className="sec-head">
             <div>

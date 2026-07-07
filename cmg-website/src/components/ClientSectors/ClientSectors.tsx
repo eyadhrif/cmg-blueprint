@@ -5,7 +5,7 @@ import styles from './ClientSectors.module.css';
 export default function ClientSectors() {
   return (
     <section className={styles.clientSectors} id="clients">
-      <BlueprintFrame>
+      <BlueprintFrame crosshairs={['bl', 'br']}>
         <div className="section-inner">
           <div className="sec-head">
             <div>
@@ -20,7 +20,10 @@ export default function ClientSectors() {
           <div className={styles.grid}>
             {clientSectors.map((sector) => (
               <div key={sector.name} className={styles.sector}>
-                <h3 className={styles.sectorName}>{sector.name}</h3>
+                <div className={styles.sectorHeader}>
+                  <span className={styles.count}>{sector.clients.length}</span>
+                  <h3 className={styles.sectorName}>{sector.name}</h3>
+                </div>
                 <ul className={styles.clientList}>
                   {sector.clients.map((c) => (
                     <li key={c}>{c}</li>

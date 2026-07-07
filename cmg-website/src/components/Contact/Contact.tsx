@@ -30,7 +30,7 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <BlueprintFrame>
+      <BlueprintFrame crosshairs={['tl', 'tr', 'bl', 'br']}>
         <div className="section-inner">
           <div className="sec-head">
             <div>

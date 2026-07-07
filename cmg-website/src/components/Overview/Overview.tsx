@@ -5,7 +5,7 @@ import styles from './Overview.module.css';
 export default function Overview() {
   return (
     <section className={styles.overview} id="overview">
-      <BlueprintFrame>
+      <BlueprintFrame crosshairs={['bl', 'br']}>
         <div className="section-inner">
           <div className="sec-head">
             <div>

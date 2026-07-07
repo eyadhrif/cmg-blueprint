@@ -5,7 +5,7 @@ import styles from './WhyChooseUs.module.css';
 export default function WhyChooseUs() {
   return (
     <section className={styles.whyChooseUs} id="why-choose-us">
-      <BlueprintFrame>
+      <BlueprintFrame crosshairs={['bl', 'br']}>
         <div className="section-inner">
           <div className="sec-head">
             <div>

@@ -18,6 +18,7 @@ function getInitialTheme(): 'light' | 'dark' | null {
 
 export default function Nav() {
   const [theme, setTheme] = useState<'light' | 'dark' | null>(getInitialTheme);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     if (theme) {
@@ -32,6 +33,8 @@ export default function Nav() {
     setTheme(next);
     localStorage.setItem('theme', next);
   };
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <nav className={styles.nav}>
@@ -57,7 +60,32 @@ export default function Nav() {
             {theme === 'dark' ? 'Light' : 'Dark'}
           </button>
         </div>
+        <button
+          className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
+          onClick={() => setMobileOpen((o) => !o)}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
+      {mobileOpen && (
+        <div className={styles.mobileMenu}>
+          {links.map((link) => (
+            <a key={link.href} href={link.href} onClick={closeMobile}>
+              {link.label}
+            </a>
+          ))}
+          <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+          >
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
+        </div>
+      )}
     </nav>
   );
 }

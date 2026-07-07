@@ -10,15 +10,35 @@
 }
 
 .sector {
-  border-left: 2px solid var(--crimson);
-  padding-left: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.sectorHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.count {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--crimson);
+  line-height: 1;
+  min-width: 28px;
 }
 
 .sectorName {
   font-family: 'Fraunces', serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  margin: 0 0 12px 0;
+  margin: 0;
 }
 
 .clientList {
@@ -28,10 +48,10 @@
 }
 
 .clientList li {
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.6;
   color: var(--muted);
-  padding: 2px 0;
+  padding: 3px 0;
 }
 
 @media (max-width: 900px) {

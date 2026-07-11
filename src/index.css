@@ -16,12 +16,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 18px;
   }
   body {
     background-color: var(--color-dark);
     color: var(--color-text-primary);
-    font-family: 'Times New Roman', Times, serif;
     -webkit-font-smoothing: antialiased;
   }
 }

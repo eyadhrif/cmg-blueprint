@@ -55,11 +55,11 @@ export default function Hero() {
           </p>
 
           {/* CTAs - red stays primary action */}
-          <div className="flex flex-wrap items-center gap-4 relative z-10">
-            <a href="#services" className="bg-accent border border-white/10 text-white px-8 py-4 text-sm font-bold tracking-wider uppercase whitespace-nowrap focus-visible:outline-white transition-all duration-200">
+          <div className="flex flex-nowrap items-center gap-4 relative z-10">
+            <a href="#services" className="shrink-0 bg-accent border border-white/10 text-white px-8 py-4 text-sm font-bold tracking-wider uppercase whitespace-nowrap focus-visible:outline-white transition-all duration-200">
               DÉCOUVRIR NOS SERVICES &rarr;
             </a>
-            <a href="#contact" className="border border-white/25 text-white px-8 py-4 text-sm font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 hover:bg-white/10 focus-visible:outline-accent">
+            <a href="#contact" className="shrink-0 border border-white/25 text-white px-8 py-4 text-sm font-bold tracking-wider uppercase whitespace-nowrap transition-all duration-200 hover:bg-white/10 focus-visible:outline-accent">
               NOUS CONTACTER
             </a>
           </div>

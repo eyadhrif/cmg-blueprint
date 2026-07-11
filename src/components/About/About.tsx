@@ -27,7 +27,7 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-7 relative">
-          <div className="relative">
+          <div className="relative animate-float">
             <div className="aspect-[5/3] overflow-hidden bg-slate-100 shadow-[0_32px_80px_-48px_rgba(13,13,13,0.45)]"
               style={{ clipPath: 'polygon(5% 0, 100% 0, 95% 100%, 0 100%)' }}>
               <img 
@@ -62,6 +62,17 @@ export default function About() {
             <div className="absolute -bottom-3 left-12 w-24 h-px bg-gradient-to-r from-accent/30 to-transparent" />
           </div>
         </div>
+
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-8px) rotate(0.5deg); }
+            66% { transform: translateY(4px) rotate(-0.3deg); }
+          }
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+        `}</style>
       </div>
     </section>
   );

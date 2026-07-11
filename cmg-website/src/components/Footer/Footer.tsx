@@ -110,8 +110,7 @@ export default function Footer() {
             © 2026 Cabinet Mourad Guellaty (MG & Associés). Tous droits réservés.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-text-muted hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="text-xs text-text-muted hover:text-white transition-colors">Politique de confidentialité</a>
+            
           </div>
         </div>
 

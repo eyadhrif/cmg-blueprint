@@ -3,21 +3,35 @@ import { Phone, Mail, Menu, X } from 'lucide-react';
 import logoImg from '../../assets/logo.png';
 
 const navLinks = [
-  { label: 'ACCUEIL', href: '#', active: true },
-  { label: 'À PROPOS', href: '#about' },
-  { label: 'NOS SERVICES', href: '#services' },
-  { label: 'SECTEURS', href: '#sectors' },
-  { label: 'NOTRE ÉQUIPE', href: '#team' },
-  { label: 'ACTUALITÉS', href: '#news' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'ACCUEIL', href: '#', sectionId: 'accueil' },
+  { label: 'À PROPOS', href: '#about', sectionId: 'about' },
+  { label: 'NOS SERVICES', href: '#services', sectionId: 'services' },
+  { label: 'SECTEURS', href: '#sectors', sectionId: 'sectors' },
+  { label: 'NOTRE ÉQUIPE', href: '#team', sectionId: 'team' },
+  { label: 'CONTACT', href: '#contact', sectionId: 'contact' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('accueil');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      const offset = 150;
+      let current = 'accueil';
+      for (const link of navLinks) {
+        const el = document.getElementById(link.sectionId);
+        if (el && el.offsetTop <= window.scrollY + offset) {
+          current = link.sectionId;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -26,11 +40,11 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-dark/95 backdrop-blur-md shadow-md' : 'bg-dark'}`}>
       <div className="hidden lg:block border-b border-card-border">
         <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-text-muted">
-          <a href="tel:+21671123456" className="flex items-center gap-2 hover:text-accent transition-colors">
-            <Phone size={12} /> +216 71 123 456
+          <a href="tel:+21671740131" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <Phone size={12} /> +216 71 740 131
           </a>
-          <a href="mailto:contact@cmg.tn" className="flex items-center gap-2 hover:text-accent transition-colors">
-            <Mail size={12} /> contact@cmg.tn
+          <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <Mail size={12} /> contact@cabinetguellaty.com
           </a>
         </div>
       </div>
@@ -50,11 +64,11 @@ export default function Header() {
               key={link.label}
               href={link.href}
               className={`text-[11px] font-medium tracking-[0.15em] uppercase whitespace-nowrap transition-colors relative py-2 focus-visible:outline-accent
-                ${link.active ? 'text-text-primary' : 'text-text-muted hover:text-text-primary'}
+                ${activeSection === link.sectionId ? 'text-text-primary' : 'text-text-muted hover:text-text-primary'}
               `}
             >
               {link.label}
-              {link.active && (
+              {activeSection === link.sectionId && (
                 <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent" />
               )}
             </a>
@@ -84,7 +98,7 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className={`text-sm font-medium tracking-wide uppercase focus-visible:outline-accent ${link.active ? 'text-accent' : 'text-text-primary'}`}
+              className={`text-sm font-medium tracking-wide uppercase focus-visible:outline-accent ${activeSection === link.sectionId ? 'text-accent' : 'text-text-primary'}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
@@ -98,8 +112,8 @@ export default function Header() {
             PRENDRE RENDEZ-VOUS
           </a>
           <div className="flex flex-col gap-2 mt-4 text-xs text-text-muted border-t border-card-border pt-4">
-            <a href="tel:+21671123456" className="flex items-center gap-2 focus-visible:outline-accent"><Phone size={14} /> +216 71 123 456</a>
-            <a href="mailto:contact@cmg.tn" className="flex items-center gap-2 focus-visible:outline-accent"><Mail size={14} /> contact@cmg.tn</a>
+            <a href="tel:+21671740131" className="flex items-center gap-2 focus-visible:outline-accent"><Phone size={14} /> +216 71 740 131</a>
+            <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 focus-visible:outline-accent"><Mail size={14} /> contact@cabinetguellaty.com</a>
           </div>
         </div>
       )}

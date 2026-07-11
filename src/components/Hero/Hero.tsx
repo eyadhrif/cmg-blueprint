@@ -2,7 +2,7 @@ import { Shield, Users, TrendingUp } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-96px)] bg-dark overflow-hidden">
+    <section id="accueil" className="relative min-h-[calc(100vh-96px)] bg-dark overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(179,37,9,0.03),transparent_40%)]" />
 
       {/* Full‑width video background behind everything */}
@@ -99,15 +99,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="hidden lg:flex absolute bottom-8 left-0 items-center">
-        <div className="relative flex flex-col items-center gap-2">
-          <div className="relative h-24 w-px bg-accent-crystal/20">
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-accent-crystal animate-bounce" />
-          </div>
-          <span className="text-text-muted text-[10px] tracking-[0.3em] uppercase">SCROLL</span>
-        </div>
-      </div>
     </section>
   );
 }

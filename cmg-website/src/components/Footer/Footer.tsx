@@ -107,7 +107,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-card-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-text-muted">
-            © 2025 Cabinet Mourad Guellaty (MG & Associés). Tous droits réservés.
+            © 2026 Cabinet Mourad Guellaty (MG & Associés). Tous droits réservés.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-text-muted hover:text-white transition-colors">Mentions légales</a>

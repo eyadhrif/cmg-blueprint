@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-dark/95 backdrop-blur-md shadow-md' : 'bg-dark'}`}>
       <div className="hidden lg:block border-b border-card-border">
-        <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-text-muted">
+        <div className="px-4 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-text-muted">
           <a href="tel:+21671123456" className="flex items-center gap-2 hover:text-accent transition-colors">
             <Phone size={12} /> +216 71 123 456
           </a>
@@ -35,7 +35,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-3 flex items-center justify-between gap-4 lg:gap-6">
+      <div className="px-4 py-3 flex items-center justify-between gap-4 lg:gap-6">
         <a href="#" className="flex items-center gap-4 group shrink-0 focus-visible:outline-accent">
           <img src={logoImg} alt="CMG" className="w-10 h-10 group-hover:opacity-90 transition-opacity" />
           <div className="flex flex-col gap-0.5">

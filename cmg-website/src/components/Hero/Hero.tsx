@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative min-h-[calc(100vh-96px)] bg-dark overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(179,37,9,0.03),transparent_40%)]" />
 
-      <div className="w-full max-w-[1280px] mx-auto px-6 pt-24 pb-24 lg:pt-32 lg:pb-28 grid lg:grid-cols-2 relative z-10 items-center">
+      <div className="w-full max-w-[1280px] mx-auto px-4 pt-24 pb-24 lg:pt-32 lg:pb-28 grid lg:grid-cols-2 relative z-10 items-center">
         <div className="relative flex flex-col justify-center lg:pr-12">
           <div className="pointer-events-none absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 320 320\'><polyline points=\'20,280 120,120 220,260\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.18\'/><polyline points=\'40,240 120,120 180,220\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.12\'/><polyline points=\'10,260 80,170 150,260\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.08\'/></svg>")', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: '220px' }} />
           <div className="pointer-events-none absolute inset-0 z-0 opacity-4" style={{ backgroundImage: 'radial-gradient(circle at 8% 12%, rgba(179,37,9,0.14) 1px, transparent 4px), radial-gradient(circle at 78% 18%, rgba(179,37,9,0.1) 1px, transparent 7px)', backgroundSize: '30px 30px, 48px 48px', backgroundRepeat: 'repeat' }} />
@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs - red stays primary action */}
-          <div className="flex flex-wrap items-center gap-4 relative z-10">
+          <div className="flex flex-col sm:flex-row gap-4 items-start relative z-10">
             <a href="#services" className="bg-accent border border-white/10 text-white px-8 py-4 text-sm font-bold tracking-wider uppercase whitespace-nowrap focus-visible:outline-white transition-all duration-200">
               DÉCOUVRIR NOS SERVICES &rarr;
             </a>
@@ -99,15 +99,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="hidden lg:flex absolute bottom-8 left-0 items-center">
-          <div className="relative flex flex-col items-center gap-2">
-            <div className="relative h-24 w-px bg-accent-crystal/20">
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-accent-crystal animate-bounce" />
-            </div>
-            <span className="text-text-muted text-[10px] tracking-[0.3em] uppercase">SCROLL</span>
-          </div>
-        </div>
       </div>
     </section>
   );

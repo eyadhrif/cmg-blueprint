@@ -1,0 +1,68 @@
+import { ShieldCheck, Calculator, LineChart, Scale, TrendingUp, Handshake } from 'lucide-react';
+
+const services = [
+  {
+    icon: ShieldCheck,
+    title: 'Audit légal',
+    desc: 'Commissariat aux comptes et audit légal dans le respect des normes en vigueur.',
+  },
+  {
+    icon: Calculator,
+    title: 'Conseil fiscal',
+    desc: "Optimisation fiscale, déclarations et assistance dans vos relations avec l'administration.",
+  },
+  {
+    icon: LineChart,
+    title: 'Expertise comptable',
+    desc: 'Tenue et révision comptable, états financiers et reporting fiable pour une meilleure prise de décision.',
+  },
+  {
+    icon: Scale,
+    title: 'Conseil juridique',
+    desc: 'Accompagnement juridique des entreprises et sécurisation de vos opérations.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Conseil en gestion',
+    desc: 'Analyse financière, tableaux de bord et accompagnement à la performance.',
+  },
+  {
+    icon: Handshake,
+    title: 'Transactions & due diligence',
+    desc: "Évaluation, audit d'acquisition et accompagnement dans vos opérations stratégiques.",
+  },
+];
+
+export default function Services() {
+  return (
+    <section id="services" className="bg-dark py-24 lg:py-32">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="flex flex-col items-center text-center mb-16 lg:mb-24">
+          <span className="w-8 h-[1px] bg-accent mb-4" />
+          <span className="text-accent text-xs font-bold tracking-[0.15em] uppercase mb-4">NOS SERVICES</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-text-primary tracking-tight max-w-2xl">
+            Des solutions sur mesure pour accompagner votre croissance
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div key={i} className="bg-card border border-card-border p-10 flex flex-col items-center text-center group hover:border-accent/30 hover:-translate-y-0.5 transition-all duration-300">
+                <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-text-primary mb-4">{s.title}</h3>
+                <p className="text-text-muted/90 text-sm leading-relaxed mb-8 flex-1">
+                  {s.desc}
+                </p>
+                <a href="#contact" className="text-text-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2 focus-visible:outline-accent">
+                  EN SAVOIR PLUS <span className="text-accent">&rarr;</span>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

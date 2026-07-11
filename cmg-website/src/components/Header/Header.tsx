@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Phone, Mail, Menu, X } from 'lucide-react';
-import Logo from '../Logo';
+import logoImg from '../../assets/logo.png';
 
 const navLinks = [
   { label: 'ACCUEIL', href: '#', active: true },
@@ -35,8 +35,8 @@ export default function Header() {
 
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
         <a href="#" className="flex items-center gap-4 group shrink-0 focus-visible:outline-accent">
-          <Logo className="w-10 h-10 text-accent group-hover:opacity-90 transition-opacity" />
-          <div className="flex flex-col">
+          <img src={logoImg} alt="CMG" className="w-10 h-10 group-hover:opacity-90 transition-opacity" />
+          <div className="flex flex-col gap-0.5">
             <span className="font-bold text-sm tracking-wide text-text-primary whitespace-nowrap">CABINET MOURAD GUELLATY</span>
             <span className="text-[10px] tracking-[0.2em] text-text-muted">MG & ASSOCIÉS</span>
           </div>
@@ -62,7 +62,7 @@ export default function Header() {
         <div className="flex items-center gap-4 shrink-0">
           <a
             href="#contact"
-            className="hidden md:inline-block bg-accent text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-accent/90 transition-colors focus-visible:outline-white whitespace-nowrap"
+            className="hidden md:inline-flex items-center bg-accent text-white px-7 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-accent/90 hover:brightness-110 hover:scale-[1.04] hover:shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition-all duration-200 focus-visible:outline-white whitespace-nowrap"
           >
             PRENDRE RENDEZ-VOUS
           </a>

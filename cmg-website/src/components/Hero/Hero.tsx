@@ -5,16 +5,6 @@ export default function Hero() {
     <section className="relative min-h-[calc(100vh-96px)] bg-dark overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(179,37,9,0.03),transparent_40%)]" />
 
-      {/* Scroll indicator */}
-      <div className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 items-center">
-        <div className="relative flex flex-col items-center gap-2">
-          <div className="relative h-32 w-px bg-accent-crystal/20">
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-accent-crystal" />
-          </div>
-          <span className="text-text-muted text-[10px] tracking-[0.3em] uppercase">SCROLL</span>
-        </div>
-      </div>
-
       <div className="w-full max-w-[1280px] mx-auto px-6 pt-24 pb-24 lg:pt-32 lg:pb-28 grid lg:grid-cols-2 relative z-10 items-center">
         <div className="relative flex flex-col justify-center lg:pr-12">
           <div className="pointer-events-none absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 320 320\'><polyline points=\'20,280 120,120 220,260\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.18\'/><polyline points=\'40,240 120,120 180,220\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.12\'/><polyline points=\'10,260 80,170 150,260\' fill=\'none\' stroke=\'%23C8352E\' stroke-width=\'1\' opacity=\'0.08\'/></svg>")', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: '220px' }} />
@@ -54,7 +44,7 @@ export default function Hero() {
 
           {/* Trust badges row */}
           <div className="mt-12 relative z-10 border border-white/10 rounded-sm bg-transparent">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x lg:divide-y lg:divide-x-0 xl:divide-y-0 xl:divide-x divide-white/10">
               <div className="flex items-center gap-3 px-5 py-4">
                 <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-accent-crystal/40 rounded-sm">
                   <Shield size={14} className="text-accent-crystal" />
@@ -87,7 +77,7 @@ export default function Hero() {
         </div>
 
         {/* Video container */}
-        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] overflow-hidden border border-accent-crystal/10">
+        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-1/2 overflow-hidden border border-accent-crystal/10">
           <video
             className="absolute inset-0 h-full w-full object-cover filter saturate-50 brightness-[0.72] contrast-[1.05]"
             src="/output.mp4"
@@ -97,6 +87,7 @@ export default function Hero() {
             loop
             playsInline
           />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-dark to-transparent z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-l from-dark/95 via-dark/80 to-transparent" />
           <div className="absolute inset-0 bg-[linear-gradient(220deg,rgba(179,37,9,0.08)_0%,transparent_18%),linear-gradient(160deg,rgba(255,255,255,0.04)_0%,transparent_28%)]" />
           <div className="absolute inset-0 pointer-events-none border border-accent-crystal/10" />
@@ -105,6 +96,16 @@ export default function Hero() {
           <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none z-10 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full" style={{ background: 'linear-gradient(135deg, rgba(179,37,9,0.18) 0%, rgba(179,37,9,0.05) 35%, transparent 55%)' }} />
             <div className="absolute top-2 left-0 w-56 h-px bg-gradient-to-r from-accent-crystal/25 via-accent-crystal/8 to-transparent -rotate-45 origin-top-left" />
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="hidden lg:flex absolute bottom-8 left-0 items-center">
+          <div className="relative flex flex-col items-center gap-2">
+            <div className="relative h-24 w-px bg-accent-crystal/20">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-accent-crystal animate-bounce" />
+            </div>
+            <span className="text-text-muted text-[10px] tracking-[0.3em] uppercase">SCROLL</span>
           </div>
         </div>
       </div>

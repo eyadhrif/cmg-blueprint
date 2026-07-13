@@ -1,90 +1,153 @@
-import { MapPin } from 'lucide-react';
-import Logo from '../Logo';
+import { useState } from 'react';
+
+const navLinks = [
+  { label: 'Accueil', href: '#accueil' },
+  { label: 'Le Cabinet', href: '#about' },
+  { label: 'Expertises', href: '#services' },
+  { label: 'Secteurs', href: '#sectors' },
+  { label: 'Notre équipe', href: '#team' },
+  { label: 'Carrières', href: '#nous-rejoindre' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Footer() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
   return (
-    <footer className="bg-[#0D0D0D] pt-24 pb-10 border-t border-[rgba(255,255,255,0.06)]">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <footer className="relative bg-[#0B0B0C] pt-32 pb-10 overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <span
+          className="font-['Playfair_Display',serif] text-[clamp(300px,40vw,600px)] leading-none text-white"
+          style={{ opacity: 0.03 }}
+        >
+          MG
+        </span>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6">
 
-          <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-5">
-              <Logo className="w-7 h-7 text-[#C8352E]" />
+        <div className="grid grid-cols-12 gap-10 lg:gap-16">
+
+          <div className="col-span-12 lg:col-span-5">
+            <div className="flex items-center gap-3 mb-8">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#C8352E]">
+                <rect x="0.5" y="0.5" width="27" height="27" rx="1.5" stroke="currentColor" strokeOpacity="0.3" />
+                <text x="14" y="19" textAnchor="middle" fill="currentColor" fontSize="14" fontFamily="serif" fontWeight="700">MG</text>
+              </svg>
               <div className="flex flex-col">
-                <span className="font-bold text-sm tracking-wide text-[#F5F5F5]">CABINET MOURAD GUELLATY</span>
-                <span className="text-[10px] tracking-[0.2em] text-[#9C9C9C]">MG & ASSOCIÉS</span>
+                <span className="font-bold text-xs tracking-wide text-[#F5F5F5]">MG & ASSOCIÉS</span>
+                <span className="text-[9px] tracking-[0.2em] text-[#6B6B6B]">CABINET MOURAD GUELLATY</span>
               </div>
             </div>
-            <p className="text-[#9C9C9C] text-sm leading-relaxed max-w-[320px]">
-              Cabinet d'expertise comptable, d'audit et de conseil établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien président de l'Ordre des Experts Comptables de Tunisie.
-            </p>
-            <div className="flex gap-4 mt-6">
-              <a href="https://www.linkedin.com/company/cabinet-mourad-guellaty/" target="_blank" rel="noopener noreferrer" className="text-[#9C9C9C] hover:text-[#F5F5F5] transition-colors" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
-              <a href="https://www.facebook.com/p/Cabinet-Mourad-GUELLATY-100045481282074/" target="_blank" rel="noopener noreferrer" className="text-[#9C9C9C] hover:text-[#F5F5F5] transition-colors" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+
+            <div className="font-['Playfair_Display',serif] text-2xl sm:text-3xl lg:text-4xl text-[#F5F5F5] leading-[1.3] tracking-tight max-w-md">
+              Depuis plusieurs décennies,<br />
+              nous accompagnons entreprises,<br />
+              institutions et dirigeants<br />
+              avec exigence, indépendance<br />
+              et confiance.
+            </div>
+
+            <div className="flex items-center gap-8 mt-12">
+              {[
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/cabinet-mourad-guellaty/', icon: (
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                )},
+                { label: 'Facebook', href: 'https://www.facebook.com/p/Cabinet-Mourad-GUELLATY-100045481282074/', icon: (
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                )},
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="text-[#6B6B6B] hover:text-[#C8352E] transition-all duration-300 hover:rotate-[-4deg]"
+                >
+                  {s.icon}
+                </a>
+              ))}
+              <a
+                href="mailto:contact@cabinetguellaty.com"
+                className="text-[#6B6B6B] hover:text-[#C8352E] text-xs font-semibold tracking-wider uppercase transition-all duration-300"
+              >
+                Email
               </a>
             </div>
           </div>
 
-          <div className="lg:col-span-2 lg:col-start-7">
-            <h3 className="text-[#F5F5F5] font-semibold text-sm mb-5">Liens</h3>
-            <ul className="space-y-3">
-              {[
-                { label: 'Accueil', href: '#accueil' },
-                { label: 'À propos', href: '#about' },
-                { label: 'Services', href: '#services' },
-                { label: 'Secteurs', href: '#sectors' },
-                { label: 'Carrières', href: '#nous-rejoindre' },
-                { label: 'Contact', href: '#contact' },
-              ].map((link) => (
+          <div className="col-span-6 lg:col-span-3 lg:col-start-7">
+            <span className="text-[#6B6B6B] text-[10px] font-semibold tracking-[0.2em] uppercase">
+              Navigation
+            </span>
+            <ul className="mt-6 space-y-4">
+              {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-[#9C9C9C] hover:text-[#C8352E] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="relative text-[#9C9C9C] text-sm hover:text-[#F5F5F5] transition-colors duration-300 group inline-flex items-center gap-2"
+                    onMouseEnter={() => setHoveredLink(link.label)}
+                    onMouseLeave={() => setHoveredLink(null)}
+                  >
+                    <span
+                      className={`inline-block transition-all duration-300 ${
+                        hoveredLink === link.label ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'
+                      }`}
+                    >
+                      &rarr;
+                    </span>
                     {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-[#C8352E] group-hover:w-full transition-all duration-300" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
-            <h3 className="text-[#F5F5F5] font-semibold text-sm mb-5">Contact</h3>
-            <div className="space-y-4">
+          <div className="col-span-6 lg:col-span-3 lg:col-start-10">
+            <span className="text-[#6B6B6B] text-[10px] font-semibold tracking-[0.2em] uppercase">
+              Contact
+            </span>
+            <div className="mt-6 space-y-8">
               <div>
-                <span className="block text-xs font-medium text-[#9C9C9C] uppercase tracking-wider mb-1">Adresse</span>
-                <span className="text-sm text-[#F5F5F5]">45 Avenue de la République, 2078 Marsa Safsaf, Tunis</span>
+                <p className="text-[#9C9C9C] text-sm leading-relaxed">
+                  45 Avenue de la République<br />
+                  2078 La Marsa<br />
+                  Tunisie
+                </p>
               </div>
               <div>
-                <span className="block text-xs font-medium text-[#9C9C9C] uppercase tracking-wider mb-1">Téléphone</span>
-                <a href="tel:+21671740131" className="text-sm text-[#F5F5F5] hover:text-[#C8352E] transition-colors">+216 71 740 131</a>
-              </div>
-              <div>
-                <span className="block text-xs font-medium text-[#9C9C9C] uppercase tracking-wider mb-1">Email</span>
-                <a href="mailto:contact@cabinetguellaty.com" className="text-sm text-[#F5F5F5] hover:text-[#C8352E] transition-colors">contact@cabinetguellaty.com</a>
+                <a
+                  href="tel:+21671740131"
+                  className="text-[#9C9C9C] text-sm hover:text-[#F5F5F5] transition-colors duration-300 block"
+                >
+                  +216 71 740 131
+                </a>
+                <a
+                  href="mailto:contact@cabinetguellaty.com"
+                  className="text-[#9C9C9C] text-sm hover:text-[#F5F5F5] transition-colors duration-300 block mt-2"
+                >
+                  contact@cabinetguellaty.com
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-2">
-            <h3 className="text-[#F5F5F5] font-semibold text-sm mb-5">Emplacement</h3>
-            <a
-              href="https://www.google.com/maps/place/45+Av.+de+la+R%C3%A9publique,+Site+arch%C3%A9ologique+de+Carthage/@36.8725441,10.3279552,875m/data=!3m1!1e3!4m6!3m5!1s0x12e2b49419c4ee1d:0x6b2b9ccb47218dc3!8m2!3d36.8721791!4d10.3322998!16s%2Fg%2F11jgrnzlq9?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full h-28 bg-[#151515] border border-[rgba(255,255,255,0.06)] flex items-center justify-center gap-2 hover:border-[#C8352E]/30 transition-colors"
-            >
-              <MapPin size={16} className="text-[#C8352E]" />
-              <span className="text-[#9C9C9C] text-xs font-medium">La Marsa, Tunis</span>
-            </a>
-          </div>
         </div>
 
-        <div className="pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-[#6B6B6B]">
-            © 2026 Cabinet Mourad Guellaty (MG & Associés). Tous droits réservés.
-          </p>
+        <div className="mt-32 pt-8 border-t border-[rgba(255,255,255,0.06)]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <p className="text-[#6B6B6B] text-xs">
+              &copy; 2026 MG &amp; Associés. Tous droits réservés.
+            </p>
+            <p className="font-['Playfair_Display',serif] text-sm text-[#6B6B6B] italic">
+              &ldquo;La confiance se construit dans la durée.&rdquo;
+            </p>
+            <p className="text-[#6B6B6B] text-xs tracking-wider">
+              Audit &middot; Conseil &middot; Expertise Comptable
+            </p>
+          </div>
         </div>
 
       </div>

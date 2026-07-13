@@ -1,66 +1,85 @@
-import { ShieldCheck, Calculator, LineChart, Scale, TrendingUp, Handshake } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
-    icon: ShieldCheck,
     title: 'Audit légal',
     desc: 'Commissariat aux comptes et audit légal dans le respect des normes en vigueur.',
   },
   {
-    icon: Calculator,
     title: 'Conseil fiscal',
     desc: "Optimisation fiscale, déclarations et assistance dans vos relations avec l'administration.",
   },
   {
-    icon: LineChart,
     title: 'Expertise comptable',
     desc: 'Tenue et révision comptable, états financiers et reporting fiable pour une meilleure prise de décision.',
   },
   {
-    icon: Scale,
     title: 'Conseil juridique',
     desc: 'Accompagnement juridique des entreprises et sécurisation de vos opérations.',
   },
   {
-    icon: TrendingUp,
     title: 'Conseil en gestion',
     desc: 'Analyse financière, tableaux de bord et accompagnement à la performance.',
   },
   {
-    icon: Handshake,
     title: 'Transactions & due diligence',
     desc: "Évaluation, audit d'acquisition et accompagnement dans vos opérations stratégiques.",
   },
 ];
 
+const fadeUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+};
+
 export default function Services() {
   return (
-    <section id="services" className="bg-dark py-24 lg:py-32">
+    <section id="services" className="bg-[#0D0D0D] py-32 lg:py-40">
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16 lg:mb-24">
-          <span className="w-8 h-[1px] bg-accent mb-4" />
-          <span className="text-accent text-xs font-bold tracking-[0.15em] uppercase mb-4">NOS SERVICES</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-text-primary tracking-tight max-w-2xl">
+        <motion.div className="mb-20" {...fadeUp}>
+          <span className="text-[#C8352E] text-xs font-semibold tracking-[0.18em] uppercase">
+            Nos Services
+          </span>
+          <h2 className="font-['Playfair_Display',serif] text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-[#F5F5F5] mt-6 tracking-tight max-w-3xl">
             Des solutions sur mesure pour accompagner votre croissance
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div key={i} className="bg-card border border-card-border p-10 flex flex-col items-center text-center group hover:border-accent/30 hover:-translate-y-0.5 transition-all duration-300">
-                <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="text-xl font-bold text-text-primary mb-4">{s.title}</h3>
-                <p className="text-text-muted/90 text-sm leading-relaxed mb-8 flex-1">
-                  {s.desc}
-                </p>
-                <a href="#contact" className="text-text-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2 focus-visible:outline-accent">
-                  EN SAVOIR PLUS <span className="text-accent">&rarr;</span>
-                </a>
+        <div className="space-y-px bg-[rgba(255,255,255,0.06)]">
+          {services.map((s, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#0D0D0D] py-8 lg:py-10 group hover:bg-[#151515] transition-all duration-500 px-0"
+              {...fadeUp}
+            >
+              <div className="grid lg:grid-cols-12 gap-6 items-start">
+                <span className="font-['Playfair_Display',serif] text-[#9C9C9C]/30 text-4xl lg:col-span-1 leading-none">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="lg:col-span-4">
+                  <h3 className="font-['Playfair_Display',serif] text-2xl lg:text-3xl text-[#F5F5F5] tracking-tight">
+                    {s.title}
+                  </h3>
+                </div>
+                <div className="lg:col-span-5">
+                  <p className="text-[#9C9C9C] text-base leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
+                <div className="lg:col-span-2 lg:text-right">
+                  <a
+                    href="#contact"
+                    className="text-[#9C9C9C] text-xs font-semibold tracking-[0.2em] uppercase group-hover:text-[#C8352E] transition-colors inline-flex items-center gap-2"
+                  >
+                    Contact
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  </a>
+                </div>
               </div>
-            );
-          })}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

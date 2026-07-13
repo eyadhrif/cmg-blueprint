@@ -1,63 +1,58 @@
-import { Building2, Factory, Stethoscope, GraduationCap, Ship, Wallet } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const secteurs = [
-  {
-    icon: Building2,
-    title: 'Services & Finance',
-    desc: 'Banques, assurances, sociétés de services et institutions financières.',
-  },
-  {
-    icon: Factory,
-    title: 'Industrie & Manufacture',
-    desc: 'Industries manufacturières, agroalimentaires et unités de production.',
-  },
-  {
-    icon: Stethoscope,
-    title: 'Santé & Pharmacie',
-    desc: 'Cliniques, laboratoires, pharmacies et établissements de santé.',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Éducation & Formation',
-    desc: 'Institutions académiques, centres de formation et organismes éducatifs.',
-  },
-  {
-    icon: Ship,
-    title: 'Transport & Logistique',
-    desc: 'Transport maritime, aérien, terrestre et chaînes logistiques.',
-  },
-  {
-    icon: Wallet,
-    title: 'Immobilier & BTP',
-    desc: 'Promotion immobilière, construction, et aménagement urbain.',
-  },
+  { title: 'Services & Finance', desc: 'Banques, assurances, sociétés de services et institutions financières.' },
+  { title: 'Industrie & Manufacture', desc: 'Industries manufacturières, agroalimentaires et unités de production.' },
+  { title: 'Santé & Pharmacie', desc: 'Cliniques, laboratoires, pharmacies et établissements de santé.' },
+  { title: 'Éducation & Formation', desc: 'Institutions académiques, centres de formation et organismes éducatifs.' },
+  { title: 'Transport & Logistique', desc: 'Transport maritime, aérien, terrestre et chaînes logistiques.' },
+  { title: 'Immobilier & BTP', desc: 'Promotion immobilière, construction, et aménagement urbain.' },
 ];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+};
 
 export default function Secteurs() {
   return (
-    <section id="sectors" className="bg-light py-24 lg:py-32">
+    <section id="sectors" className="bg-[#F5F5F3] py-32 lg:py-40">
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16 lg:mb-24">
-          <span className="w-8 h-[1px] bg-accent mb-4" />
-          <span className="text-accent text-xs font-bold tracking-[0.15em] uppercase mb-4">SECTEURS D'ACTIVITÉ</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-text-dark tracking-tight max-w-2xl">
+        <motion.div className="mb-20" {...fadeUp}>
+          <span className="text-[#C8352E] text-xs font-semibold tracking-[0.18em] uppercase">
+            Secteurs d'Activité
+          </span>
+          <h2 className="font-['Playfair_Display',serif] text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-[#1A1A1A] mt-6 tracking-tight max-w-3xl">
             Une expertise multisectorielle reconnue
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {secteurs.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div key={i} className="bg-white border border-card-border/20 p-10 flex flex-col items-center text-center group hover:border-accent/30 hover:-translate-y-0.5 transition-all duration-300">
-                <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="text-xl font-bold text-text-dark mb-4">{s.title}</h3>
-                <p className="text-text-dark-muted text-sm leading-relaxed">
-                  {s.desc}
-                </p>
+        <div className="space-y-px bg-[rgba(0,0,0,0.08)]">
+          {secteurs.map((s, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#F5F5F3] py-8 lg:py-10 group hover:bg-white transition-all duration-500"
+              {...fadeUp}
+            >
+              <div className="grid lg:grid-cols-12 gap-6 items-start">
+                <span className="font-['Playfair_Display',serif] text-[#1A1A1A]/10 text-4xl lg:col-span-1 leading-none">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="lg:col-span-4">
+                  <h3 className="font-['Playfair_Display',serif] text-2xl lg:text-3xl text-[#1A1A1A] tracking-tight">
+                    {s.title}
+                  </h3>
+                </div>
+                <div className="lg:col-span-5">
+                  <p className="text-[#6B6B6B] text-base leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-            );
-          })}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

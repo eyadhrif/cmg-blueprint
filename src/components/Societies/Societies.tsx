@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const companies = [
   'Société Générale Tunisie',
   'Banque de Tunisie',
@@ -13,38 +15,44 @@ const companies = [
   'ENIT',
 ];
 
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+};
+
 export default function Societies() {
   return (
-    <section className="bg-dark border-t border-b border-card-border py-16 overflow-hidden">
+    <section className="bg-[#0D0D0D] py-20 overflow-hidden border-b border-[rgba(255,255,255,0.06)]">
       <div className="max-w-[1280px] mx-auto px-6 mb-12">
-        <div className="flex flex-col items-center text-center">
-          <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">ILS NOUS ONT FAIT CONFIANCE</span>
-          <span className="w-8 h-[1px] bg-accent/50 mt-4" />
-        </div>
+        <motion.div className="text-center" {...fadeUp}>
+          <span className="text-[#9C9C9C] text-xs font-semibold tracking-[0.18em] uppercase">
+            Ils nous ont fait confiance
+          </span>
+          <div className="w-8 h-px bg-[#C8352E]/50 mx-auto mt-4" />
+        </motion.div>
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="flex whitespace-nowrap animate-marquee" style={{ gap: '4rem' }}>
+        <div className="flex whitespace-nowrap" style={{ gap: '3rem' }}>
           {[...companies, ...companies].map((name, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center h-20 px-8 border border-card-border bg-card shrink-0"
+              className="inline-flex items-center justify-center h-16 px-8 border border-[rgba(255,255,255,0.06)] bg-[#151515] shrink-0"
+              style={{ animation: `marquee 40s linear infinite` }}
             >
-              <span className="text-text-muted text-sm font-medium tracking-wide">{name}</span>
+              <span className="text-[#9C9C9C] text-sm font-medium tracking-wide">{name}</span>
             </div>
           ))}
         </div>
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

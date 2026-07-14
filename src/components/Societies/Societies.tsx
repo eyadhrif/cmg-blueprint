@@ -35,12 +35,11 @@ export default function Societies() {
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="flex whitespace-nowrap" style={{ gap: '3rem' }}>
+        <div className="flex whitespace-nowrap" style={{ gap: '3rem', animation: 'marquee 20s linear infinite' }}>
           {[...companies, ...companies].map((name, i) => (
             <div
               key={i}
               className="inline-flex items-center justify-center h-16 px-8 border border-[rgba(255,255,255,0.06)] bg-[#151515] shrink-0"
-              style={{ animation: `marquee 40s linear infinite` }}
             >
               <span className="text-[#9C9C9C] text-sm font-medium tracking-wide">{name}</span>
             </div>

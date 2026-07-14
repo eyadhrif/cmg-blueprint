@@ -68,11 +68,16 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className={`text-[11px] font-medium tracking-[0.15em] uppercase whitespace-nowrap transition-colors duration-300 py-1
+              className={`relative text-[11px] font-medium tracking-[0.15em] uppercase whitespace-nowrap transition-colors duration-300 py-1
                 ${activeSection === link.sectionId ? 'text-[#F5F5F5]' : 'text-[#9C9C9C] hover:text-[#F5F5F5]'}
               `}
             >
               {link.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-[2px] bg-[#C8352E] transition-all duration-500 ease-out ${
+                  activeSection === link.sectionId ? 'w-full' : 'w-0'
+                }`}
+              />
             </a>
           ))}
         </nav>

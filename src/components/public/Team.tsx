@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -105,16 +105,16 @@ export default function Team() {
         <div className="lg:hidden mt-20">
           <div className="relative overflow-hidden">
             <div className="flex justify-center gap-6">
-              <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCarousel}
+                className="flex justify-center gap-6 w-full"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.35 }}
+              >
                 {displayedMembers.map((member) => (
-                  <motion.div
-                    key={member.name}
-                    className="w-[45%]"
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -40 }}
-                    transition={{ duration: 0.4 }}
-                  >
+                  <div key={member.name} className="w-[45%]">
                     <div className="relative aspect-square mb-4 overflow-hidden bg-card border border-white/5">
                       <div className={`absolute inset-0 bg-gradient-to-br ${placeholderColors[team.indexOf(member) % placeholderColors.length]} opacity-40`} />
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -125,9 +125,9 @@ export default function Team() {
                     </div>
                     <h3 className="font-serif text-base text-text-primary text-center">{member.name}</h3>
                     <p className="text-text-muted text-[11px] tracking-wider uppercase text-center mt-1">{member.role}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </AnimatePresence>
+              </motion.div>
             </div>
           </div>
 

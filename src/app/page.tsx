@@ -14,7 +14,7 @@ import NewsletterSection from '@/components/public/NewsletterSection';
 import CTABanner from '@/components/public/CTABanner';
 import Footer from '@/components/public/Footer';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export default function Home() {
   return (

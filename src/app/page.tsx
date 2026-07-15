@@ -1,16 +1,19 @@
 import Header from '@/components/public/Header';
 import Hero from '@/components/public/Hero';
-import EditorialStatement from '@/components/public/EditorialStatement';
 import StatsBar from '@/components/public/StatsBar';
+import MerciMourad from '@/components/public/MerciMourad';
 import About from '@/components/public/About';
 import Societies from '@/components/public/Societies';
 import Services from '@/components/public/Services';
 import Secteurs from '@/components/public/Secteurs';
 import Team from '@/components/public/Team';
-import NousRejoindre from '@/components/public/NousRejoindre';
+import PublicNews from '@/components/public/PublicNews';
 import Contact from '@/components/public/Contact';
+import NewsletterSection from '@/components/public/NewsletterSection';
 import CTABanner from '@/components/public/CTABanner';
 import Footer from '@/components/public/Footer';
+
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return (
@@ -18,15 +21,16 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <EditorialStatement />
         <StatsBar />
+        <MerciMourad />
         <About />
         <Societies />
         <Services />
         <Secteurs />
         <Team />
-        <NousRejoindre />
+        <PublicNews />
         <Contact />
+        <NewsletterSection />
         <CTABanner />
       </main>
       <Footer />

@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: '#0D0D0D',
+        dark: '#171717',
         light: '#F5F5F3',
         accent: '#C8352E',
         'accent-crystal': '#B32509',

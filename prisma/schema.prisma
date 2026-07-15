@@ -18,7 +18,7 @@ model News {
   id         String    @id @default(cuid())
   title      String
   slug       String    @unique
-  summary    String
+  summary    String?
   content    String
   coverImage String?
   published  Boolean   @default(false)

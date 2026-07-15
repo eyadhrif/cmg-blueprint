@@ -1,16 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { Mail } from 'lucide-react';
 import { subscribe } from '@/actions/subscribers';
 
 const navLinks = [
-  { label: 'Accueil', href: '#accueil' },
-  { label: 'Le Cabinet', href: '#about' },
-  { label: 'Expertises', href: '#services' },
-  { label: 'Secteurs', href: '#sectors' },
-  { label: 'Notre équipe', href: '#team' },
-  { label: 'Carrières', href: '#nous-rejoindre' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Accueil', href: '/' },
+  { label: 'Le Cabinet', href: '/#about' },
+  { label: 'Expertises', href: '/#services' },
+  { label: 'Secteurs', href: '/#sectors' },
+  { label: 'Notre équipe', href: '/#team' },
+  { label: 'Actualités', href: '/news' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Footer() {
@@ -46,10 +48,7 @@ export default function Footer() {
         <div className="grid grid-cols-12 gap-10 lg:gap-16">
           <div className="col-span-12 lg:col-span-5">
             <div className="flex items-center gap-3 mb-8">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-accent">
-                <rect x="0.5" y="0.5" width="27" height="27" rx="1.5" stroke="currentColor" strokeOpacity="0.3" />
-                <text x="14" y="19" textAnchor="middle" fill="currentColor" fontSize="14" fontFamily="serif" fontWeight="700">MG</text>
-              </svg>
+              <img src="/logo.png" alt="CMG" className="w-7 h-7" />
               <div className="flex flex-col">
                 <span className="font-bold text-xs tracking-wide text-text-primary">MG & ASSOCIÉS</span>
                 <span className="text-[9px] tracking-[0.2em] text-text-dark-muted">CABINET MOURAD GUELLATY</span>
@@ -101,7 +100,7 @@ export default function Footer() {
                   {s.icon}
                 </a>
               ))}
-              <a href="mailto:contact@cabinetguellaty.com" className="text-text-dark-muted hover:text-accent text-xs font-semibold tracking-wider uppercase transition-all duration-300">Email</a>
+              <a href="mailto:contact@cabinetguellaty.com" className="text-text-dark-muted hover:text-accent transition-all duration-300"><Mail size={16} /></a>
             </div>
           </div>
 
@@ -110,7 +109,7 @@ export default function Footer() {
             <ul className="mt-6 space-y-4">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="relative text-text-muted text-sm hover:text-text-primary transition-colors duration-300 group inline-flex items-center gap-2"
                     onMouseEnter={() => setHoveredLink(link.label)}
@@ -121,7 +120,7 @@ export default function Footer() {
                     </span>
                     {link.label}
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -6,7 +6,7 @@ import { z } from 'zod';
 
 const newsSchema = z.object({
   title: z.string().min(1, 'Titre requis').max(200),
-  summary: z.string().min(1, 'Résumé requis').max(500),
+  summary: z.string().max(500).optional(),
   content: z.string().min(1, 'Contenu requis'),
   coverImage: z.string().optional(),
   published: z.boolean().default(false),

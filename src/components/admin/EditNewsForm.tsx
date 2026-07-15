@@ -14,7 +14,7 @@ interface EditNewsFormProps {
   article: {
     id: string;
     title: string;
-    summary: string;
+    summary: string | null;
     content: string;
     coverImage: string | null;
     published: boolean;
@@ -50,8 +50,8 @@ export function EditNewsForm({ article }: EditNewsFormProps) {
         <Input id="title" name="title" defaultValue={article.title} required />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="summary">Résumé</Label>
-        <Textarea id="summary" name="summary" defaultValue={article.summary} required />
+        <Label htmlFor="summary">Résumé <span className="text-text-muted text-xs">(optionnel)</span></Label>
+        <Textarea id="summary" name="summary" defaultValue={article.summary || ''} />
       </div>
         <div className="space-y-2">
           <Label>Image de couverture</Label>

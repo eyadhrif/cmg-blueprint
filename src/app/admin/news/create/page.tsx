@@ -41,8 +41,8 @@ export default function CreateNews() {
           <Input id="title" name="title" placeholder="Titre de l'article" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="summary">Résumé</Label>
-          <Textarea id="summary" name="summary" placeholder="Brève description..." required />
+          <Label htmlFor="summary">Résumé <span className="text-text-muted text-xs">(optionnel)</span></Label>
+          <Textarea id="summary" name="summary" placeholder="Brève description..." />
         </div>
         <div className="space-y-2">
           <Label>Image de couverture</Label>

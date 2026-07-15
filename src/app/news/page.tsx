@@ -50,9 +50,11 @@ export default async function NewsPage() {
                   <h2 className="font-serif text-xl text-text-primary group-hover:text-accent transition-colors mb-3">
                     {article.title}
                   </h2>
-                  <p className="text-text-muted text-sm leading-relaxed line-clamp-3">
-                    {article.summary}
-                  </p>
+                  {article.summary && (
+                    <p className="text-text-muted text-sm leading-relaxed line-clamp-3">
+                      {article.summary}
+                    </p>
+                  )}
                   <span className="inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-wider uppercase mt-4 group-hover:gap-3 transition-all">
                     Lire la suite <span>&rarr;</span>
                   </span>

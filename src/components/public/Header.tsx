@@ -13,7 +13,7 @@ const navLinks = [
   { label: 'SECTEURS', href: '/#sectors', sectionId: 'sectors' },
   { label: 'ÉQUIPE', href: '/#team', sectionId: 'team' },
   { label: 'CARRIÈRES', href: '/#careers', sectionId: 'careers' },
-  { label: 'ACTUALITÉS', href: '/news', sectionId: 'news' },
+  { label: 'ACTUALITÉS', href: '/#news', sectionId: 'news' },
   { label: 'CONTACT', href: '/#contact', sectionId: 'contact' },
 ];
 

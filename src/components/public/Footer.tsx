@@ -11,6 +11,7 @@ const navLinks = [
   { label: 'Expertises', href: '/#services' },
   { label: 'Secteurs', href: '/#sectors' },
   { label: 'Notre équipe', href: '/#team' },
+  { label: 'Carrières', href: '/#careers' },
   { label: 'Actualités', href: '/news' },
   { label: 'Contact', href: '/#contact' },
 ];

@@ -6,6 +6,7 @@ import { signOut } from 'next-auth/react';
 import {
   LayoutDashboard,
   Newspaper,
+  Briefcase,
   Users,
   Mail,
   LogOut,
@@ -15,6 +16,7 @@ import { cn } from '@/lib/utils';
 const sidebarItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'News', href: '/admin/news', icon: Newspaper },
+  { label: 'Careers', href: '/admin/careers', icon: Briefcase },
   { label: 'Subscribers', href: '/admin/subscribers', icon: Users },
   { label: 'Messages', href: '/admin/messages', icon: Mail },
 ];

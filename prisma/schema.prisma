@@ -33,6 +33,17 @@ model Subscriber {
   createdAt DateTime @default(now())
 }
 
+model Job {
+  id        String    @id @default(cuid())
+  title     String
+  type      String
+  location  String
+  description String
+  published Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
 model Message {
   id        String   @id @default(cuid())
   name      String

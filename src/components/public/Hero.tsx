@@ -19,12 +19,30 @@ const containerFade = {
 export default function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen bg-dark overflow-hidden">
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center saturate-50 brightness-[0.72] contrast-[1.05]"
-        style={{ backgroundImage: "url('/hero-poster.jpg')" }}
-        animate={{ scale: [1, 1.03, 1], y: [0, -8, 0] }}
-        transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity }}
-      />
+      <div className="absolute inset-0 overflow-hidden hero-video-wrapper">
+        <video
+          className="absolute inset-0 h-full w-full object-cover saturate-50 brightness-[0.72] contrast-[1.05] hero-video"
+          src="/hero-video.mp4"
+          poster="/hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+      <style>{`
+        .hero-video-wrapper {
+          will-change: transform;
+        }
+        .hero-video {
+          will-change: transform;
+          animation: heroFloat 14s ease-in-out infinite;
+        }
+        @keyframes heroFloat {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-6px) scale(1.015); }
+        }
+      `}</style>
       <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/40 to-dark/30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.03)_0%,transparent_50%)]" />
 

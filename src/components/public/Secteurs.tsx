@@ -20,7 +20,7 @@ const fadeUp = {
 
 export default function Secteurs() {
   return (
-    <section id="sectors" className="bg-light py-32 lg:py-40">
+    <section id="sectors" className="bg-ivoire py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6">
         <motion.div className="mb-20" {...fadeUp}>
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">

@@ -37,7 +37,7 @@ export default function NewsletterSection() {
   }
 
   return (
-    <section id="newsletter" className="bg-light py-32 lg:py-40 border-t border-black/6">
+    <section id="newsletter" className="bg-ivoire py-24 lg:py-32 border-t border-black/6">
       <div className="max-w-[1280px] mx-auto px-6">
         <motion.div className="max-w-2xl mx-auto text-center" {...fadeUp}>
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">

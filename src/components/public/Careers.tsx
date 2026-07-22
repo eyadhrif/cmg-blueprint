@@ -10,7 +10,7 @@ export default async function Careers() {
   if (jobs.length === 0) return null;
 
   return (
-    <section id="careers" className="bg-light py-32 lg:py-40 border-t border-black/6">
+    <section id="careers" className="bg-ivoire py-24 lg:py-32 border-t border-black/6">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
@@ -35,7 +35,7 @@ export default async function Careers() {
                 <div className="flex flex-wrap items-center gap-6">
                   <Briefcase size={18} className="text-text-dark-muted shrink-0" />
                   <div>
-                    <h3 className="text-lg font-semibold text-text-dark">{job.title}</h3>
+                    <h3 className="font-serif text-lg text-text-dark">{job.title}</h3>
                     <div className="flex items-center gap-4 mt-1 text-sm text-text-dark-muted">
                       <span className="flex items-center gap-1.5"><MapPin size={13} /> {job.location}</span>
                       <span className="w-[1px] h-3 bg-black/10" />

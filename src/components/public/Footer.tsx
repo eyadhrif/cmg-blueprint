@@ -38,9 +38,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#0B0B0C] pt-32 pb-10 overflow-hidden">
+    <footer className="relative bg-gris border-t border-black/10 pt-32 pb-10 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <span className="font-serif text-[clamp(300px,40vw,600px)] leading-none text-white" style={{ opacity: 0.03 }}>
+        <span className="font-serif text-[clamp(300px,40vw,600px)] leading-none text-black" style={{ opacity: 0.04 }}>
           MG
         </span>
       </div>
@@ -51,11 +51,11 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-8">
               <img src="/logo.png" alt="CMG" className="w-7 h-7" />
               <div className="flex flex-col">
-                <span className="font-bold text-xs tracking-wide text-text-primary">MG & ASSOCIÉS</span>
+                <span className="font-bold text-xs tracking-wide text-text-dark">MG & ASSOCIÉS</span>
                 <span className="text-[9px] tracking-[0.2em] text-text-dark-muted">CABINET MOURAD GUELLATY</span>
               </div>
             </div>
-            <div className="font-serif text-2xl sm:text-3xl lg:text-4xl text-text-primary leading-[1.3] tracking-tight max-w-md">
+            <div className="font-serif text-2xl sm:text-3xl lg:text-4xl text-text-dark leading-[1.3] tracking-tight max-w-md">
               Depuis plusieurs décennies,<br />
               nous accompagnons entreprises,<br />
               institutions et dirigeants<br />
@@ -63,7 +63,7 @@ export default function Footer() {
               et confiance.
             </div>
 
-            <div className="mt-12 border-t border-white/6 pt-8">
+            <div className="mt-12 border-t border-black/10 pt-8">
               <span className="text-text-dark-muted text-[10px] font-semibold tracking-[0.2em] uppercase">
                 Newsletter
               </span>
@@ -74,7 +74,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="votre@email.com"
                   required
-                  className="flex-1 bg-card border border-card-border px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent"
+                  className="flex-1 bg-white border border-black/15 px-4 py-2.5 text-sm text-text-dark placeholder:text-text-dark-muted focus:outline-none focus:border-accent"
                 />
                 <button
                   type="submit"
@@ -84,7 +84,7 @@ export default function Footer() {
                 </button>
               </form>
               {subscribeMsg && (
-                <p className="text-text-muted text-xs mt-3">{subscribeMsg}</p>
+                <p className="text-text-dark-muted text-xs mt-3">{subscribeMsg}</p>
               )}
             </div>
 
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="relative text-text-muted text-sm hover:text-text-primary transition-colors duration-300 group inline-flex items-center gap-2"
+                    className="relative text-text-dark-muted text-sm hover:text-text-dark transition-colors duration-300 group inline-flex items-center gap-2"
                     onMouseEnter={() => setHoveredLink(link.label)}
                     onMouseLeave={() => setHoveredLink(null)}
                   >
@@ -131,21 +131,21 @@ export default function Footer() {
             <span className="text-text-dark-muted text-[10px] font-semibold tracking-[0.2em] uppercase">Contact</span>
             <div className="mt-6 space-y-8">
               <div>
-                <p className="text-text-muted text-sm leading-relaxed">
+                <p className="text-text-dark-muted text-sm leading-relaxed">
                   45 Avenue de la République<br />
                   2078 La Marsa<br />
                   Tunisie
                 </p>
               </div>
               <div>
-                <a href="tel:+21671740131" className="text-text-muted text-sm hover:text-text-primary transition-colors duration-300 block">+216 71 740 131</a>
-                <a href="mailto:contact@cabinetguellaty.com" className="text-text-muted text-sm hover:text-text-primary transition-colors duration-300 block mt-2">contact@cabinetguellaty.com</a>
+                <a href="tel:+21671740131" className="text-text-dark-muted text-sm hover:text-text-dark transition-colors duration-300 block">+216 71 740 131</a>
+                <a href="mailto:contact@cabinetguellaty.com" className="text-text-dark-muted text-sm hover:text-text-dark transition-colors duration-300 block mt-2">contact@cabinetguellaty.com</a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-32 pt-8 border-t border-white/6">
+        <div className="mt-32 pt-8 border-t border-black/10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
             <p className="text-text-dark-muted text-xs">&copy; 2026 MG &amp; Associés. Tous droits réservés.</p>
             <p className="font-serif text-sm text-text-dark-muted italic">&ldquo;La confiance se construit dans la durée.&rdquo;</p>

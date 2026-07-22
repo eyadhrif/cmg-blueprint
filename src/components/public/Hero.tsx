@@ -52,11 +52,11 @@ export default function Hero() {
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
               Audit & Conseil
             </span>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] leading-[1.08] text-text-primary mt-8 tracking-tight">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] leading-[1.08] text-white mt-8 tracking-tight">
               L&apos;expertise au service de votre{' '}
               <span className="italic text-accent">performance</span>
             </h1>
-            <p className="text-text-muted text-base sm:text-lg mt-6 max-w-xl leading-relaxed">
+            <p className="text-white/75 text-base sm:text-lg mt-6 max-w-xl leading-relaxed">
               Cabinet Mourad Guellaty (MG & Associés) accompagne les entreprises à chaque étape
               de leur développement avec rigueur, indépendance et engagement.
             </p>
@@ -70,7 +70,7 @@ export default function Hero() {
               </a>
               <a
                 href="#about"
-                className="inline-flex items-center px-8 py-4 text-sm font-semibold tracking-wider uppercase text-text-muted border border-white/15 hover:border-text-primary hover:text-text-primary transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 text-sm font-semibold tracking-wider uppercase text-white/80 border border-white/30 hover:border-white hover:text-white transition-all duration-300"
               >
                 En savoir plus
               </a>

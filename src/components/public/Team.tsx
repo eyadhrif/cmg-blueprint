@@ -47,7 +47,7 @@ export default function Team() {
   }
 
   return (
-    <section id="team" className="relative bg-dark py-32 lg:py-40 overflow-hidden">
+    <section id="team" className="relative bg-gris py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(200,160,100,0.03)_0%,transparent_50%)]" />
 
       <div className="relative max-w-[1280px] mx-auto px-6">
@@ -55,10 +55,10 @@ export default function Team() {
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
             Notre Équipe
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-primary mt-6 tracking-tight">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
             Une équipe pluridisciplinaire au service de votre performance
           </h2>
-          <p className="text-text-muted text-base sm:text-lg mt-8 leading-relaxed">
+          <p className="text-text-dark-muted text-base sm:text-lg mt-8 leading-relaxed">
             MG & Associés réunit des experts-comptables, commissaires aux comptes et conseillers spécialisés,
             capables d&apos;intervenir sur l&apos;ensemble des métiers de la finance, de l&apos;audit et du conseil.
           </p>
@@ -76,16 +76,16 @@ export default function Team() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative aspect-square mb-5 overflow-hidden bg-card border border-white/5 group-hover:border-accent/30 transition-all duration-500">
+              <div className="glass mirror aspect-square mb-5 overflow-hidden group-hover:border-accent/30 transition-all duration-500">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${placeholderColors[i % placeholderColors.length]} opacity-40 group-hover:opacity-60 transition-opacity duration-500`}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-serif text-4xl text-text-primary/30 group-hover:text-text-primary/50 transition-colors duration-500 select-none">
+                  <span className="font-serif text-4xl text-text-dark/30 group-hover:text-text-dark/50 transition-colors duration-500 select-none">
                     {member.initials}
                   </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400"
                   animate={hoveredIndex === i ? { y: 0, opacity: 1 } : { y: 4, opacity: 0 }}
@@ -94,10 +94,10 @@ export default function Team() {
                   <p className="text-xs text-accent font-semibold tracking-wider uppercase">{member.role}</p>
                 </motion.div>
               </div>
-              <h3 className="font-serif text-lg text-text-primary group-hover:text-accent transition-colors">
+              <h3 className="font-serif text-lg text-text-dark group-hover:text-accent transition-colors">
                 {member.name}
               </h3>
-              <p className="text-text-muted text-xs tracking-wider uppercase mt-1">{member.role}</p>
+              <p className="text-text-dark-muted text-xs tracking-wider uppercase mt-1">{member.role}</p>
             </motion.div>
           ))}
         </div>
@@ -115,16 +115,16 @@ export default function Team() {
               >
                 {displayedMembers.map((member) => (
                   <div key={member.name} className="w-[45%]">
-                    <div className="relative aspect-square mb-4 overflow-hidden bg-card border border-white/5">
+                    <div className="glass mirror aspect-square mb-4 overflow-hidden">
                       <div className={`absolute inset-0 bg-gradient-to-br ${placeholderColors[team.indexOf(member) % placeholderColors.length]} opacity-40`} />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="font-serif text-3xl text-text-primary/30 select-none">
+                        <span className="font-serif text-3xl text-text-dark/30 select-none">
                           {member.initials}
                         </span>
                       </div>
                     </div>
-                    <h3 className="font-serif text-base text-text-primary text-center">{member.name}</h3>
-                    <p className="text-text-muted text-[11px] tracking-wider uppercase text-center mt-1">{member.role}</p>
+                    <h3 className="font-serif text-base text-text-dark text-center">{member.name}</h3>
+                    <p className="text-text-dark-muted text-[11px] tracking-wider uppercase text-center mt-1">{member.role}</p>
                   </div>
                 ))}
               </motion.div>
@@ -137,7 +137,7 @@ export default function Team() {
                 key={i}
                 onClick={() => setActiveCarousel(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  activeCarousel === i ? 'bg-accent w-6' : 'bg-white/20'
+                  activeCarousel === i ? 'bg-accent w-6' : 'bg-black/20'
                 }`}
                 aria-label={`Voir les membres ${i * 2 + 1}-${Math.min(i * 2 + 2, team.length)}`}
               />
@@ -145,18 +145,18 @@ export default function Team() {
           </div>
         </div>
 
-        <motion.div className="max-w-3xl mx-auto mt-24 pt-16 border-t border-white/6 text-center" {...fadeUp}>
+        <motion.div className="max-w-3xl mx-auto mt-24 pt-16 border-t border-black/10 text-center" {...fadeUp}>
           <span className="font-serif text-[80px] leading-none text-accent/10 select-none block">
             &ldquo;
           </span>
-          <blockquote className="font-serif text-2xl sm:text-3xl leading-[1.2] text-text-primary -mt-10 tracking-tight">
+          <blockquote className="font-serif text-2xl sm:text-3xl leading-[1.2] text-text-dark -mt-10 tracking-tight">
             Notre force réside dans la diversité de nos expertises
             <br />
             et notre engagement collectif pour l&apos;excellence.
           </blockquote>
           <div className="mt-8">
             <div className="w-10 h-px bg-accent mx-auto mb-4" />
-            <cite className="text-sm text-text-muted not-italic">
+            <cite className="text-sm text-text-dark-muted not-italic">
               L&apos;équipe MG & Associés
             </cite>
           </div>

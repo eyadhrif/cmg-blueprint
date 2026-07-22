@@ -6,123 +6,166 @@ const fadeUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+  transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
 };
 
 const milestones = [
-  { year: '1992', text: 'Fondation du cabinet Mourad Guellaty' },
-  { year: '2001', text: 'Nommé président de l\'Ordre des Experts Comptables de Tunisie' },
-  { year: '2005', text: 'Consolidation du département audit financier' },
-  { year: '2010', text: 'Développement du conseil en Stratégie et Gouvernance' },
-  { year: '2015', text: 'MG & Associés — élargissement de l\'équipe pluridisciplinaire' },
+  { year: '1982', text: 'Fondation du cabinet Mourad Guellaty' },
+  { year: '2001', text: 'Nommé président de l’Ordre des Experts Comptables de Tunisie' },
+  { year: '2008', text: 'Consolidation du département audit financier' },
+  { year: '2012', text: 'Développement du conseil en stratégie et gouvernance' },
+  { year: '2015', text: 'MG & Associés — élargissement de l’équipe pluridisciplinaire' },
   { year: '2020', text: 'Accompagnement des transformations numériques et réglementaires' },
 ];
 
 export default function MerciMourad() {
   return (
-    <section id="merci-mourad" className="relative bg-dark py-32 lg:py-40 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(200,160,100,0.04)_0%,transparent_50%)]" />
-
-      <div className="absolute top-0 right-0 w-96 h-96 border-r border-t border-white/5" />
-      <div className="absolute top-20 right-20 w-64 h-64 border-r border-t border-white/[0.03]" />
-
-      <div className="absolute left-0 bottom-0 w-80 h-80 border-l border-b border-white/5" />
-      <div className="absolute left-16 bottom-16 w-48 h-48 border-l border-b border-white/[0.03]" />
-
-      <div className="relative max-w-[1280px] mx-auto px-6">
-        <motion.div className="text-center mb-20" {...fadeUp}>
-          <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Hommage
-          </span>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-primary mt-6 tracking-tight">
-            Merci, Monsieur{' '}
-            <span className="text-accent">Mourad</span>
-          </h2>
-          <div className="w-16 h-px bg-accent/50 mx-auto mt-8" />
-        </motion.div>
-
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start mb-24">
-          <motion.div className="lg:col-span-6" {...fadeUp}>
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 shrink-0 mx-auto lg:mx-0">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-accent/20 to-gold/20 border border-white/10 flex items-center justify-center overflow-hidden">
-                  <span className="font-serif text-5xl sm:text-6xl text-text-muted/20 select-none">MG</span>
-                </div>
-                <div className="absolute -inset-2 rounded-full border border-accent/10 -z-10" />
-                <div className="absolute -inset-4 rounded-full border border-accent/5 -z-10" />
-              </div>
-              <div className="space-y-6">
-                <p className="font-serif text-2xl sm:text-3xl leading-[1.3] text-light italic">
-                  &ldquo;Bâtir un cabinet d&apos;excellence, c&apos;est avant tout bâtir des hommes et des femmes
-                  de confiance.&rdquo;
-                </p>
-                <p className="text-text-muted text-base sm:text-lg leading-relaxed">
-                  Mourad Guellaty a consacré sa vie à l&apos;expertise comptable et à l&apos;audit en Tunisie.
-                  Ancien président de l&apos;Ordre des Experts Comptables de Tunisie, il a porté les valeurs
-                  de rigueur, d&apos;indépendance et d&apos;engagement qui font aujourd&apos;hui la réputation du cabinet.
-                </p>
-                <p className="text-text-muted text-base sm:text-lg leading-relaxed">
-                  Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières,
-                  accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs
-                  enjeux les plus stratégiques.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
+    <section id="merci-mourad" className="relative bg-champagne py-24 lg:py-32 overflow-hidden">
+      <div className="relative max-w-[1400px] mx-auto px-6">
+        {/* ── Row 1 — portrait paired with the heading block ───────────── */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* ── Portrait ──────────────────────────────────────────────── */}
           <motion.div
-            className="lg:col-span-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:col-span-4 relative mx-auto w-full max-w-[280px] sm:max-w-[300px]"
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="relative">
-              <div className="bg-white/[0.03] border border-white/10 p-8 lg:p-10">
-                <h3 className="font-serif text-xl text-light mb-8 tracking-tight">Parcours & Engagements</h3>
-                <div className="space-y-6">
-                  {milestones.map((m, i) => (
-                    <div key={m.year} className="flex gap-5 group">
-                      <div className="flex flex-col items-center">
-                        <span className="text-accent text-xs font-bold tracking-wider whitespace-nowrap pt-0.5 group-hover:text-light transition-colors">
-                          {m.year}
-                        </span>
-                        {i < milestones.length - 1 && (
-                          <div className="w-px flex-1 bg-gradient-to-b from-accent/30 to-transparent mt-2" />
-                        )}
-                      </div>
-                      <p className="text-text-muted text-sm leading-relaxed pt-0.5 group-hover:text-text-primary transition-colors">
-                        {m.text}
-                      </p>
-                    </div>
-                  ))}
+            <div className="relative w-full h-[300px] sm:h-[340px] lg:h-[370px]">
+              {/* thin gold ring behind the arch */}
+              <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
+              {/* champagne fill behind */}
+              <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#EFE6D4]/70 -z-10" />
+              {/* arched portrait */}
+              <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#E9DFCB] to-[#D8C9AC]" />
+                <div className="absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_16%,rgba(255,255,255,0.55)_0%,transparent_70%)]" />
+                {/* monogram placeholder — a photo at /founder.jpg will cover this */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6 select-none">
+                  <span className="font-serif leading-none text-[#A98C5B]/50 text-[68px] lg:text-[84px]">
+                    MG
+                  </span>
+                  <span className="w-10 h-px bg-gold/50" />
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#8A7550]/80">
+                    Mourad Guellaty
+                  </span>
                 </div>
+                {/* TEMPORARY placeholder portrait — must be replaced with the
+                    real photograph of Mourad Guellaty before going live.
+                    Drop the file at public/founder.jpg and swap the URL below. */}
+                <div
+                  className="absolute inset-0 bg-cover bg-top saturate-[0.8] contrast-[1.02]"
+                  style={{
+                    backgroundImage:
+                      'url(https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop)',
+                  }}
+                />
               </div>
-              <div className="absolute -top-3 -left-3 w-full h-full border border-accent/10 -z-10" />
             </div>
           </motion.div>
-        </div>
 
-        <motion.div className="max-w-4xl mx-auto text-center" {...fadeUp}>
-          <span className="font-serif text-[140px] leading-none text-accent/10 select-none block">
-            &ldquo;
-          </span>
-          <blockquote className="font-serif text-3xl sm:text-4xl lg:text-5xl leading-[1.2] text-light -mt-20 tracking-tight">
-            La confiance ne se d&eacute;cr&egrave;te pas.
-            <br />
-            Elle se construit, ann&eacute;e apr&egrave;s ann&eacute;e,
-            <br />
-            au service de nos clients et de l&apos;excellence.
-          </blockquote>
-          <div className="mt-10">
-            <div className="w-12 h-px bg-accent mx-auto mb-5" />
-            <cite className="font-serif text-base text-text-muted not-italic">
-              Mourad Guellaty
-              <span className="block text-[11px] tracking-[0.15em] uppercase mt-1 text-text-dark-muted">
+          {/* ── Right content ─────────────────────────────────────────── */}
+          <div className="lg:col-span-8">
+            {/* label */}
+            <motion.div className="flex items-center gap-4" {...fadeUp}>
+              <span className="h-px w-10 bg-gold" />
+              <span className="text-[#9C7F56] text-[11px] font-semibold tracking-[0.28em] uppercase">
                 Fondateur
               </span>
-            </cite>
+            </motion.div>
+
+            {/* heading + signature */}
+            <motion.div className="relative mt-6" {...fadeUp}>
+              <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.04] text-text-dark tracking-tight">
+                Merci, Monsieur <span className="text-accent">Mourad</span>
+              </h2>
+              <span
+                aria-hidden
+                style={{ fontFamily: 'var(--font-signature), cursive' }}
+                className="pointer-events-none select-none block text-6xl sm:text-7xl lg:text-8xl text-text-dark/[0.12] leading-[1.1] -mt-4 lg:-mt-7 pl-6"
+              >
+                Mourad Guellaty
+              </span>
+            </motion.div>
+
+            {/* lead sentence */}
+            <motion.p
+              className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-8 max-w-xl"
+              {...fadeUp}
+            >
+              Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes
+              et des femmes de <span className="text-accent">confiance</span>.
+            </motion.p>
           </div>
+        </div>
+
+        {/* ── Row 2 — biography, two columns of text ───────────────────── */}
+        <motion.div className="grid md:grid-cols-2 gap-10 lg:gap-16 mt-14 lg:mt-20" {...fadeUp}>
+          <p className="text-text-dark-muted text-[15px] leading-[1.75]">
+            Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit
+            en Tunisie. Ancien président de l’Ordre des Experts Comptables de Tunisie,
+            il a porté la voix de la profession avec{' '}
+            <span className="text-text-dark font-medium">indépendance</span> et{' '}
+            <span className="text-text-dark font-medium">engagement</span>.
+          </p>
+          <p className="text-text-dark-muted text-[15px] leading-[1.75]">
+            Son leadership visionnaire a permis au cabinet de rayonner bien au-delà
+            des frontières, accompagnant les plus grandes entreprises tunisiennes
+            et internationales dans leurs enjeux les plus stratégiques.
+          </p>
+        </motion.div>
+
+        {/* ── Row 3 — horizontal timeline ──────────────────────────────── */}
+        <motion.div className="relative mt-20 lg:mt-24" {...fadeUp}>
+          {/* the axis, drawn only where all six sit on one line */}
+          <div className="hidden lg:block absolute left-0 right-0 top-[5px] h-px bg-gold/30" />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
+            {milestones.map((m, i) => (
+              <div key={m.year} className="relative pt-7">
+                <span
+                  className={`absolute left-0 top-0 w-2.5 h-2.5 rounded-full ${
+                    i === 0 ? 'bg-accent' : 'bg-[#F3ECDD] border border-gold/60'
+                  }`}
+                />
+                <div
+                  className={`font-serif text-lg tabular-nums ${
+                    i === 0 ? 'text-accent' : 'text-text-dark'
+                  }`}
+                >
+                  {m.year}
+                </div>
+                <p className="text-text-dark-muted text-[13px] leading-snug mt-2">
+                  {m.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── Row 3 — quote centerpiece ────────────────────────────────── */}
+        <motion.div className="mt-20 lg:mt-28 max-w-3xl mx-auto text-center" {...fadeUp}>
+              <div className="flex items-center justify-center gap-5">
+                <span className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent to-gold/60" />
+                <span className="font-serif text-6xl text-gold/50 leading-none -mb-6 select-none">
+                  &ldquo;
+                </span>
+                <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent to-gold/60" />
+              </div>
+              <blockquote className="font-serif text-2xl sm:text-3xl lg:text-[32px] leading-[1.32] text-text-dark mt-4 tracking-tight">
+                La confiance ne se décrète pas.
+                <br />
+                Elle se construit, année après année,
+                <br className="hidden sm:block" /> au service de nos clients et de l’excellence.
+              </blockquote>
+              <div className="mt-8">
+                <div className="w-8 h-px bg-gold/60 mx-auto mb-4" />
+                <div className="font-serif text-lg text-text-dark">Mourad Guellaty</div>
+                <div className="text-[10px] tracking-[0.24em] uppercase text-text-dark-muted mt-1.5">
+                  Fondateur
+                </div>
+              </div>
         </motion.div>
       </div>
     </section>

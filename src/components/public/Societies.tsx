@@ -81,7 +81,7 @@ const fadeUp = {
 
 export default function Societies() {
   return (
-    <section className="bg-light py-20 overflow-hidden border-b border-black/6">
+    <section className="bg-ivoire py-20 overflow-hidden border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-6 mb-12">
         <motion.div className="text-center" {...fadeUp}>
           <span className="text-text-dark-muted text-xs font-semibold tracking-[0.18em] uppercase">

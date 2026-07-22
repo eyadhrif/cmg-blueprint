@@ -21,12 +21,12 @@ const fadeUp = {
 
 export default function Services() {
   return (
-    <section id="services" className="bg-dark py-24 lg:py-32">
+    <section id="services" className="bg-gris py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6">
         <motion.div className="flex flex-col items-center text-center mb-16 lg:mb-24" {...fadeUp}>
           <span className="w-8 h-[1px] bg-accent mb-4" />
-          <span className="text-accent text-xs font-bold tracking-[0.15em] uppercase mb-4">NOS SERVICES</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-text-primary tracking-tight max-w-2xl">
+          <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4">NOS SERVICES</span>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight max-w-2xl">
             Des solutions sur mesure pour accompagner votre croissance
           </h2>
         </motion.div>
@@ -37,15 +37,15 @@ export default function Services() {
             return (
               <motion.div
                 key={i}
-                className="bg-card border border-card-border p-10 flex flex-col items-center text-center group hover:border-accent/30 hover:-translate-y-0.5 transition-all duration-300"
+                className="surface mirror shadow-soft p-10 flex flex-col items-center text-center group hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
                 {...fadeUp}
               >
                 <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="text-xl font-bold text-text-primary mb-4">{s.title}</h3>
-                <p className="text-text-muted/90 text-sm leading-relaxed mb-8 flex-1">
+                <h3 className="font-serif text-xl text-text-dark mb-4">{s.title}</h3>
+                <p className="text-text-dark-muted text-sm leading-relaxed mb-8 flex-1">
                   {s.desc}
                 </p>
-                <a href="#contact" className="text-text-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2">
+                <a href="#contact" className="text-text-dark-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2">
                   EN SAVOIR PLUS <span className="text-accent">&rarr;</span>
                 </a>
               </motion.div>

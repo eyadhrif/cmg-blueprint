@@ -32,7 +32,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-light py-32 lg:py-40">
+    <section id="contact" className="bg-ivoire py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
           <motion.div className="lg:col-span-5" {...fadeUp}>
@@ -100,21 +100,21 @@ export default function Contact() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium text-text-dark-muted uppercase tracking-wider mb-2">Nom complet</label>
-                  <input type="text" id="name" name="name" placeholder="Votre nom" required className="w-full bg-white border border-black/10 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
+                  <input type="text" id="name" name="name" placeholder="Votre nom" required className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-xs font-medium text-text-dark-muted uppercase tracking-wider mb-2">Email</label>
-                    <input type="email" id="email" name="email" placeholder="votre@email.com" required className="w-full bg-white border border-black/10 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-xs font-medium text-text-dark-muted uppercase tracking-wider mb-2">Téléphone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+216 XX XXX XXX" className="w-full bg-white border border-black/10 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
+                    <input type="tel" id="phone" name="phone" placeholder="+216 XX XXX XXX" className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors" />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-xs font-medium text-text-dark-muted uppercase tracking-wider mb-2">Sujet</label>
-                  <select id="subject" name="subject" required className="w-full bg-white border border-black/10 text-text-dark text-sm px-5 py-4 focus:outline-none focus:border-accent transition-colors">
+                  <select id="subject" name="subject" required className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 focus:outline-none focus:border-accent transition-colors">
                     <option value="">Sélectionnez un sujet</option>
                     <option value="audit">Audit & Commissariat</option>
                     <option value="fiscal">Conseil fiscal</option>
@@ -126,7 +126,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-xs font-medium text-text-dark-muted uppercase tracking-wider mb-2">Message</label>
-                  <textarea id="message" name="message" rows={5} placeholder="Votre message..." required className="w-full bg-white border border-black/10 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors resize-none" />
+                  <textarea id="message" name="message" rows={5} placeholder="Votre message..." required className="w-full bg-white/65 backdrop-blur-sm border border-white/60 text-text-dark text-sm px-5 py-4 placeholder:text-text-dark-muted/50 focus:outline-none focus:border-accent transition-colors resize-none" />
                 </div>
                 {error && <p className="text-red-500 text-sm">{error}</p>}
                 <button type="submit" className="w-full bg-accent text-white px-8 py-5 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 transition-all duration-300 group">

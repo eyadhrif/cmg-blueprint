@@ -8,6 +8,186 @@
   }
 
   body {
-    @apply bg-dark text-text-primary antialiased;
+    @apply bg-light text-text-dark antialiased;
+    position: relative;
+  }
+
+  /* Every title shares one format: bold. Colour comes from the
+     text-dark token (#0A0A0A), so utilities can still override it
+     where a heading sits on a dark surface. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+
+  /* Paper grain — a faint tactile texture over the whole page so surfaces
+     read as printed stock rather than flat fills. Sits under the header. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* ── Section dégradations ──────────────────────────────────────────
+     Every section carries a gradient: a soft light source at the top
+     fading into a deeper warm tone at the bottom. */
+
+  /* Ivory — the light sections. */
+  .bg-ivoire {
+    background:
+      radial-gradient(85% 55% at 50% 0%, rgba(255, 255, 255, 0.75) 0%, transparent 62%),
+      linear-gradient(180deg, #F8F5EE 0%, #F2EDE3 55%, #E9E3D6 100%);
+  }
+
+  /* Warm grey — the panels that replaced the former black sections. */
+  .bg-gris {
+    background:
+      radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.60) 0%, transparent 62%),
+      linear-gradient(180deg, #EDEAE3 0%, #DCD7CE 48%, #CAC5BA 100%);
+  }
+
+  /* Champagne — the editorial founder section, lit from the upper-left. */
+  .bg-champagne {
+    background:
+      radial-gradient(80% 55% at 28% 12%, rgba(255, 255, 255, 0.65) 0%, transparent 62%),
+      linear-gradient(155deg, #F6EFE2 0%, #EDE3D1 50%, #E1D4BB 100%);
+  }
+
+  /* Sections hold their own stacking context so the travelling reflection
+     sits above the background but beneath the content. */
+  .bg-ivoire,
+  .bg-gris,
+  .bg-champagne {
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* A slow reflection drifting the full length of every section. */
+  .bg-ivoire::after,
+  .bg-gris::after,
+  .bg-champagne::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.28) 42%,
+      rgba(255, 255, 255, 0.05) 52%,
+      transparent 68%
+    );
+    background-size: 220% 100%;
+    background-repeat: no-repeat;
+    animation: sheen 14s ease-in-out infinite alternate;
+  }
+
+  /* The grey sections carry a red reflection — the logo red drifting
+     across the warm grey, instead of a white highlight.
+     NOTE: background-image, not the `background` shorthand — the shorthand
+     would reset background-size/repeat and freeze the animation. */
+  .bg-gris::after {
+    background-image: linear-gradient(
+      115deg,
+      transparent 25%,
+      rgba(168, 24, 40, 0.18) 42%,
+      rgba(168, 24, 40, 0.05) 52%,
+      transparent 68%
+    );
+  }
+
+  /* ── Glass surface ─────────────────────────────────────────────────
+     Transparent, blurred stock that lets the section gradient show
+     through, with a bright top edge where light catches the glass. */
+  .surface,
+  .glass {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.74) 0%,
+      rgba(255, 255, 255, 0.44) 48%,
+      rgba(255, 255, 255, 0.26) 100%
+    );
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+    backdrop-filter: blur(14px) saturate(1.08);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+  }
+
+  /* the lit top edge — the "mirror" highlight */
+  .surface::before,
+  .glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(255, 255, 255, 0.08) 36%,
+      transparent 58%
+    );
+  }
+
+  /* ── Mirror sweep ──────────────────────────────────────────────────
+     A soft diagonal reflection travelling across the surface. */
+  .mirror {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .mirror::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 22%,
+      rgba(255, 255, 255, 0.34) 40%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 68%
+    );
+    background-size: 220% 100%;
+    background-repeat: no-repeat;
+    animation: sheen 9s ease-in-out infinite alternate;
+  }
+
+  .hairline {
+    border-color: rgba(28, 26, 22, 0.10);
+  }
+}
+
+/* The travelling reflection. Alternating so it drifts back and forth with
+   no visible reset, slow enough to read as light rather than motion. */
+@keyframes sheen {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-ivoire::after,
+  .bg-gris::after,
+  .bg-champagne::after,
+  .mirror::after {
+    animation: none;
   }
 }

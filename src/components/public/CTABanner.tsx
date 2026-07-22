@@ -11,7 +11,7 @@ const fadeUp = {
 
 export default function CTABanner() {
   return (
-    <section className="bg-accent py-20">
+    <section className="mirror bg-gradient-to-br from-accent via-accent to-accent-crystal py-20">
       <div className="max-w-[1280px] mx-auto px-6">
         <motion.div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10" {...fadeUp}>
           <div className="max-w-2xl">

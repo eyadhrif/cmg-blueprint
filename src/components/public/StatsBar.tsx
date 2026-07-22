@@ -56,15 +56,15 @@ export default function StatsBar() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section ref={ref} className="bg-card border-t border-b border-card-border">
-      <div className="max-w-[1280px] mx-auto px-6 py-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 lg:divide-x divide-card-border">
+    <section ref={ref} className="bg-gris border-t border-b border-black/10">
+      <div className="max-w-[1280px] mx-auto px-6 py-14 lg:py-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 lg:divide-x divide-black/10">
           {stats.map((stat, i) => (
             <motion.div key={i} className="text-center lg:px-10" {...fadeUp}>
-              <span className="font-serif text-5xl lg:text-6xl text-text-primary tracking-tight leading-none">
+              <span className="font-serif text-5xl lg:text-6xl text-text-dark tracking-tight leading-none">
                 <AnimatedStat raw={stat.number} inView={inView} />
               </span>
-              <p className="text-text-muted text-sm mt-3 font-medium tracking-wide">
+              <p className="text-text-dark-muted text-sm mt-3 font-medium tracking-wide">
                 {stat.label}
               </p>
             </motion.div>

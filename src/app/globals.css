@@ -57,22 +57,22 @@
   /* Ivory — the light sections. */
   .bg-ivoire {
     background:
-      radial-gradient(85% 55% at 50% 0%, rgba(255, 255, 255, 0.75) 0%, transparent 62%),
-      linear-gradient(180deg, #F8F5EE 0%, #F2EDE3 55%, #E9E3D6 100%);
+      radial-gradient(85% 55% at 50% 0%, rgba(255, 255, 255, 0.98) 0%, transparent 62%),
+      linear-gradient(180deg, #FCFBF7 0%, #F7F3EC 54%, #F0ECE3 100%);
   }
 
-  /* Warm grey — the panels that replaced the former black sections. */
+  /* Warm white — neutral panels that stay bright and airy. */
   .bg-gris {
     background:
-      radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.60) 0%, transparent 62%),
-      linear-gradient(180deg, #EDEAE3 0%, #DCD7CE 48%, #CAC5BA 100%);
+      radial-gradient(90% 60% at 50% 0%, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
+      linear-gradient(180deg, #FCFBF7 0%, #F6F3ED 48%, #F0EBE1 100%);
   }
 
   /* Champagne — the editorial founder section, lit from the upper-left. */
   .bg-champagne {
     background:
-      radial-gradient(80% 55% at 28% 12%, rgba(255, 255, 255, 0.65) 0%, transparent 62%),
-      linear-gradient(155deg, #F6EFE2 0%, #EDE3D1 50%, #E1D4BB 100%);
+      radial-gradient(80% 55% at 28% 12%, rgba(255, 255, 255, 0.95) 0%, transparent 62%),
+      linear-gradient(155deg, #FCFBF7 0%, #F7F1E7 50%, #EEE4D2 100%);
   }
 
   /* Sections hold their own stacking context so the travelling reflection
@@ -105,20 +105,6 @@
     animation: sheen 14s ease-in-out infinite alternate;
   }
 
-  /* The grey sections carry a red reflection — the logo red drifting
-     across the warm grey, instead of a white highlight.
-     NOTE: background-image, not the `background` shorthand — the shorthand
-     would reset background-size/repeat and freeze the animation. */
-  .bg-gris::after {
-    background-image: linear-gradient(
-      115deg,
-      transparent 25%,
-      rgba(168, 24, 40, 0.18) 42%,
-      rgba(168, 24, 40, 0.05) 52%,
-      transparent 68%
-    );
-  }
-
   /* ── Glass surface ─────────────────────────────────────────────────
      Transparent, blurred stock that lets the section gradient show
      through, with a bright top edge where light catches the glass. */
@@ -128,13 +114,13 @@
     isolation: isolate;
     background: linear-gradient(
       158deg,
-      rgba(255, 255, 255, 0.74) 0%,
-      rgba(255, 255, 255, 0.44) 48%,
-      rgba(255, 255, 255, 0.26) 100%
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.82) 54%,
+      rgba(255, 255, 255, 0.70) 100%
     );
     -webkit-backdrop-filter: blur(14px) saturate(1.08);
     backdrop-filter: blur(14px) saturate(1.08);
-    border: 1px solid rgba(255, 255, 255, 0.60);
+    border: 1px solid rgba(255, 255, 255, 0.82);
   }
 
   /* the lit top edge — the "mirror" highlight */
@@ -179,7 +165,7 @@
   }
 
   .hairline {
-    border-color: rgba(28, 26, 22, 0.10);
+    border-color: rgba(17, 17, 17, 0.08);
   }
 }
 
@@ -194,11 +180,47 @@
   }
 }
 
+/* Hero video — a slow breathing drift. */
+.hero-video-wrapper {
+  will-change: transform;
+}
+
+.hero-video {
+  will-change: transform;
+  animation: heroFloat 14s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.015);
+  }
+}
+
+/* Logo marquee — a seamless -50% loop on a doubled track. */
+.marquee-track {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bg-ivoire::after,
   .bg-gris::after,
   .bg-champagne::after,
-  .mirror::after {
+  .mirror::after,
+  .hero-video,
+  .marquee-track {
     animation: none;
   }
 }

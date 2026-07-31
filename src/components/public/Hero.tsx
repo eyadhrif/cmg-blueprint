@@ -40,19 +40,6 @@ export default function Hero() {
           playsInline
         />
       </div>
-      <style>{`
-        .hero-video-wrapper {
-          will-change: transform;
-        }
-        .hero-video {
-          will-change: transform;
-          animation: heroFloat 14s ease-in-out infinite;
-        }
-        @keyframes heroFloat {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(-6px) scale(1.015); }
-        }
-      `}</style>
       <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/40 to-dark/30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.03)_0%,transparent_50%)]" />
 

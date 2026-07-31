@@ -100,10 +100,7 @@ export default function Societies() {
             'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent)',
         }}
       >
-        <div
-          className="flex items-center gap-14 hover:[animation-play-state:paused]"
-          style={{ animation: 'marquee 15s linear infinite' }}
-        >
+        <div className="marquee-track flex items-center gap-14 hover:[animation-play-state:paused]">
           {[...logos, ...logos].map((src, i) => (
             <div
               key={i}
@@ -117,12 +114,6 @@ export default function Societies() {
             </div>
           ))}
         </div>
-        <style>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
       </div>
     </section>
   );

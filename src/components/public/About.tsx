@@ -24,7 +24,7 @@ export default function About() {
             <div className="space-y-5 text-text-dark-muted text-base sm:text-lg leading-relaxed mt-8">
               <p>
                 Le Cabinet Mourad Guellaty est un cabinet d&apos;expertise comptable, d&apos;audit et de conseil
-                établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien président de l&apos;Ordre des
+                établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien et premier président de l&apos;Ordre des
                 Experts Comptables de Tunisie, le cabinet accompagne les entreprises locales et
                 internationales dans leurs enjeux financiers.
               </p>
@@ -54,7 +54,7 @@ export default function About() {
               <div className="pointer-events-none absolute -top-5 -left-5 w-full h-full border border-accent/25" aria-hidden />
 
               {/* image */}
-              <div className="relative aspect-[1/1] overflow-hidden bg-[#E7E0D2] shadow-soft-lg ring-1 ring-black/[0.05]">
+              <div className="relative aspect-[1/1] overflow-hidden bg-[#F0F0F0] shadow-soft-lg ring-1 ring-black/[0.05]">
                 <img
                   src="/cabinet.jpg"
                   alt="Bureau MG & Associés"

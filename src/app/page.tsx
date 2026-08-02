@@ -7,7 +7,6 @@ import Societies from '@/components/public/Societies';
 import Services from '@/components/public/Services';
 import Secteurs from '@/components/public/Secteurs';
 import Team from '@/components/public/Team';
-import PublicNews from '@/components/public/PublicNews';
 import Articles from '@/components/public/Articles';
 import Careers from '@/components/public/Careers';
 import Contact from '@/components/public/Contact';
@@ -26,11 +25,10 @@ export default function Home() {
         <StatsBar />
         <MerciMourad />
         <About />
-        <Societies />
         <Services />
         <Secteurs />
+        <Societies />
         <Team />
-        <PublicNews />
         <Articles />
         <Careers />
         <Contact />

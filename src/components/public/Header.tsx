@@ -6,13 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Phone, Mail, Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'ACCUEIL', href: '/', sectionId: 'accueil' },
+  { label: 'ACCUEIL', href: '/#accueil', sectionId: 'accueil' },
   { label: 'FONDATEUR', href: '/#fondateur', sectionId: 'fondateur' },
   { label: 'À PROPOS', href: '/#about', sectionId: 'about' },
   { label: 'SERVICES', href: '/#services', sectionId: 'services' },
   { label: 'SECTEURS', href: '/#sectors', sectionId: 'sectors' },
   { label: 'ÉQUIPE', href: '/#team', sectionId: 'team' },
-  { label: 'ACTUALITÉS', href: '/#news', sectionId: 'news' },
   { label: 'ARTICLES', href: '/#articles', sectionId: 'articles' },
   { label: 'CARRIÈRES', href: '/#careers', sectionId: 'careers' },
   { label: 'CONTACT', href: '/#contact', sectionId: 'contact' },
@@ -58,16 +57,16 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
         isScrolled
-          ? 'bg-gradient-to-b from-[#EEEBE3]/80 to-[#D8D4CA]/75 backdrop-blur-xl border-white/40 shadow-sm'
-          : 'bg-gradient-to-b from-[#F2EFE8]/70 to-[#DFDBD1]/65 backdrop-blur-lg border-white/30'
+          ? 'bg-white/90 backdrop-blur-xl border-black/10 shadow-sm'
+          : 'bg-white/75 backdrop-blur-lg border-black/5'
       }`}
     >
-      <div className="hidden lg:block border-b border-black/10">
-        <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-text-dark-muted">
-          <a href="tel:+21671740131" className="flex items-center gap-2 hover:text-text-dark transition-colors">
+      <div className="hidden lg:block bg-accent">
+        <div className="max-w-[1280px] mx-auto px-6 py-2 flex justify-end items-center gap-6 text-[11px] uppercase tracking-[0.15em] text-white">
+          <a href="tel:+21671740131" className="flex items-center gap-2 hover:text-white/80 transition-colors">
             <Phone size={11} /> +216 71 740 131
           </a>
-          <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 hover:text-text-dark transition-colors">
+          <a href="mailto:contact@cabinetguellaty.com" className="flex items-center gap-2 hover:text-white/80 transition-colors">
             <Mail size={11} /> contact@cabinetguellaty.com
           </a>
         </div>
@@ -119,7 +118,7 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-[#EEEBE3] to-[#DAD6CC] border-t border-black/10 p-6 flex flex-col gap-4">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-black/10 p-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.label}

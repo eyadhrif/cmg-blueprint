@@ -32,7 +32,7 @@ const rest: Member[] = [
   { name: 'Ayman El Euch', role: 'Manager', photo: '/cabinet/Ayman-El-Euch.png' },
 ];
 
-function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: number }) {
+function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'; delay?: number; zoom?: number }) {
   const isFounder = m.role === 'Fondateur';
   const w = size === 'lg' ? 'w-52 sm:w-56 lg:w-64' : 'w-40 sm:w-44 lg:w-52';
 
@@ -45,18 +45,18 @@ function Avatar({ m, size, delay = 0 }: { m: Member; size: 'lg' | 'md'; delay?: 
       transition={{ duration: 0.5, delay }}
     >
       <div
-        className={`relative ${w} aspect-[3/4] rounded-2xl overflow-hidden bg-[#E7E0D2] shadow-soft transition-all duration-500 group-hover:shadow-soft-lg group-hover:-translate-y-1.5 ${
+        className={`relative ${w} aspect-[3/4] rounded-2xl overflow-hidden bg-[#F0F0F0] shadow-soft transition-all duration-500 group-hover:shadow-soft-lg group-hover:-translate-y-1.5 ${
           isFounder ? 'ring-2 ring-accent/40' : 'ring-1 ring-black/[0.06]'
         }`}
       >
         {m.photo ? (
           <div
-            className="absolute inset-0 bg-cover bg-top group-hover:scale-105 transition-transform duration-700"
-            style={{ backgroundImage: `url(${m.photo})` }}
+            className="absolute inset-0 bg-cover bg-[position:50%_8%] group-hover:scale-105 transition-transform duration-700"
+            style={{ backgroundImage: `url(${m.photo})`, backgroundSize: zoom > 1 ? `${zoom * 100}%` : undefined }}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#E9DFCB] to-[#D8C9AC]">
-            <span className="font-serif text-6xl text-[#A98C5B]/60 select-none">{m.initials}</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#F2F2F2] to-[#E5E5E5]">
+            <span className="font-serif text-6xl text-accent/40 select-none">{m.initials}</span>
           </div>
         )}
       </div>
@@ -97,7 +97,7 @@ export default function Team() {
           {/* row 1 — founder + Walid */}
           <div className="flex justify-center items-end gap-8 lg:gap-12">
             <Avatar m={founder} size="lg" />
-            <Avatar m={walid} size="lg" delay={0.15} />
+            <Avatar m={walid} size="lg" delay={0.15} zoom={1.2} />
           </div>
 
           {/* row 2 — rest in one line */}

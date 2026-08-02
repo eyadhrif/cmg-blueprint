@@ -100,11 +100,18 @@ export default function Societies() {
             'linear-gradient(to right, transparent, #000 7%, #000 93%, transparent)',
         }}
       >
+<<<<<<< HEAD
         <div className="marquee-track flex items-center gap-14 hover:[animation-play-state:paused]">
+=======
+        <div
+          className="flex items-center gap-14 w-max hover:[animation-play-state:paused]"
+          style={{ animation: 'marquee 100s linear infinite' }}
+        >
+>>>>>>> c0f3be4d7f0cab0e7c8a31a053837a28708bf820
           {[...logos, ...logos].map((src, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center h-20 w-48 shrink-0"
+              className="inline-flex items-center justify-center h-24 w-56 shrink-0"
             >
               <img
                 src={`/logos/${encodeURI(src)}`}

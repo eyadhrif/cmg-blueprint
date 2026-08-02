@@ -33,9 +33,9 @@ function Presentation() {
       <div className="lg:col-span-4 relative mx-auto w-full max-w-[280px]">
         <div className="relative w-full h-[320px] sm:h-[360px]">
           <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
-          <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#EFE6D4]/70 -z-10" />
+          <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#F2F2F2]/70 -z-10" />
           <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
-            <div className="absolute inset-0 bg-cover bg-top"
+            <div className="absolute inset-0 bg-cover bg-[position:50%_8%]"
               style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.png)' }} />
           </div>
         </div>
@@ -62,7 +62,7 @@ function Presentation() {
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
             Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie.
-            Ancien président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
+            Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
             profession avec <span className="text-text-dark font-medium">indépendance</span> et{' '}
             <span className="text-text-dark font-medium">engagement</span>.
           </p>
@@ -91,7 +91,7 @@ function Parcours() {
             <div key={m.year} className="relative pt-7">
               <span
                 className={`absolute left-0 top-0 w-2.5 h-2.5 rounded-full ${
-                  i === 0 ? 'bg-accent' : 'bg-[#F3ECDD] border border-gold/60'
+                  i === 0 ? 'bg-accent' : 'bg-white border border-gold/60'
                 }`}
               />
               <div

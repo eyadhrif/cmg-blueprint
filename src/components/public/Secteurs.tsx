@@ -49,7 +49,7 @@ export default function Secteurs() {
           {secteurs.map((s, i) => (
             <motion.div
               key={i}
-              className="group relative min-h-[320px] overflow-hidden rounded-2xl bg-light cursor-pointer"
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-light cursor-pointer"
               {...fadeUp}
             >
               <div

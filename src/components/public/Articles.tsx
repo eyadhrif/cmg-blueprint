@@ -7,7 +7,7 @@ export default async function Articles() {
     articles = await prisma.article.findMany({
       where: { published: true },
       orderBy: { publishedAt: 'desc' },
-      take: 6,
+      take: 8,
     });
   } catch {
     // DB unavailable during build
@@ -36,7 +36,7 @@ export default async function Articles() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {articles.map((article) => (
             <Link
               key={article.id}

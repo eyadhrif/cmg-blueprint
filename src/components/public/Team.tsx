@@ -13,7 +13,7 @@ const fadeUp = {
 
 type Member = {
   name: string;
-  role: string;
+  role?: string;
   photo?: string;
   initials?: string;
   pool?: string;
@@ -36,7 +36,6 @@ const walid: Member = {
 const rest: Member[] = [
   {
     name: 'Haythem Belhadj',
-    role: 'Manager',
     photo: '/cabinet/Haythem_belhadj.png',
     pool: 'Pôle Entreprises Publiques',
     description:
@@ -44,7 +43,6 @@ const rest: Member[] = [
   },
   {
     name: 'Salem Ben Salah',
-    role: 'Manager',
     photo: '/cabinet/Salem_Ben_Salah.png',
     pool: 'Pôle Institutions Financières Résidentes',
     description:
@@ -52,7 +50,6 @@ const rest: Member[] = [
   },
   {
     name: 'Sofiene Dahbi',
-    role: 'Manager',
     photo: '/cabinet/Dahbi_Sofiene.png',
     pool: 'Pôle Consolidation et Normes IFRS',
     description:
@@ -60,7 +57,6 @@ const rest: Member[] = [
   },
   {
     name: 'Hafedh Kharrat',
-    role: 'Manager',
     photo: '/cabinet/Hafedh-kharrat.png',
     pool: 'Pôle Institutions Financières Non Résidentes',
     description:
@@ -68,7 +64,6 @@ const rest: Member[] = [
   },
   {
     name: 'Ayman El Euch',
-    role: 'Manager',
     photo: '/cabinet/Ayman-El-Euch.png',
     pool: 'Pôle Audit Industriel',
     description:
@@ -185,13 +180,15 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
       <h3 className="font-serif text-lg lg:text-xl text-text-dark mt-4 group-hover:text-accent transition-colors">
         {m.name}
       </h3>
-      <p
-        className={`text-[11px] tracking-[0.2em] uppercase mt-1.5 ${
-          isFounder ? 'text-accent font-semibold' : 'text-text-dark-muted'
-        }`}
-      >
-        {m.role}
-      </p>
+      {m.role && (
+        <p
+          className={`text-[11px] tracking-[0.2em] uppercase mt-1.5 ${
+            isFounder ? 'text-accent font-semibold' : 'text-text-dark-muted'
+          }`}
+        >
+          {m.role}
+        </p>
+      )}
     </motion.div>
   );
 }

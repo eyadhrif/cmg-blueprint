@@ -35,7 +35,7 @@ export default async function ArticlesList() {
         {articles.length === 0 ? (
           <p className="text-text-dark-muted">Aucun article publié pour le moment.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {articles.map((article) => (
               <Link
                 key={article.id}

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FlipVertical2 } from 'lucide-react';
+import { TeamMemberCard } from './TeamMemberCard';
+import { ProfileModal } from './ProfileModal';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
@@ -18,6 +20,9 @@ type Member = {
   initials?: string;
   pool?: string;
   description?: string;
+  email?: string;
+  linkedin?: string;
+  phone?: string;
 };
 
 const founder: Member = {
@@ -40,6 +45,8 @@ const rest: Member[] = [
     pool: 'Pôle Entreprises Publiques',
     description:
       "Fort d'une solide expérience de plus de 15 ans dans l'audit et le commissariat aux comptes des entreprises et établissements publics, il accompagne depuis plusieurs années des organismes de différentes tailles et secteurs d'activité. Son expertise couvre les missions d'audit légal, l'évaluation des dispositifs de contrôle interne, l'analyse des risques et l'accompagnement des projets de gouvernance et de transformation du secteur public.",
+    email: 'haythem.belhadj@mg-associes.com',
+    linkedin: 'https://linkedin.com/in/haythem-belhadj',
   },
   {
     name: 'Salem Ben Salah',
@@ -47,6 +54,8 @@ const rest: Member[] = [
     pool: 'Pôle Institutions Financières Résidentes',
     description:
       "Il possède une expérience reconnue de plus de 15 ans dans l'audit des banques et des institutions financières résidentes. Au cours de son parcours, il a conduit de nombreuses missions auprès d'établissements bancaires, de sociétés de leasing et d'autres acteurs du secteur financier. Son expertise porte notamment sur les exigences prudentielles, le contrôle interne, la gestion des risques et les problématiques comptables propres aux institutions financières.",
+    email: 'salem.bensalah@mg-associes.com',
+    linkedin: 'https://linkedin.com/in/salem-ben-salah',
   },
   {
     name: 'Sofiene Dahbi',
@@ -54,6 +63,8 @@ const rest: Member[] = [
     pool: 'Pôle Consolidation et Normes IFRS',
     description:
       "Spécialiste des normes internationales d'information financière (IFRS) et de la consolidation des états financiers, il accompagne les groupes nationaux et internationaux dans leurs projets de reporting financier. Son expérience couvre les opérations de consolidation complexes, les conversions vers les référentiels IFRS, l'assistance technique aux directions financières ainsi que le traitement des problématiques comptables à forte technicité.",
+    email: 'sofiene.dahbi@mg-associes.com',
+    linkedin: 'https://linkedin.com/in/sofiene-dahbi',
   },
   {
     name: 'Hafedh Kharrat',
@@ -61,6 +72,8 @@ const rest: Member[] = [
     pool: 'Pôle Institutions Financières Non Résidentes',
     description:
       "Il dispose d'une expertise approfondie dans l'audit des banques et établissements financiers non résidents opérant en Tunisie. Son expérience lui permet d'intervenir sur des missions intégrant les exigences réglementaires locales, les standards internationaux d'audit ainsi que les problématiques spécifiques liées aux activités financières transfrontalières et à la gestion des risques.",
+    email: 'hafedh.kharrat@mg-associes.com',
+    linkedin: 'https://linkedin.com/in/hafedh-kharrat',
   },
   {
     name: 'Ayman El Euch',
@@ -68,6 +81,8 @@ const rest: Member[] = [
     pool: 'Pôle Audit Industriel',
     description:
       "Il bénéficie d'une expérience significative dans l'audit d'entreprises industrielles évoluant dans des secteurs variés. Son expertise couvre l'analyse des processus industriels, l'évaluation des dispositifs de contrôle interne, la maîtrise des risques opérationnels et l'accompagnement des groupes industriels. Il intervient sur des missions de conseil fiscal, de revue de conformité, d'assistance lors des contrôles fiscaux et d'optimisation fiscale dans le respect de la réglementation en vigueur.",
+    email: 'ayman.eleuch@mg-associes.com',
+    linkedin: 'https://linkedin.com/in/ayman-el-euch',
   },
 ];
 
@@ -108,8 +123,6 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
         style={{ perspective: '1200px' }}
         onClick={() => m.description && setFlipped((f) => !f)}
       >
-        {/* rotating red border — only shown while the back description is visible,
-            faded in after the flip finishes so nothing red flashes mid-transition */}
         {m.description && (
           <motion.div
             className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -140,14 +153,10 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
           />
         )}
 
-        {/* card body — inset so the animated border peeks through.
-            No overflow-hidden here: combining it with preserve-3d flattens
-            the faces and breaks the flip. Clipping lives on each face. */}
         <div
           className="absolute inset-[2px] rounded-[15px] transition-transform duration-700 ease-out"
           style={{ transformStyle: 'preserve-3d', transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
         >
-          {/* front face */}
           <div
             className="absolute inset-0 rounded-[15px] overflow-hidden"
             style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
@@ -161,7 +170,6 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
             )}
           </div>
 
-          {/* back face */}
           <div
             className="absolute inset-0 rounded-[15px] overflow-hidden bg-[#F4F4F4]"
             style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
@@ -194,6 +202,16 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
 }
 
 export default function Team() {
+  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+
+  const handleOpenProfile = (member: Member) => {
+    setSelectedMember(member);
+  };
+
+  const handleCloseProfile = () => {
+    setSelectedMember(null);
+  };
+
   return (
     <section id="team" className="relative bg-gris py-24 lg:py-32 overflow-hidden">
       <div className="relative max-w-[1280px] mx-auto px-6">
@@ -205,7 +223,7 @@ export default function Team() {
             Une équipe pluridisciplinaire au service de votre performance
           </h2>
           <p className="text-text-dark-muted text-base sm:text-lg mt-8 leading-relaxed">
-            MG &amp; Associés réunit des experts-comptables, commissaires aux comptes et conseillers
+            MG & Associés réunit des experts-comptables, commissaires aux comptes et conseillers
             spécialisés, capables d&apos;intervenir sur l&apos;ensemble des métiers de la finance,
             de l&apos;audit et du conseil.
           </p>
@@ -213,16 +231,21 @@ export default function Team() {
 
         {/* ── Team Grid ────────────────────────────────────────────────── */}
         <div className="flex flex-col items-center mt-20 lg:mt-24">
-          {/* row 1 — founder + Walid */}
+          {/* row 1 — founder + Walid (UNCHANGED) */}
           <div className="flex justify-center items-end gap-8 lg:gap-12">
             <Avatar m={founder} size="lg" />
             <Avatar m={walid} size="lg" delay={0.15} zoom={1.2} />
           </div>
 
-          {/* row 2 — rest in one line */}
+          {/* row 2 — rest in one line (NEW INTERACTION) */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 justify-items-center mt-14">
             {rest.map((m, i) => (
-              <Avatar key={m.name} m={m} size="md" delay={(i + 1) * 0.1} />
+              <TeamMemberCard
+                key={m.name}
+                member={m}
+                index={i}
+                onOpen={handleOpenProfile}
+              />
             ))}
           </div>
         </div>
@@ -240,10 +263,17 @@ export default function Team() {
           <div className="mt-8">
             <div className="w-10 h-px bg-accent mx-auto mb-4" />
             <cite className="text-sm text-text-dark-muted not-italic">
-              L&apos;équipe MG &amp; Associés
+              L&apos;équipe MG & Associés
             </cite>
           </div>
         </motion.div>
+
+        {/* ── Profile Modal ────────────────────────────────────────────── */}
+        <ProfileModal
+          member={selectedMember}
+          isOpen={!!selectedMember}
+          onClose={handleCloseProfile}
+        />
       </div>
     </section>
   );

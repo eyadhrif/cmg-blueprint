@@ -49,7 +49,7 @@ export default function Secteurs() {
           {secteurs.map((s, i) => (
             <motion.div
               key={i}
-              className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-light cursor-pointer"
+              className="group relative aspect-[16/9] overflow-hidden rounded-2xl bg-light cursor-pointer"
               {...fadeUp}
             >
               <div
@@ -58,9 +58,6 @@ export default function Secteurs() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 transition-opacity duration-500 group-hover:opacity-90" />
               <div className="relative z-10 flex flex-col justify-end h-full p-8">
-                <span className="text-white/30 font-serif text-5xl leading-none mb-4">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 <h3 className="font-serif text-2xl text-white mb-3 tracking-tight">
                   {s.title}
                 </h3>

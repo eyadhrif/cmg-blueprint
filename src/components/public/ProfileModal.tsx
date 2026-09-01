@@ -10,7 +10,6 @@ interface TeamMember {
   name: string;
   role?: string;
   photo?: string;
-  pool?: string;
   description?: string;
   email?: string;
   linkedin?: string;
@@ -37,16 +36,29 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
 
   useEffect(() => {
     if (isOpen) {
+      const lenis = (window as unknown as { __lenis?: { stop: () => void; start: () => void } }).__lenis;
+      lenis?.stop();
+
       const style = document.createElement('style');
       style.textContent = SCROLLBAR_STYLES;
       document.head.appendChild(style);
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
+
       return () => {
         document.head.removeChild(style);
-        document.body.style.overflow = '';
+        document.body.style.overflow = originalOverflow;
+        lenis?.start();
       };
     }
   }, [isOpen]);
+
+  const handleModalWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (scrollAreaRef.current && !scrollAreaRef.current.contains(e.target as Node)) {
+      scrollAreaRef.current.scrollTop += e.deltaY;
+    }
+  };
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
@@ -76,10 +88,19 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
               <DialogPrimitive.Overlay
                 className="fixed inset-0 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
                 onClick={onClose}
+                data-lenis-prevent
+                onWheel={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
               />
               
               <motion.div
                 ref={contentRef}
+                data-lenis-prevent
+                data-lenis-prevent-wheel
+                data-lenis-prevent-touch
+                onWheel={handleModalWheel}
                 className="relative w-full max-w-[900px] max-h-[90vh] rounded-2xl bg-white shadow-[0_30px_80px_-20px_rgba(10,10,10,0.15)] overflow-hidden"
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -116,9 +137,11 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
                     <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent lg:from-black/30 lg:via-black/10 lg:to-transparent" />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10 text-white">
-                      <p className="text-accent text-[10px] tracking-[0.18em] uppercase font-semibold mb-2">
-                        {member.pool || member.role || 'Équipe'}
-                      </p>
+                      {member.role && (
+                        <p className="text-accent text-[10px] tracking-[0.18em] uppercase font-semibold mb-2">
+                          {member.role}
+                        </p>
+                      )}
                       <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
                         {member.name}
                       </h2>
@@ -126,8 +149,12 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
                   </motion.div>
 
                   <motion.div
-                    className="lg:w-3/5 w-full p-8 lg:p-10 overflow-y-auto max-h-[90vh] lg:max-h-[500px] bg-white"
+                    className="lg:w-3/5 w-full p-8 lg:p-10 overflow-y-auto max-h-[calc(90vh-300px)] lg:max-h-[500px] overscroll-contain bg-white"
                     ref={scrollAreaRef}
+                    data-lenis-prevent
+                    data-lenis-prevent-wheel
+                    data-lenis-prevent-touch
+                    onWheel={(e) => e.stopPropagation()}
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
@@ -141,9 +168,9 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
                         <h1 id="profile-title" className="font-serif text-2xl lg:text-3xl text-text-dark leading-tight mb-2">
                           {member.name}
                         </h1>
-                        {(member.pool || member.role) && (
+                        {member.role && (
                           <p className="text-accent text-[11px] tracking-[0.15em] uppercase font-semibold mb-4">
-                            {member.pool || member.role}
+                            {member.role}
                           </p>
                         )}
                         <div className="w-16 h-px bg-accent" />

@@ -42,45 +42,40 @@ const rest: Member[] = [
   {
     name: 'Haythem Belhadj',
     photo: '/cabinet/Haythem_belhadj.png',
-    pool: 'Pôle Entreprises Publiques',
     description:
-      "Fort d'une solide expérience de plus de 15 ans dans l'audit et le commissariat aux comptes des entreprises et établissements publics, il accompagne depuis plusieurs années des organismes de différentes tailles et secteurs d'activité. Son expertise couvre les missions d'audit légal, l'évaluation des dispositifs de contrôle interne, l'analyse des risques et l'accompagnement des projets de gouvernance et de transformation du secteur public.",
+      "Fort d'une solide expérience de plus de 15 ans dans l'audit et le commissariat aux comptes des entreprises et établissements publics, Haythem Belhadj accompagne depuis plusieurs années des organismes de différentes tailles et secteurs d'activité. Son expertise couvre les missions d'audit légal, l'évaluation des dispositifs de contrôle interne, l'analyse des risques et l'accompagnement des projets de gouvernance et de transformation du secteur public.",
     email: 'haythem.belhadj@mg-associes.com',
     linkedin: 'https://linkedin.com/in/haythem-belhadj',
   },
   {
     name: 'Salem Ben Salah',
     photo: '/cabinet/Salem_Ben_Salah.png',
-    pool: 'Pôle Institutions Financières Résidentes',
     description:
-      "Il possède une expérience reconnue de plus de 15 ans dans l'audit des banques et des institutions financières résidentes. Au cours de son parcours, il a conduit de nombreuses missions auprès d'établissements bancaires, de sociétés de leasing et d'autres acteurs du secteur financier. Son expertise porte notamment sur les exigences prudentielles, le contrôle interne, la gestion des risques et les problématiques comptables propres aux institutions financières.",
+      "Salem Ben Salah possède une expérience reconnue de plus de 15 ans dans l'audit des banques et des institutions financières résidentes. Au cours de son parcours, Salem a conduit de nombreuses missions auprès d'établissements bancaires, de sociétés de leasing et d'autres acteurs du secteur financier. Son expertise porte notamment sur les exigences prudentielles, le contrôle interne, la gestion des risques et les problématiques comptables propres aux institutions financières.",
     email: 'salem.bensalah@mg-associes.com',
     linkedin: 'https://linkedin.com/in/salem-ben-salah',
   },
   {
     name: 'Sofiene Dahbi',
     photo: '/cabinet/Dahbi_Sofiene.png',
-    pool: 'Pôle Consolidation et Normes IFRS',
     description:
-      "Spécialiste des normes internationales d'information financière (IFRS) et de la consolidation des états financiers, il accompagne les groupes nationaux et internationaux dans leurs projets de reporting financier. Son expérience couvre les opérations de consolidation complexes, les conversions vers les référentiels IFRS, l'assistance technique aux directions financières ainsi que le traitement des problématiques comptables à forte technicité.",
+      "Spécialiste des normes internationales d'information financière (IFRS) et de la consolidation des états financiers, Sofiene Dahbi accompagne les groupes nationaux et internationaux dans leurs projets de reporting financier. Son expérience couvre les opérations de consolidation complexes, les conversions vers les référentiels IFRS, l'assistance technique aux directions financières ainsi que le traitement des problématiques comptables à forte technicité.",
     email: 'sofiene.dahbi@mg-associes.com',
     linkedin: 'https://linkedin.com/in/sofiene-dahbi',
   },
   {
     name: 'Hafedh Kharrat',
     photo: '/cabinet/Hafedh-kharrat.png',
-    pool: 'Pôle Institutions Financières Non Résidentes',
     description:
-      "Il dispose d'une expertise approfondie dans l'audit des banques et établissements financiers non résidents opérant en Tunisie. Son expérience lui permet d'intervenir sur des missions intégrant les exigences réglementaires locales, les standards internationaux d'audit ainsi que les problématiques spécifiques liées aux activités financières transfrontalières et à la gestion des risques.",
+      "Hafedh Kharrat dispose d'une expertise approfondie dans l'audit des banques et établissements financiers non résidents opérant en Tunisie. Son expérience lui permet d'intervenir sur des missions intégrant les exigences réglementaires locales, les standards internationaux d'audit ainsi que les problématiques spécifiques liées aux activités financières transfrontalières et à la gestion des risques.",
     email: 'hafedh.kharrat@mg-associes.com',
     linkedin: 'https://linkedin.com/in/hafedh-kharrat',
   },
   {
     name: 'Ayman El Euch',
     photo: '/cabinet/Ayman-El-Euch.png',
-    pool: 'Pôle Audit Industriel',
     description:
-      "Il bénéficie d'une expérience significative dans l'audit d'entreprises industrielles évoluant dans des secteurs variés. Son expertise couvre l'analyse des processus industriels, l'évaluation des dispositifs de contrôle interne, la maîtrise des risques opérationnels et l'accompagnement des groupes industriels. Il intervient sur des missions de conseil fiscal, de revue de conformité, d'assistance lors des contrôles fiscaux et d'optimisation fiscale dans le respect de la réglementation en vigueur.",
+      "Ayman El Euch bénéficie d'une expérience significative dans l'audit d'entreprises industrielles évoluant dans des secteurs variés. Son expertise couvre l'analyse des processus industriels, l'évaluation des dispositifs de contrôle interne, la maîtrise des risques opérationnels et l'accompagnement des groupes industriels. Ayman intervient également sur des missions de conseil fiscal, de revue de conformité, d'assistance lors des contrôles fiscaux et d'optimisation fiscale dans le respect de la réglementation en vigueur.",
     email: 'ayman.eleuch@mg-associes.com',
     linkedin: 'https://linkedin.com/in/ayman-el-euch',
   },

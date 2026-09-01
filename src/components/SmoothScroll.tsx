@@ -42,6 +42,7 @@ export default function SmoothScroll() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    (window as unknown as { __lenis?: Lenis | null }).__lenis = lenis;
 
     function scrollToId(id: string) {
       const key = id.slice(1);
@@ -100,6 +101,7 @@ export default function SmoothScroll() {
     return () => {
       cancelAnimationFrame(rafId);
       document.removeEventListener('click', onClick);
+      (window as unknown as { __lenis?: Lenis | null }).__lenis = null;
       lenis.destroy();
     };
   }, [router]);

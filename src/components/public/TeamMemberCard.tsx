@@ -8,7 +8,6 @@ interface TeamMember {
   name: string;
   role?: string;
   photo?: string;
-  pool?: string;
   description?: string;
   email?: string;
   linkedin?: string;
@@ -141,12 +140,7 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
       <h3 className="font-serif text-lg text-text-dark mt-4 group-hover:text-accent transition-colors duration-300">
         {member.name}
       </h3>
-      {member.pool && (
-        <p className="text-[10px] tracking-[0.18em] uppercase text-accent font-semibold mt-1.5">
-          {member.pool}
-        </p>
-      )}
-      {member.role && !member.pool && (
+      {member.role && (
         <p className="text-[11px] tracking-[0.15em] uppercase text-text-dark-muted mt-1.5">
           {member.role}
         </p>

@@ -13,14 +13,18 @@ export default async function ArticlesList() {
   });
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold text-text-primary">Articles</h1>
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-text-primary">Publications (PDF)</h1>
+          <p className="text-text-muted text-sm mt-1">
+            Gérez les publications fiscales, études juridiques et documents PDF consultables par le public.
+          </p>
+        </div>
         <Link href="/admin/articles/create">
-          <Button>Nouvel article</Button>
+          <Button className="bg-accent hover:bg-accent/90 text-white">Nouvelle publication</Button>
         </Link>
       </div>
-
       <div className="border border-card-border rounded-lg overflow-hidden">
         <Table>
           <TableHeader>

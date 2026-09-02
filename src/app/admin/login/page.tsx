@@ -38,19 +38,29 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-dark flex items-center justify-center p-6">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen bg-dark flex flex-col items-center justify-center p-6 relative">
+      <div className="absolute top-6 left-6">
+        <a
+          href="/"
+          className="text-xs text-text-muted hover:text-text-primary transition-colors flex items-center gap-1.5"
+        >
+          <span>&larr;</span> Retour au site public
+        </a>
+      </div>
+      <Card className="w-full max-w-md border-card-border bg-card">
         <CardHeader className="text-center">
-          <div className="w-12 h-12 bg-accent flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 bg-accent rounded flex items-center justify-center mx-auto mb-4 shadow-sm">
             <span className="text-white text-lg font-bold">MG</span>
           </div>
-          <CardTitle>Administration</CardTitle>
-          <CardDescription>Connectez-vous pour accéder au tableau de bord.</CardDescription>
+          <CardTitle className="text-text-primary text-xl font-bold">Portail Administration</CardTitle>
+          <CardDescription className="text-text-muted">
+            Connectez-vous pour accéder à la gestion du cabinet.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-text-muted text-xs">Adresse Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -58,10 +68,11 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-dark/50 border-card-border"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Mot de passe</Label>
+              <Label htmlFor="password" className="text-text-muted text-xs">Mot de passe</Label>
               <Input
                 id="password"
                 type="password"
@@ -69,13 +80,16 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                className="bg-dark/50 border-card-border"
               />
             </div>
             {error && (
-              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/20 p-2.5 rounded text-center">
+                {error}
+              </p>
             )}
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Connexion...' : 'Se connecter'}
+            <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-white font-semibold" disabled={loading}>
+              {loading ? 'Connexion en cours...' : 'Se connecter'}
             </Button>
           </form>
         </CardContent>

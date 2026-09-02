@@ -1,8 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata: Metadata = {
+  title: 'Articles & Analyses Fiscales et Juridiques',
+  description:
+    'Découvrez les publications, analyses fiscales, commentaires de lois de finances et études juridiques du Cabinet Mourad Guellaty & Associés.',
+  alternates: { canonical: '/articles' },
+  openGraph: {
+    title: 'Articles & Analyses Fiscales et Juridiques | MG & Associés',
+    description:
+      'Publications, analyses fiscales, commentaires de lois de finances et études juridiques en Tunisie.',
+    url: 'https://www.cabinetguellaty.com/articles',
+  },
+};
 export default async function ArticlesList() {
   let articles: Awaited<ReturnType<typeof prisma.article.findMany>> = [];
   try {

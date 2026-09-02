@@ -13,14 +13,18 @@ export default async function CareersList() {
   });
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold text-text-primary">Offres d&apos;emploi</h1>
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-text-primary">Offres d&apos;emploi</h1>
+          <p className="text-text-muted text-sm mt-1">
+            Gérez les postes ouverts au recrutement et opportunités de carrière.
+          </p>
+        </div>
         <Link href="/admin/careers/create">
-          <Button>Nouvelle offre</Button>
+          <Button className="bg-accent hover:bg-accent/90 text-white">Nouvelle offre</Button>
         </Link>
       </div>
-
       <div className="border border-card-border rounded-lg overflow-hidden">
         <Table>
           <TableHeader>

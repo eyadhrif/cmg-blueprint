@@ -113,7 +113,7 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
         className={`relative rounded-2xl overflow-hidden bg-[#F0F0F0] shadow-soft transition-all duration-500 group-hover:-translate-y-1.5 ${
           m.description
             ? `cursor-pointer ${flipped ? `${flipW} aspect-[3/5] shadow-soft-lg` : `${baseW} aspect-[3/4]`}`
-            : `${baseW} aspect-[3/4] ${isFounder ? 'ring-2 ring-accent/40' : 'ring-1 ring-black/[0.06]'}`
+            : `${baseW} aspect-[3/4] ring-1 ring-black/[0.06]`
         }`}
         style={{ perspective: '1200px' }}
         onClick={() => m.description && setFlipped((f) => !f)}

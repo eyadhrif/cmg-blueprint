@@ -35,26 +35,26 @@ export default async function ArticlesList() {
         {articles.length === 0 ? (
           <p className="text-text-dark-muted">Aucun article publié pour le moment.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {articles.map((article) => (
               <Link
                 key={article.id}
                 href={`/articles/${article.slug}`}
-                className="group block bg-light hover:-translate-y-1 transition-all duration-300"
+                className="group block bg-white rounded-2xl border border-black/[0.06] shadow-soft overflow-hidden hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="aspect-[16/11] overflow-hidden bg-[#F0F0F0]">
+                <div className="aspect-[16/9] overflow-hidden bg-[#F0F0F0]">
                   {article.coverImage ? (
                     <img
                       src={article.coverImage}
                       alt=""
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover object-[50%_65%] group-hover:scale-105 transition-transform duration-700"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#F2F2F2] to-[#E5E5E5]" />
                   )}
                 </div>
-                <div className="bg-white p-6 min-h-[110px] flex flex-col justify-center">
-                  <h2 className="font-serif text-lg text-black leading-snug line-clamp-2 group-hover:opacity-90 transition-opacity">
+                <div className="p-6 min-h-[110px] flex flex-col justify-center">
+                  <h2 className="font-serif text-lg text-black leading-snug line-clamp-2 group-hover:text-accent transition-colors">
                     {article.title}
                   </h2>
                   {article.subtitle && (

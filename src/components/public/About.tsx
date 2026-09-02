@@ -35,7 +35,7 @@ export default function About() {
             </div>
             <a
               href="#services"
-              className="inline-flex items-center gap-2 border border-text-dark text-text-dark px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-text-dark hover:text-light transition-all duration-300 mt-10 group"
+              className="inline-flex items-center gap-2 bg-accent text-white border border-accent px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 mt-10 group"
             >
               Découvrir nos services
               <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>

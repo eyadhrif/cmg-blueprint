@@ -23,26 +23,32 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <motion.div
                 key={i}
-                className="surface mirror shadow-soft p-8 lg:p-10 flex flex-col items-center text-center group hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
+                className="group relative surface mirror shadow-soft rounded-2xl p-7 lg:p-8 flex flex-col sm:flex-row items-start gap-6 hover:shadow-soft-lg hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 {...fadeUp}
               >
-                <Icon size={42} className="text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="font-serif text-lg lg:text-xl text-text-dark mb-4">{s.title}</h3>
-                <p className="text-text-dark-muted text-sm leading-relaxed mb-8 flex-1">
-                  {s.desc}
-                </p>
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="text-text-dark-muted hover:text-accent text-xs font-bold tracking-[0.25em] uppercase transition-colors flex items-center gap-2"
-                >
-                  EN SAVOIR PLUS <span className="text-accent">&rarr;</span>
-                </Link>
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <Icon size={28} strokeWidth={1.5} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-xl lg:text-2xl text-text-dark mb-2.5 group-hover:text-accent transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-text-dark-muted text-sm leading-relaxed mb-4">
+                    {s.desc}
+                  </p>
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="text-text-dark-muted hover:text-accent text-xs font-bold tracking-[0.2em] uppercase transition-colors inline-flex items-center gap-2"
+                  >
+                    EN SAVOIR PLUS <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  </Link>
+                </div>
               </motion.div>
             );
           })}

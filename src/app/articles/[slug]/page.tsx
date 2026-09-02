@@ -26,15 +26,6 @@ export default async function ArticlePage({ params }: Props) {
           <span>&larr;</span> Retour aux articles
         </Link>
 
-        {article.coverImage && (
-          <div className="aspect-[3/4] max-h-[70vh] w-full mx-auto max-w-[480px] overflow-hidden mb-10">
-            <img
-              src={article.coverImage}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
 
         <div className="mb-4 text-text-dark-muted text-sm">
           {article.publishedAt &&

@@ -80,14 +80,13 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
   return (
     <motion.div
       ref={cardRef}
-      className="group flex flex-col items-center text-center"
+      className="group flex flex-col items-center text-center cursor-pointer"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
       style={{
         transform,
-        boxShadow: shadow,
         zIndex: isHovered ? 10 : 1,
       }}
       onMouseEnter={handleMouseEnter}
@@ -95,7 +94,7 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
       onClick={handleClick}
     >
       <div
-        className="relative rounded-2xl overflow-hidden bg-gris shadow-soft transition-all duration-500"
+        className="relative rounded-2xl overflow-hidden bg-[#F0F0F0] shadow-soft ring-1 ring-black/[0.06] transition-all duration-500 group-hover:-translate-y-1.5"
         style={{
           width: CARD_WIDTH,
           height: CARD_HEIGHT,
@@ -111,15 +110,15 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
           }}
         />
         {!member.photo && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gris to-[#E5E5E5]">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#F2F2F2] to-[#E5E5E5]">
             <span className="font-serif text-5xl text-accent/40 select-none">
-              {member.name.split(' ').map(n => n[0]).join('')}
+              {member.name.split(' ').map((n) => n[0]).join('')}
             </span>
           </div>
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {isHovered && (
           <motion.div
             className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -136,12 +135,12 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
           <span>Voir le profil</span>
         </div>
       </div>
-      
-      <h3 className="font-serif text-lg text-text-dark mt-4 group-hover:text-accent transition-colors duration-300">
+
+      <h3 className="font-serif text-lg lg:text-xl text-text-dark mt-4 group-hover:text-accent transition-colors duration-300">
         {member.name}
       </h3>
       {member.role && (
-        <p className="text-[11px] tracking-[0.15em] uppercase text-text-dark-muted mt-1.5">
+        <p className="text-[11px] tracking-[0.2em] uppercase text-text-dark-muted mt-1.5">
           {member.role}
         </p>
       )}

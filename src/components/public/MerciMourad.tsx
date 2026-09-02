@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 const milestones = [
   { year: '1982', text: 'Fondation du cabinet Mourad Guellaty' },
@@ -31,20 +31,36 @@ function Presentation() {
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       {/* portrait */}
       <div className="lg:col-span-4 relative mx-auto w-full max-w-[280px]">
-        <div className="relative w-full h-[320px] sm:h-[360px]">
-          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
+        <a
+          href="https://oect.org.tn/notre-histoire/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/portrait block relative w-full h-[320px] sm:h-[360px] cursor-pointer"
+          title="En savoir plus sur Mourad Guellaty (Ordre des Experts Comptables de Tunisie)"
+        >
+          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10 group-hover/portrait:border-accent/40 transition-colors duration-300" />
           <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#F2F2F2]/70 -z-10" />
-          <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
-            <div className="absolute inset-0 bg-cover bg-[position:50%_8%]"
-              style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.png)' }} />
+          <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04] group-hover/portrait:ring-accent/40 transition-all duration-300">
+            <div
+              className="absolute inset-0 bg-cover bg-[position:50%_8%] group-hover/portrait:scale-105 transition-transform duration-700"
+              style={{ backgroundImage: 'url(/cabinet/Mourad-Guellaty.png)' }}
+            />
           </div>
-        </div>
+        </a>
       </div>
-
       {/* identity + bio */}
       <div className="lg:col-span-8">
         <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight">
-          Monsieur <span className="text-accent">Mourad</span>
+          <a
+            href="https://oect.org.tn/notre-histoire/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/name inline-flex items-center gap-2.5 hover:text-accent transition-colors"
+            title="Consulter l'histoire de l'OECT"
+          >
+            <span>Monsieur <span className="text-accent">Mourad</span></span>
+            <ArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 text-accent transition-transform duration-300 group-hover/name:translate-x-1 group-hover/name:-translate-y-1 shrink-0" />
+          </a>
         </h2>
         <span
           aria-hidden

@@ -159,7 +159,17 @@
     "apply": "Apply",
     "notFound": "Can't find the ideal role?",
     "spontaneous": "Send us a spontaneous application",
-    "mailSubject": "Application"
+    "mailSubject": "Application",
+    "modalTitle": "Apply for this position",
+    "modalSubtitle": "Send your resume and cover letter directly to our team.",
+    "spontaneousTitle": "Spontaneous Application",
+    "openGmail": "Open with Gmail",
+    "openDefaultMail": "Default Mail App (Outlook, Apple Mail...)",
+    "copyEmail": "Copy email address",
+    "copied": "Address copied!",
+    "destEmail": "Recipient email",
+    "subjectLabel": "Email subject",
+    "close": "Close"
   },
   "contact": {
     "kicker": "Contact",

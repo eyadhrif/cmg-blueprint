@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { Briefcase, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n';
+import { ApplyModal } from './ApplyModal';
 
 interface JobItem {
   id: string;
@@ -15,7 +17,8 @@ interface JobItem {
 
 export default function Careers({ jobs = [] }: { jobs?: JobItem[] }) {
   const { t, isEn } = useLanguage();
-
+  const [selectedJobTitle, setSelectedJobTitle] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   if (jobs.length === 0) return null;
 
   return (
@@ -40,16 +43,22 @@ export default function Careers({ jobs = [] }: { jobs?: JobItem[] }) {
             const displayLocation = isEn && job.locationEn ? job.locationEn : job.location;
 
             return (
-              <a
+              <button
                 key={job.id}
-                href={`mailto:contact@cabinetguellaty.com?subject=Candidature%20-%20${encodeURIComponent(displayTitle)}`}
-                className="group block surface shadow-soft px-8 py-6 hover:shadow-soft-lg hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300"
+                type="button"
+                onClick={() => {
+                  setSelectedJobTitle(displayTitle);
+                  setIsModalOpen(true);
+                }}
+                className="w-full text-left group block surface shadow-soft px-6 sm:px-8 py-5 sm:py-6 hover:shadow-soft-lg hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300 rounded-xl cursor-pointer"
               >
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex flex-wrap items-center gap-6">
-                    <Briefcase size={18} className="text-text-dark-muted shrink-0" />
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <div className="w-10 h-10 rounded-lg bg-black/[0.03] group-hover:bg-accent/10 flex items-center justify-center transition-colors">
+                      <Briefcase size={18} className="text-text-dark-muted group-hover:text-accent transition-colors shrink-0" />
+                    </div>
                     <div>
-                      <h3 className="font-serif text-lg text-text-dark">{displayTitle}</h3>
+                      <h3 className="font-serif text-lg text-text-dark group-hover:text-accent transition-colors">{displayTitle}</h3>
                       <div className="flex items-center gap-4 mt-1 text-sm text-text-dark-muted">
                         <span className="flex items-center gap-1.5"><MapPin size={13} /> {displayLocation}</span>
                         <span className="w-[1px] h-3 bg-black/10" />
@@ -58,13 +67,13 @@ export default function Careers({ jobs = [] }: { jobs?: JobItem[] }) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-xs text-text-dark-muted group-hover:text-text-dark transition-colors">
+                    <span className="text-xs text-text-dark-muted group-hover:text-accent font-semibold transition-colors">
                       {t('careers.apply', 'Postuler')}
                     </span>
                     <ArrowRight size={16} className="text-text-dark-muted group-hover:text-accent transition-all duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
-              </a>
+              </button>
             );
           })}
         </div>
@@ -72,12 +81,25 @@ export default function Careers({ jobs = [] }: { jobs?: JobItem[] }) {
         <div className="text-center mt-12">
           <p className="text-text-dark-muted text-sm">
             {t('careers.notFound', "Vous ne trouvez pas l'offre idéale ?")}{' '}
-            <a href="mailto:contact@cabinetguellaty.com" className="text-accent hover:underline font-medium">
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedJobTitle(null);
+                setIsModalOpen(true);
+              }}
+              className="text-accent hover:underline font-medium cursor-pointer"
+            >
               {t('careers.spontaneous', 'Envoyez-nous une candidature spontanée')}
-            </a>
+            </button>
           </p>
         </div>
       </div>
+
+      <ApplyModal
+        jobTitle={selectedJobTitle}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

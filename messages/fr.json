@@ -159,7 +159,17 @@
     "apply": "Postuler",
     "notFound": "Vous ne trouvez pas l’offre idéale ?",
     "spontaneous": "Envoyez-nous une candidature spontanée",
-    "mailSubject": "Candidature"
+    "mailSubject": "Candidature",
+    "modalTitle": "Postuler pour ce poste",
+    "modalSubtitle": "Transmettez votre CV et lettre de motivation directement à notre équipe.",
+    "spontaneousTitle": "Candidature spontanée",
+    "openGmail": "Ouvrir avec Gmail",
+    "openDefaultMail": "Application de messagerie (Outlook, Apple Mail...)",
+    "copyEmail": "Copier l'adresse email",
+    "copied": "Adresse copiée !",
+    "destEmail": "Adresse destinataire",
+    "subjectLabel": "Objet du message",
+    "close": "Fermer"
   },
   "contact": {
     "kicker": "Contact",

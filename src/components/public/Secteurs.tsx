@@ -47,23 +47,23 @@ export default function Secteurs() {
             {t('secteurs.title', 'Une expertise multisectorielle reconnue')}
           </h2>
         </motion.div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
           {secteurs.map((s, i) => (
             <motion.div
               key={i}
-              className="group relative aspect-[16/9] overflow-hidden rounded-2xl bg-light cursor-pointer"
+              className="group relative h-[210px] sm:h-[215px] xl:h-[220px] overflow-hidden rounded-2xl bg-dark/20 border border-black/[0.06] shadow-soft hover:shadow-soft-lg hover:border-accent/30 transition-all duration-300 cursor-pointer"
               {...fadeUp}
             >
               <div
-                className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-105"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url(${s.img})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 transition-opacity duration-500 group-hover:opacity-90" />
-              <div className="relative z-10 flex flex-col justify-end h-full p-8">
-                <h3 className="font-serif text-2xl text-white mb-3 tracking-tight">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/15 transition-opacity duration-500 group-hover:opacity-90" />
+              <div className="relative z-10 flex flex-col justify-end h-full p-5">
+                <h3 className="font-serif text-base sm:text-lg font-medium text-white mb-1.5 leading-snug tracking-tight group-hover:text-accent-crystal transition-colors">
                   {t(`secteurs.items.${s.key}.title`, s.title)}
                 </h3>
-                <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+                <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed line-clamp-3">
                   {t(`secteurs.items.${s.key}.desc`, s.desc)}
                 </p>
               </div>

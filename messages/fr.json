@@ -1,0 +1,381 @@
+{
+  "common": {
+    "brandName": "CABINET MOURAD GUELLATY",
+    "brandSub": "MG & ASSOCIÉS",
+    "addressLine1": "45 Avenue de la République",
+    "addressLine2": "2078 La Marsa",
+    "addressCountry": "Tunisie"
+  },
+  "header": {
+    "nav": {
+      "home": "ACCUEIL",
+      "direction": "DIRECTION",
+      "about": "À PROPOS",
+      "services": "SERVICES",
+      "sectors": "SECTEURS",
+      "team": "ÉQUIPE",
+      "articles": "ARTICLES",
+      "careers": "CARRIÈRES",
+      "contact": "CONTACT"
+    },
+    "cta": "PRENDRE RENDEZ-VOUS"
+  },
+  "hero": {
+    "kicker": "Audit & Conseil",
+    "headline": ["L’expertise", "au", "service", "de", "votre"],
+    "headlineAccent": "performance",
+    "subtitle": "Cabinet Mourad Guellaty accompagne les entreprises à chaque étape de leur développement avec rigueur, indépendance et engagement.",
+    "ctaPrimary": "Découvrir nos services",
+    "ctaSecondary": "En savoir plus",
+    "scrollAria": "Défiler vers le bas",
+    "scrollLabel": "Défiler"
+  },
+  "stats": {
+    "experience": "Années d'expérience",
+    "clients": "Clients accompagnés",
+    "experts": "Experts à votre service",
+    "quality": "Engagement qualité"
+  },
+  "merciMourad": {
+    "kicker": "Direction",
+    "mrTitle": "Monsieur <accent>Mourad</accent>",
+    "mrTitleName": "Monsieur <accent>Walid</accent>",
+    "signature": "Mourad Guellaty",
+    "walidSignature": "Walid Moussa",
+    "tagline": "Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes et des femmes de <accent>confiance</accent>.",
+    "bio1": "Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie. Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la profession avec <strong>indépendance</strong> et <strong>engagement</strong>.",
+    "bio2": "Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières, accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs enjeux les plus stratégiques.",
+    "parcoursTitle": "Parcours & Engagements",
+    "milestones": {
+      "1982": "Fondation du cabinet Mourad Guellaty",
+      "2001": "Nommé président de l’Ordre des Experts Comptables de Tunisie",
+      "2008": "Consolidation du département audit financier",
+      "2012": "Développement du conseil en stratégie et gouvernance",
+      "2015": "MG & Associés — élargissement de l’équipe pluridisciplinaire",
+      "2020": "Accompagnement des transformations numériques et réglementaires"
+    },
+    "slides": {
+      "presentation": "Présentation",
+      "parcours": "Parcours",
+      "citation": "Citation"
+    },
+    "quote": "La confiance ne se décrète pas.\nElle se construit, année après année, au service de nos clients et de l’excellence.",
+    "founderRole": "Fondateur",
+    "walidRoleTitle": "Expert-comptable et commissaire aux comptes (<accent>Tunisie & France</accent>), Managing Partner.",
+    "walidBio1": "Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les domaines de l’audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty & Associés en Tunisie en 2014.",
+    "walidBio2": "Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau international que national, avec de solides connaissances des normes IFRS.",
+    "walidBio3": "Il est régulièrement intervenu dans des missions de conseil et d’audit en environnement international, y compris pour des sociétés cotées, et a été en charge de la coordination de l’audit à l’international pour de grands groupes industriels étrangers.",
+    "walidBio4": "Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.",
+    "prevAria": "Chapitre précédent",
+    "nextAria": "Chapitre suivant"
+  },
+  "about": {
+    "kicker": "À Propos",
+    "title": "Un partenaire de confiance pour des décisions éclairées",
+    "p1": "Le Cabinet Mourad Guellaty est un cabinet d’expertise comptable, d’audit et de conseil établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien et premier président de l’Ordre des Experts Comptables de Tunisie, le cabinet accompagne les entreprises locales et internationales dans leurs enjeux financiers.",
+    "p2": "Spécialisé en commissariat aux comptes, audit financier, conseil en gestion et advisory, nous mettons notre expertise au service de votre performance.",
+    "cta": "Découvrir nos services",
+    "imgAlt": "Bureau MG & Associés",
+    "caption": "La Marsa · Tunis"
+  },
+  "services": {
+    "kicker": "NOS SERVICES",
+    "title": "Des solutions sur mesure pour accompagner votre croissance",
+    "learnMore": "EN SAVOIR PLUS"
+  },
+  "secteurs": {
+    "kicker": "Secteurs d'Activité",
+    "title": "Une expertise multisectorielle reconnue",
+    "items": {
+      "financier": { "title": "Banques & institutions financières", "desc": "Banques, assurances et institutions financières." },
+      "btp": { "title": "Bâtiments et travaux publics", "desc": "Construction, BTP et aménagement urbain." },
+      "cliniques": { "title": "Cliniques et des soins de santé", "desc": "Cliniques, laboratoires et établissements de soins." },
+      "agroalimentaire": { "title": "Industrie agroalimentaire", "desc": "Industries agroalimentaires et unités de production." },
+      "chimique": { "title": "Industrie chimique", "desc": "Industries chimiques et unités de transformation." },
+      "hygiene": { "title": "Industrie d'hygiène", "desc": "Produits d'hygiène, cosmétiques et détergents." },
+      "mecanique": { "title": "Industrie mécanique", "desc": "Industries mécaniques et unités de fabrication." },
+      "petrolier": { "title": "Industrie pétrolière", "desc": "Industrie pétrolière, raffinage et distribution." },
+      "pharmaceutique": { "title": "Industrie pharmaceutique", "desc": "Laboratoires pharmaceutiques et établissements de santé." },
+      "materiaux": { "title": "Industries des matériaux de construction", "desc": "Matériaux de construction et unités de production." },
+      "textile": { "title": "Industries textiles et habillement", "desc": "Textiles, habillement et filières de production." },
+      "immobiliere": { "title": "Promotion immobilière", "desc": "Promotion immobilière et développement foncier." },
+      "agricole": { "title": "Secteur agricole", "desc": "Exploitations agricoles et filières agro-industrielles." },
+      "commercial": { "title": "Secteur commercial", "desc": "Grande distribution, commerces et surfaces de vente." },
+      "telecom": { "title": "Secteur de télécommunication", "desc": "Télécommunications et technologies de l'information." },
+      "hotelier": { "title": "Secteur hôtelier", "desc": "Hôtels, resorts et établissements touristiques." },
+      "logistique": { "title": "Secteur logistique", "desc": "Logistique, transport et chaînes d'approvisionnement." },
+      "startups": { "title": "Startups", "desc": "Startups et entreprises innovantes." },
+      "energies": { "title": "Énergies renouvelables", "desc": "Énergies vertes et transition énergétique." },
+      "technologies": { "title": "Secteur des technologies", "desc": "Technologies de l'information et innovation." }
+    }
+  },
+  "societies": {
+    "kicker": "Ils nous ont fait confiance"
+  },
+  "team": {
+    "kicker": "Notre Équipe",
+    "title": "Une équipe pluridisciplinaire au service de votre performance",
+    "description": "MG & Associés réunit des experts-comptables, commissaires aux comptes et conseillers spécialisés, capables d’intervenir sur l’ensemble des métiers de la finance, de l’audit et du conseil.",
+    "clickHint": "Cliquez pour découvrir",
+    "founderRole": "Fondateur",
+    "walidRole": "Managing Partner",
+    "pools": {
+      "publics": "Pôle Entreprises Publiques",
+      "residentes": "Pôle Institutions Financières Résidentes",
+      "ifrs": "Pôle Consolidation et Normes IFRS",
+      "nonResidentes": "Pôle Institutions Financières Non Résidentes",
+      "industriel": "Pôle Audit Industriel"
+    },
+    "bios": {
+      "haythem": "Fort d’une solide expérience de plus de 15 ans dans l’audit et le commissariat aux comptes des entreprises et établissements publics, il accompagne depuis plusieurs années des organismes de différentes tailles et secteurs d’activité. Son expertise couvre les missions d’audit légal, l’évaluation des dispositifs de contrôle interne, l’analyse des risques et l’accompagnement des projets de gouvernance et de transformation du secteur public.",
+      "salem": "Il possède une expérience reconnue de plus de 15 ans dans l’audit des banques et des institutions financières résidentes. Au cours de son parcours, il a conduit de nombreuses missions auprès d’établissements bancaires, de sociétés de leasing et d’autres acteurs du secteur financier. Son expertise porte notamment sur les exigences prudentielles, le contrôle interne, la gestion des risques et les problématiques comptables propres aux institutions financières.",
+      "sofiene": "Spécialiste des normes internationales d’information financière (IFRS) et de la consolidation des états financiers, il accompagne les groupes nationaux et internationaux dans leurs projets de reporting financier. Son expérience couvre les opérations de consolidation complexes, les conversions vers les référentiels IFRS, l’assistance technique aux directions financières ainsi que le traitement des problématiques comptables à forte technicité.",
+      "hafedh": "Il dispose d’une expertise approfondie dans l’audit des banques et établissements financiers non résidents opérant en Tunisie. Son expérience lui permet d’intervenir sur des missions intégrant les exigences réglementaires locales, les standards internationaux d’audit ainsi que les problématiques spécifiques liées aux activités financières transfrontalières et à la gestion des risques.",
+      "ayman": "Il bénéficie d’une expérience significative dans l’audit d’entreprises industrielles évoluant dans des secteurs variés. Son expertise couvre l’analyse des processus industriels, l’évaluation des dispositifs de contrôle interne, la maîtrise des risques opérationnels et l’accompagnement des groupes industriels. Il intervient sur des missions de conseil fiscal, de revue de conformité, d’assistance lors des contrôles fiscaux et d’optimisation fiscale dans le respect de la réglementation en vigueur."
+    },
+    "quote": "Notre force réside dans la diversité de nos expertises et notre engagement collectif pour l’excellence.",
+    "quoteCite": "L’équipe MG & Associés"
+  },
+  "articles": {
+    "kicker": "Publications",
+    "title": "Articles & Analyses",
+    "viewAll": "Voir tous les articles"
+  },
+  "articlesList": {
+    "back": "Retour",
+    "title": "Articles & Analyses",
+    "subtitle": "Découvrez nos publications et analyses sur l’actualité fiscale, juridique et économique en Tunisie.",
+    "empty": "Aucun article publié pour le moment."
+  },
+  "articleDetail": {
+    "back": "Retour aux articles",
+    "readDoc": "Lire le document",
+    "downloadPdf": "Télécharger le PDF"
+  },
+  "careers": {
+    "kicker": "Carrières",
+    "title": "Rejoignez notre équipe",
+    "description": "MG & Associés recrute les talents de demain. Découvrez nos opportunités.",
+    "apply": "Postuler",
+    "notFound": "Vous ne trouvez pas l’offre idéale ?",
+    "spontaneous": "Envoyez-nous une candidature spontanée",
+    "mailSubject": "Candidature"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Discutons de votre projet",
+    "description": "Que ce soit pour un audit, un conseil fiscal ou un accompagnement stratégique, notre équipe est à votre écoute.",
+    "addressLabel": "Adresse",
+    "address": "45 Avenue de la République, 2078 Marsa Safsaf, Tunis",
+    "phoneLabel": "Téléphone",
+    "emailLabel": "Email",
+    "hoursLabel": "Horaires",
+    "hours": "Lun – Ven : 08h30 – 17h30",
+    "faxLabel": "Fax",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "sentTitle": "Message envoyé !",
+    "sentText": "Nous vous répondrons dans les plus brefs délais.",
+    "sendAnother": "Envoyer un autre message",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "votre@email.com",
+    "phonePlaceholder": "+216 XX XXX XXX",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "Sélectionnez un sujet",
+    "subjects": {
+      "audit": "Audit & Commissariat",
+      "fiscal": "Conseil fiscal",
+      "comptable": "Expertise comptable",
+      "juridique": "Conseil juridique",
+      "gestion": "Conseil en gestion",
+      "autre": "Autre"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Votre message...",
+    "submit": "Envoyer votre message"
+  },
+  "newsletter": {
+    "kicker": "Newsletter",
+    "title": "Restez informé",
+    "description": "Recevez nos actualités, analyses et publications directement dans votre boîte mail.",
+    "placeholder": "votre@email.com",
+    "submit": "S'inscrire",
+    "sending": "Envoi...",
+    "success": "Merci pour votre inscription !",
+    "error": "Erreur lors de l'inscription.",
+    "errorGeneric": "Une erreur est survenue."
+  },
+  "ctaBanner": {
+    "title": "Prenons rendez-vous",
+    "description": "Discutons de vos enjeux et construisons ensemble des solutions adaptées.",
+    "cta": "Prendre rendez-vous"
+  },
+  "footer": {
+    "navLabel": "Navigation",
+    "nav": {
+      "home": "Accueil",
+      "cabinet": "Le Cabinet",
+      "expertises": "Expertises",
+      "secteurs": "Secteurs",
+      "equipe": "Notre équipe",
+      "carrieres": "Carrières",
+      "contact": "Contact"
+    },
+    "tagline1": "Depuis plusieurs décennies,",
+    "tagline2": "nous accompagnons entreprises,",
+    "tagline3": "institutions et dirigeants",
+    "tagline4": "avec exigence, indépendance",
+    "tagline5": "et confiance.",
+    "newsletterLabel": "Newsletter",
+    "newsletterSubscribe": "S'inscrire",
+    "newsletterSuccess": "Merci pour votre inscription !",
+    "newsletterError": "Erreur lors de l'inscription.",
+    "newsletterErrorGeneric": "Une erreur est survenue.",
+    "contactLabel": "Contact",
+    "country": "Tunisie",
+    "copyright": "2026 MG & Associés. Tous droits réservés.",
+    "motto": "La confiance se construit dans la durée.",
+    "expertise": "Audit · Conseil · Expertise Comptable"
+  },
+  "editorialStatement": {
+    "quote": "La confiance ne se décrète pas.\nElle se construit, année après année, au service de nos clients et de l’excellence.",
+    "name": "Mourad Guellaty",
+    "role": "Fondateur"
+  },
+  "nousRejoindre": {
+    "kicker": "Carrières",
+    "title1": "Construisons ensemble",
+    "title2": "l’avenir de la <accent>confiance</accent>.",
+    "description": "MG & Associés recrute les talents de demain. Rejoignez un cabinet d’exception où rigueur, excellence et impact se conjuguent au quotidien.",
+    "culture": "Notre culture",
+    "quote": "Rejoindre MG & Associés, c’est intégrer une équipe exigeante, humaine et tournée vers l’impact.",
+    "name": "Mourad Guellaty",
+    "role": "Fondateur",
+    "faqKicker": "FAQ",
+    "faqTitle": "Vous vous posez des questions ?",
+    "faq": {
+      "q1": "Comment se déroule le recrutement ?",
+      "a1": "Notre processus se déroule en plusieurs étapes : étude de votre candidature, entretien avec les RH, puis rencontre avec l’équipe concernée. Nous veillons à vous offrir une expérience transparente et respectueuse de votre temps.",
+      "q2": "Quels profils recherchez-vous ?",
+      "a2": "Nous recherchons des talents passionnés, rigoureux et animés par l’excellence. Experts-comptables, auditeurs, conseillers fiscaux et juristes, mais aussi des profils juniors en début de carrière.",
+      "q3": "Les stages sont-ils rémunérés ?",
+      "a3": "Oui, tous nos stages sont rémunérés conformément à la réglementation en vigueur. Nous offrons un environnement propice à l’apprentissage et à la montée en compétences.",
+      "q4": "Où se déroulent les missions ?",
+      "a4": "Nos missions se déroulent principalement dans nos bureaux de La Marsa, Tunis, ainsi que chez nos clients sur l’ensemble du territoire tunisien.",
+      "q5": "Puis-je envoyer une candidature spontanée ?",
+      "a5": "Absolument. Nous sommes toujours à la recherche de talents. Vous pouvez nous adresser votre candidature à contact@cabinetguellaty.com, nous l’étudierons avec attention."
+    }
+  },
+  "servicesData": {
+    "audit-legal": {
+      "title": "Audit légal",
+      "desc": "Commissariat aux comptes et audit légal dans le respect des normes en vigueur.",
+      "intro": "L’audit légal constitue le cœur historique de notre métier. En qualité de commissaires aux comptes, nous certifions la régularité et la sincérité de vos états financiers conformément aux normes tunisiennes et internationales.",
+      "points": [
+        "Certification des comptes sociaux et consolidés",
+        "Commissariat aux comptes légal et contractuel",
+        "Audit des états financiers en normes IFRS",
+        "Revue limitée et missions d’examen",
+        "Rapports spéciaux du commissaire aux comptes",
+        "Assistance aux organes de gouvernance (conseil d’administration, comités d’audit)"
+      ]
+    },
+    "conseil-fiscal": {
+      "title": "Conseil fiscal",
+      "desc": "Optimisation fiscale, déclarations et assistance dans vos relations avec l’administration.",
+      "intro": "Notre équipe fiscale vous accompagne dans la sécurisation et l’optimisation de votre fiscalité. Nous intervenons en conseil comme en contentieux, avec une connaissance approfondie de l’administration fiscale tunisienne.",
+      "points": [
+        "Optimisation fiscale et structuration de votre fiscalité",
+        "Établissement et suivi des déclarations (IS, TVA, IRPP)",
+        "Gestion des contrôles fiscaux et contentieux",
+        "Demandes d’agrément, de resquittances et de sursis",
+        "Veille fiscale et impact des lois de finances",
+        "Fiscalité internationale et prix de transfert"
+      ]
+    },
+    "expertise-comptable": {
+      "title": "Expertise comptable",
+      "desc": "Tenue et révision comptable, états financiers et reporting fiable pour une meilleure prise de décision.",
+      "intro": "Nous prenons en charge votre comptabilité avec rigueur et réactivité, de la tenue des comptes jusqu’à la production des états financiers, afin de vous laisser pleinement concentré sur votre activité.",
+      "points": [
+        "Tenue de la comptabilité générale et analytique",
+        "Établissement des états financiers annuels",
+        "Révision comptable et rapprochements",
+        "Comptabilité de gestion et tableaux de bord",
+        "Paie et gestion sociale",
+        "Préparation des liasses fiscales"
+      ]
+    },
+    "conseil-juridique": {
+      "title": "Conseil juridique",
+      "desc": "Accompagnement juridique des entreprises et sécurisation de vos opérations.",
+      "intro": "Nous sécurisons vos décisions et vos opérations d’un point de vue juridique, en étroite collaboration avec vos conseils afin de vous offrir une vision complète et cohérente.",
+      "points": [
+        "Rédaction et revue de contrats commerciaux",
+        "Constitution et restructuration de sociétés",
+        "Opérations de fusion, scission et apport partiel d’actifs",
+        "Gouvernance et droit des sociétés",
+        "Conventions d’actionnaires et pactes d’associés",
+        "Accompagnement en droit social et du travail"
+      ]
+    },
+    "conseil-en-gestion": {
+      "title": "Conseil en gestion",
+      "desc": "Analyse financière, tableaux de bord et accompagnement à la performance.",
+      "intro": "Nous vous aidons à piloter votre entreprise avec des outils de gestion performants : analyse financière, budgétisation et accompagnement à la décision stratégique.",
+      "points": [
+        "Diagnostic financier et analyse de la rentabilité",
+        "Budgets, prévisionnel et business plans",
+        "Tableaux de bord et indicateurs de performance",
+        "Accompagnement à la levée de fonds",
+        "Analyse des coûts et amélioration de la marge",
+        "Restructuration et plans de redressement"
+      ]
+    },
+    "transactions-due-diligence": {
+      "title": "Transactions & due diligence",
+      "desc": "Évaluation, audit d’acquisition et accompagnement dans vos opérations stratégiques.",
+      "intro": "Nous intervenons dans vos opérations de croissance externe, d’acquisition ou de cession, avec une analyse approfondie des risques et de la valeur de la cible.",
+      "points": [
+        "Due diligence financière, fiscale et juridique",
+        "Évaluation d’entreprises et de parts sociales",
+        "Aide à la négociation des conditions de cession",
+        "Structuration des acquisitions et des financements",
+        "Rapports aux investisseurs et aux acquéreurs",
+        "Suivi post-acquisition et intégration"
+      ]
+    },
+    "creation-societe-tunisie": {
+      "title": "Création de société en Tunisie",
+      "desc": "Accompagnement complet de votre projet d’implantation : forme juridique, immatriculation et formalités.",
+      "intro": "De la validation de votre projet à son lancement opérationnel, nous vous accompagnons dans toutes les étapes de la création de votre société en Tunisie, pour les résidents comme pour les investisseurs étrangers.",
+      "points": [
+        "Choix de la forme juridique adaptée (SARL, SA, SUARL, succursale)",
+        "Rédaction des statuts et formalités de constitution",
+        "Immatriculation au Registre National des Entreprises",
+        "Obtention des autorisations et des codes d’activité",
+        "Ouverture du compte bancaire et dépôt du capital",
+        "Immatriculation fiscale et affiliés CNSS / sécurité sociale",
+        "Conseil sur les avantages fiscaux (code d’incitations aux investissements)"
+      ]
+    },
+    "assistance-comptable-fiscale-juridique-tunisie": {
+      "title": "Assistance comptable, fiscale et juridique",
+      "desc": "Un interlocuteur unique pour la gestion comptable, fiscale et juridique de votre activité en Tunisie.",
+      "intro": "Notre formule d’assistance globale vous offre un accompagnement permanent sur l’ensemble de vos obligations comptables, fiscales et juridiques, avec un interlocuteur unique et des équipes pluridisciplinaires.",
+      "points": [
+        "Tenue comptable externalisée et permanente",
+        "Gestion de l’ensemble des échéances fiscales et sociales",
+        "Ressources humaines, contrats et paie",
+        "Veille réglementaire et lois de finances",
+        "Représentation auprès de l’administration",
+        "Accompagnement des investisseurs étrangers et non-résidents"
+      ]
+    }
+  },
+  "serviceDetail": {
+    "back": "Retour aux services",
+    "kicker": "Nos services",
+    "cta": "Discutons de votre projet"
+  }
+}

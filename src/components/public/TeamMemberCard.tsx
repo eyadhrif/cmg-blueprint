@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-
+import { useLanguage } from '@/lib/i18n';
 interface TeamMember {
   name: string;
   role?: string;
@@ -23,6 +23,7 @@ const CARD_WIDTH = 208;
 const CARD_HEIGHT = 277;
 
 export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
+  const { t } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -132,7 +133,7 @@ export function TeamMemberCard({ member, index, onOpen }: TeamMemberCardProps) {
         )}
 
         <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-1.5 py-3 bg-gradient-to-t from-black/60 to-transparent text-white/90 text-[11px] tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span>Voir le profil</span>
+          <span>{t('team.clickHint', 'Voir le profil')}</span>
         </div>
       </div>
 

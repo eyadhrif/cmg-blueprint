@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { subscribe } from '@/actions/subscribers';
-
+import { useLanguage } from '@/lib/i18n';
 const fadeUp = {
   initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
   whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
@@ -12,10 +12,10 @@ const fadeUp = {
 };
 
 export default function NewsletterSection() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus('loading');
@@ -41,15 +41,14 @@ export default function NewsletterSection() {
       <div className="max-w-[1280px] mx-auto px-6">
         <motion.div className="max-w-2xl mx-auto text-center" {...fadeUp}>
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Newsletter
+            {t('newsletter.kicker', 'Newsletter')}
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
-            Restez informé
+            {t('newsletter.title', 'Restez informé')}
           </h2>
           <p className="text-text-dark-muted text-base sm:text-lg mt-6 leading-relaxed">
-            Recevez nos actualités, analyses et publications directement dans votre boîte mail.
+            {t('newsletter.subtitle', 'Recevez nos actualités, analyses et publications directement dans votre boîte mail.')}
           </p>
-
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mt-12 max-w-lg mx-auto">
             <input
               type="email"
@@ -64,7 +63,7 @@ export default function NewsletterSection() {
               disabled={status === 'loading'}
               className="bg-accent text-white px-8 py-4 text-xs font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_rgba(168,24,40,0.55)] transition-all duration-300 disabled:opacity-50 shrink-0"
             >
-              {status === 'loading' ? 'Envoi...' : "S'inscrire"}
+              {status === 'loading' ? 'Envoi...' : t('newsletter.button', "S'inscrire")}
             </button>
           </form>
 

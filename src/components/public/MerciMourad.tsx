@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-
+import { useLanguage } from '@/lib/i18n';
 const milestones = [
   { year: '1982', text: 'Fondation du cabinet Mourad Guellaty' },
   { year: '2001', text: 'Nommé président de l’Ordre des Experts Comptables de Tunisie' },
@@ -26,7 +26,7 @@ const variants = {
 };
 
 /* ── Slide 1 — Présentation ─────────────────────────────────────────── */
-function Presentation() {
+function Presentation({ t }: { t: (path: string, fallback?: string) => string }) {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       {/* portrait */}
@@ -48,6 +48,7 @@ function Presentation() {
           </div>
         </a>
       </div>
+
       {/* identity + bio */}
       <div className="lg:col-span-8">
         <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight">
@@ -71,21 +72,15 @@ function Presentation() {
         </span>
 
         <p className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-6 max-w-xl">
-          Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes et des femmes de{' '}
-          <span className="text-accent">confiance</span>.
+          {t('merciMourad.tagline', 'Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes et des femmes de confiance.')}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie.
-            Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la
-            profession avec <span className="text-text-dark font-medium">indépendance</span> et{' '}
-            <span className="text-text-dark font-medium">engagement</span>.
+            {t('merciMourad.bio1', 'Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie. Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la profession avec indépendance et engagement.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières,
-            accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs
-            enjeux les plus stratégiques.
+            {t('merciMourad.bio2', 'Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières, accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs enjeux les plus stratégiques.')}
           </p>
         </div>
       </div>
@@ -94,11 +89,11 @@ function Presentation() {
 }
 
 /* ── Slide 2 — Parcours ─────────────────────────────────────────────── */
-function Parcours() {
+function Parcours({ t }: { t: (path: string, fallback?: string) => string }) {
   return (
     <div>
       <h2 className="font-serif text-3xl lg:text-[40px] leading-tight text-text-dark tracking-tight mb-12">
-        Parcours &amp; Engagements
+        {t('merciMourad.parcoursTitle', 'Parcours & Engagements')}
       </h2>
       <div className="relative">
         <div className="hidden lg:block absolute left-0 right-0 top-[5px] h-px bg-gold/30" />
@@ -117,7 +112,9 @@ function Parcours() {
               >
                 {m.year}
               </div>
-              <p className="text-text-dark-muted text-sm leading-snug mt-2">{m.text}</p>
+              <p className="text-text-dark-muted text-sm leading-snug mt-2">
+                {t(`merciMourad.milestones.${m.year}`, m.text)}
+              </p>
             </div>
           ))}
         </div>
@@ -127,7 +124,7 @@ function Parcours() {
 }
 
 /* ── Slide 3 — Citation ─────────────────────────────────────────────── */
-function Citation() {
+function Citation({ t }: { t: (path: string, fallback?: string) => string }) {
   return (
     <div className="max-w-3xl mx-auto text-center py-6 lg:py-10">
       <div className="flex items-center justify-center gap-5">
@@ -136,22 +133,21 @@ function Citation() {
         <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent to-gold/60" />
       </div>
       <blockquote className="font-serif text-2xl sm:text-3xl lg:text-[34px] leading-[1.32] text-text-dark mt-4 tracking-tight">
-        La confiance ne se décrète pas.
-        <br />
-        Elle se construit, année après année,
-        <br className="hidden sm:block" /> au service de nos clients et de l’excellence.
+        {t('merciMourad.quote', 'La confiance ne se décrète pas. Elle se construit, année après année, au service de nos clients et de l’excellence.')}
       </blockquote>
       <div className="mt-10">
         <div className="w-8 h-px bg-gold/60 mx-auto mb-4" />
         <div className="font-serif text-lg text-text-dark">Mourad Guellaty</div>
-        <div className="text-[10px] tracking-[0.24em] uppercase text-text-dark-muted mt-1.5">Fondateur</div>
+        <div className="text-[10px] tracking-[0.24em] uppercase text-text-dark-muted mt-1.5">
+          {t('merciMourad.founderRole', 'Fondateur')}
+        </div>
       </div>
     </div>
   );
 }
 
 /* ── Static block — Walid Moussa (below the Mourad slideshow) ──────── */
-function Walid() {
+function Walid({ t }: { t: (path: string, fallback?: string) => string }) {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       {/* portrait */}
@@ -180,29 +176,21 @@ function Walid() {
         </span>
 
         <p className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-6 max-w-xl">
-          Expert-comptable et commissaire aux comptes (
-          <span className="text-accent">Tunisie &amp; France</span>), Managing Partner.
+          {t('merciMourad.walidRoleTitle', 'Expert-comptable et commissaire aux comptes (Tunisie & France), Managing Partner.')}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les
-            domaines de l&apos;audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty &amp;
-            Associés en Tunisie en 2014.
+            {t('merciMourad.walidBio1', 'Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les domaines de l’audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty & Associés en Tunisie en 2014.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions
-            d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau
-            international que national, avec de solides connaissances des normes IFRS.
+            {t('merciMourad.walidBio2', 'Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau international que national, avec de solides connaissances des normes IFRS.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Il est régulièrement intervenu dans des missions de conseil et d&apos;audit en
-            environnement international, y compris pour des sociétés cotées, et a été en charge de la
-            coordination de l’audit à l’international pour de grands groupes industriels étrangers.
+            {t('merciMourad.walidBio3', 'Il est régulièrement intervenu dans des missions de conseil et d’audit en environnement international, y compris pour des sociétés cotées, et a été en charge de la coordination de l’audit à l’international pour de grands groupes industriels étrangers.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers
-            secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.
+            {t('merciMourad.walidBio4', 'Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.')}
           </p>
         </div>
       </div>
@@ -211,7 +199,14 @@ function Walid() {
 }
 
 export default function MerciMourad() {
+  const { t } = useLanguage();
   const [[i, dir], setState] = useState<[number, number]>([0, 0]);
+
+  const slides = [
+    { key: 'presentation', label: t('merciMourad.slides.presentation', 'Présentation') },
+    { key: 'parcours', label: t('merciMourad.slides.parcours', 'Parcours') },
+    { key: 'citation', label: t('merciMourad.slides.citation', 'Citation') },
+  ];
 
   const go = (target: number) => {
     let n = target;
@@ -227,7 +222,7 @@ export default function MerciMourad() {
         <div className="flex items-center gap-4 mb-10 lg:mb-12">
           <span className="h-px w-10 bg-gold" />
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Direction
+            {t('merciMourad.kicker', 'Direction')}
           </span>
         </div>
 
@@ -243,9 +238,9 @@ export default function MerciMourad() {
               exit="exit"
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              {i === 0 && <Presentation />}
-              {i === 1 && <Parcours />}
-              {i === 2 && <Citation />}
+              {i === 0 && <Presentation t={t} />}
+              {i === 1 && <Parcours t={t} />}
+              {i === 2 && <Citation t={t} />}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -277,14 +272,14 @@ export default function MerciMourad() {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => go(i - 1)}
-              aria-label="Chapitre précédent"
+              aria-label={t('merciMourad.prevAria', 'Chapitre précédent')}
               className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center text-text-dark hover:border-accent hover:text-accent transition-colors"
             >
               <ArrowLeft size={16} />
             </button>
             <button
               onClick={() => go(i + 1)}
-              aria-label="Chapitre suivant"
+              aria-label={t('merciMourad.nextAria', 'Chapitre suivant')}
               className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center text-text-dark hover:border-accent hover:text-accent transition-colors"
             >
               <ArrowRight size={16} />
@@ -294,7 +289,7 @@ export default function MerciMourad() {
 
         {/* Legende — Walid Moussa (static, below the slideshow) */}
         <div className="mt-16 lg:mt-20 border-t border-black/10 pt-14 lg:pt-16">
-          <Walid />
+          <Walid t={t} />
         </div>
       </div>
     </section>

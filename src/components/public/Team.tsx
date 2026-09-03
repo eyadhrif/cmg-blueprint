@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FlipVertical2 } from 'lucide-react';
 import { TeamMemberCard } from './TeamMemberCard';
 import { ProfileModal } from './ProfileModal';
-
+import { useLanguage } from '@/lib/i18n';
 const fadeUp = {
   initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
   whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
@@ -81,8 +81,8 @@ const rest: Member[] = [
   },
 ];
 
-function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'; delay?: number; zoom?: number }) {
-  const isFounder = m.role === 'Fondateur';
+function Avatar({ m, size, delay = 0, zoom = 1, t }: { m: Member; size: 'lg' | 'md'; delay?: number; zoom?: number; t: (path: string, fallback?: string) => string }) {
+  const isFounder = m.role === 'Fondateur' || m.role === 'Founder';
   const baseW = size === 'lg' ? 'w-52 sm:w-56 lg:w-64' : 'w-40 sm:w-44 lg:w-52';
   const flipW = size === 'lg' ? 'w-64 sm:w-72 lg:w-80' : 'w-48 sm:w-56 lg:w-64';
   const [flipped, setFlipped] = useState(false);
@@ -160,7 +160,7 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
             {m.description && (
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-1.5 py-3 bg-gradient-to-t from-black/60 to-transparent text-white/90 text-[11px] tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <FlipVertical2 className="w-3.5 h-3.5" />
-                <span>Cliquez pour découvrir</span>
+                <span>{t('team.clickHint', 'Cliquez pour découvrir')}</span>
               </div>
             )}
           </div>
@@ -197,7 +197,24 @@ function Avatar({ m, size, delay = 0, zoom = 1 }: { m: Member; size: 'lg' | 'md'
 }
 
 export default function Team() {
+  const { t } = useLanguage();
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+
+  const localizedFounder: Member = {
+    ...founder,
+    role: t('team.founderRole', 'Fondateur'),
+  };
+
+  const localizedWalid: Member = {
+    ...walid,
+    role: t('team.walidRole', 'Managing Partner'),
+  };
+
+  const memberKeys = ['haythem', 'salem', 'sofiene', 'hafedh', 'ayman'];
+  const localizedRest: Member[] = rest.map((m, i) => ({
+    ...m,
+    description: t(`team.bios.${memberKeys[i]}`, m.description),
+  }));
 
   const handleOpenProfile = (member: Member) => {
     setSelectedMember(member);
@@ -212,15 +229,13 @@ export default function Team() {
       <div className="relative max-w-[1280px] mx-auto px-6">
         <motion.div className="text-center max-w-3xl mx-auto" {...fadeUp}>
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Notre Équipe
+            {t('team.kicker', 'Notre Équipe')}
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
-            Une équipe pluridisciplinaire au service de votre performance
+            {t('team.title', 'Une équipe pluridisciplinaire au service de votre performance')}
           </h2>
           <p className="text-text-dark-muted text-base sm:text-lg mt-8 leading-relaxed">
-            MG & Associés réunit des experts-comptables, commissaires aux comptes et conseillers
-            spécialisés, capables d&apos;intervenir sur l&apos;ensemble des métiers de la finance,
-            de l&apos;audit et du conseil.
+            {t('team.description', "MG & Associés réunit des experts-comptables, commissaires aux comptes et conseillers spécialisés, capables d'intervenir sur l'ensemble des métiers de la finance, de l'audit et du conseil.")}
           </p>
         </motion.div>
 
@@ -228,13 +243,13 @@ export default function Team() {
         <div className="flex flex-col items-center mt-20 lg:mt-24">
           {/* row 1 — founder + Walid (UNCHANGED) */}
           <div className="flex justify-center items-end gap-8 lg:gap-12">
-            <Avatar m={founder} size="lg" />
-            <Avatar m={walid} size="lg" delay={0.15} zoom={1.2} />
+            <Avatar m={localizedFounder} size="lg" t={t} />
+            <Avatar m={localizedWalid} size="lg" delay={0.15} zoom={1.2} t={t} />
           </div>
 
-          {/* row 2 — rest in one line (NEW INTERACTION) */}
+          {/* row 2 — rest in one line */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 justify-items-center mt-14">
-            {rest.map((m, i) => (
+            {localizedRest.map((m, i) => (
               <TeamMemberCard
                 key={m.name}
                 member={m}
@@ -251,18 +266,15 @@ export default function Team() {
             &ldquo;
           </span>
           <blockquote className="font-serif text-2xl sm:text-3xl leading-[1.2] text-text-dark -mt-10 tracking-tight">
-            Notre force réside dans la diversité de nos expertises
-            <br />
-            et notre engagement collectif pour l&apos;excellence.
+            {t('team.quote', "Notre force réside dans la diversité de nos expertises et notre engagement collectif pour l'excellence.")}
           </blockquote>
           <div className="mt-8">
             <div className="w-10 h-px bg-accent mx-auto mb-4" />
             <cite className="text-sm text-text-dark-muted not-italic">
-              L&apos;équipe MG & Associés
+              {t('team.quoteCite', "L'équipe MG & Associés")}
             </cite>
           </div>
         </motion.div>
-
         {/* ── Profile Modal ────────────────────────────────────────────── */}
         <ProfileModal
           member={selectedMember}

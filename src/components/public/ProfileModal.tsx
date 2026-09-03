@@ -5,7 +5,7 @@ import { X, Mail, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { useEffect, useRef } from 'react';
-
+import { useLanguage } from '@/lib/i18n';
 interface TeamMember {
   name: string;
   role?: string;
@@ -31,9 +31,9 @@ const SCROLLBAR_STYLES = `
 `;
 
 export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
+  const { t } = useLanguage();
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (isOpen) {
       const lenis = (window as unknown as { __lenis?: { stop: () => void; start: () => void } }).__lenis;
@@ -113,7 +113,7 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
                 <button
                   className="absolute right-6 top-6 z-10 rounded-full p-2 bg-white/90 backdrop-blur-sm text-text-dark/50 hover:text-text-dark hover:bg-white transition-all duration-300 shadow-soft focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                   onClick={onClose}
-                  aria-label="Fermer le profil"
+                  aria-label={t('team.closeAria', 'Fermer le profil')}
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -191,7 +191,7 @@ export function ProfileModal({ member, isOpen, onClose }: ProfileModalProps) {
 
                       {(member.email || member.linkedin || member.phone) && (
                         <div className="pt-6 border-t border-black/10">
-                          <h3 className="font-serif text-lg text-text-dark mb-4">Contact</h3>
+                          <h3 className="font-serif text-lg text-text-dark mb-4">{t('contact.kicker', 'Contact')}</h3>
                           <div className="flex flex-wrap items-center gap-4">
                             {member.email && (
                               <a

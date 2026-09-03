@@ -1,0 +1,381 @@
+{
+  "common": {
+    "brandName": "CABINET MOURAD GUELLATY",
+    "brandSub": "MG & ASSOCIATES",
+    "addressLine1": "45 République Avenue",
+    "addressLine2": "2078 La Marsa",
+    "addressCountry": "Tunisia"
+  },
+  "header": {
+    "nav": {
+      "home": "HOME",
+      "direction": "LEADERSHIP",
+      "about": "ABOUT",
+      "services": "SERVICES",
+      "sectors": "SECTORS",
+      "team": "TEAM",
+      "articles": "ARTICLES",
+      "careers": "CAREERS",
+      "contact": "CONTACT"
+    },
+    "cta": "BOOK AN APPOINTMENT"
+  },
+  "hero": {
+    "kicker": "Audit & Advisory",
+    "headline": ["Expertise", "at", "the", "service", "of your"],
+    "headlineAccent": "performance",
+    "subtitle": "Cabinet Mourad Guellaty supports companies at every stage of their growth with rigour, independence and commitment.",
+    "ctaPrimary": "Discover our services",
+    "ctaSecondary": "Learn more",
+    "scrollAria": "Scroll down",
+    "scrollLabel": "Scroll"
+  },
+  "stats": {
+    "experience": "Years of experience",
+    "clients": "Clients supported",
+    "experts": "Experts at your service",
+    "quality": "Quality commitment"
+  },
+  "merciMourad": {
+    "kicker": "Leadership",
+    "mrTitle": "Mr <accent>Mourad</accent>",
+    "mrTitleName": "Mr <accent>Walid</accent>",
+    "signature": "Mourad Guellaty",
+    "walidSignature": "Walid Moussa",
+    "tagline": "Building a firm of excellence means, above all, building men and women of <accent>trust</accent>.",
+    "bio1": "Mourad Guellaty devoted his life to public accountancy and audit in Tunisia. As the former and first President of the Tunisian Order of Chartered Accountants, he championed the voice of the profession with <strong>independence</strong> and <strong>commitment</strong>.",
+    "bio2": "His visionary leadership enabled the firm to extend its reach far beyond borders, supporting the largest Tunisian and international companies in their most strategic challenges.",
+    "parcoursTitle": "Career & Engagements",
+    "milestones": {
+      "1982": "Founding of Cabinet Mourad Guellaty",
+      "2001": "Appointed President of the Tunisian Order of Chartered Accountants",
+      "2008": "Consolidation of the financial audit department",
+      "2012": "Development of strategy and governance advisory",
+      "2015": "MG & Associates — expansion of the multidisciplinary team",
+      "2020": "Supporting digital and regulatory transformations"
+    },
+    "slides": {
+      "presentation": "Overview",
+      "parcours": "Career",
+      "citation": "Quote"
+    },
+    "quote": "Trust cannot be decreed.\nIt is built, year after year, in the service of our clients and of excellence.",
+    "founderRole": "Founder",
+    "walidRoleTitle": "Chartered accountant and statutory auditor (<accent>Tunisia & France</accent>), Managing Partner.",
+    "walidBio1": "Walid Moussa spent 10 years at KPMG Audit Paris (France) in audit and advisory, before joining Cabinet Mourad Guellaty & Associates in Tunisia in 2014.",
+    "walidBio2": "With 20 years of experience, he has a thorough command of audit engagements (social accounts, consolidated accounts, reporting), both internationally and nationally, with strong knowledge of IFRS standards.",
+    "walidBio3": "He has regularly carried out advisory and audit engagements in an international environment, including for listed companies, and headed the coordination of international audits for major foreign industrial groups.",
+    "walidBio4": "Since 2014, he has audited international and national groups across various sectors: industry, the financial sector, pharmaceuticals and information technology.",
+    "prevAria": "Previous chapter",
+    "nextAria": "Next chapter"
+  },
+  "about": {
+    "kicker": "About",
+    "title": "A trusted partner for informed decisions",
+    "p1": "Cabinet Mourad Guellaty is a public accountancy, audit and advisory firm based in La Marsa, Tunis. Founded by Mourad Guellaty, former and first President of the Tunisian Order of Chartered Accountants, the firm supports local and international companies in their financial challenges.",
+    "p2": "Specialised in statutory auditing, financial audit, management advisory and consulting, we put our expertise at the service of your performance.",
+    "cta": "Discover our services",
+    "imgAlt": "MG & Associates office",
+    "caption": "La Marsa · Tunis"
+  },
+  "services": {
+    "kicker": "OUR SERVICES",
+    "title": "Tailor-made solutions to support your growth",
+    "learnMore": "LEARN MORE"
+  },
+  "secteurs": {
+    "kicker": "Sectors of Activity",
+    "title": "A recognised multisectoral expertise",
+    "items": {
+      "financier": { "title": "Banks & financial institutions", "desc": "Banks, insurance and financial institutions." },
+      "btp": { "title": "Construction and public works", "desc": "Construction, civil engineering and urban development." },
+      "cliniques": { "title": "Clinics and healthcare", "desc": "Clinics, laboratories and healthcare facilities." },
+      "agroalimentaire": { "title": "Agri-food industry", "desc": "Agri-food industries and production units." },
+      "chimique": { "title": "Chemical industry", "desc": "Chemical industries and processing units." },
+      "hygiene": { "title": "Hygiene industry", "desc": "Hygiene products, cosmetics and detergents." },
+      "mecanique": { "title": "Mechanical industry", "desc": "Mechanical industries and manufacturing units." },
+      "petrolier": { "title": "Oil industry", "desc": "Oil industry, refining and distribution." },
+      "pharmaceutique": { "title": "Pharmaceutical industry", "desc": "Pharmaceutical laboratories and health facilities." },
+      "materiaux": { "title": "Construction materials industries", "desc": "Construction materials and production units." },
+      "textile": { "title": "Textile and clothing industries", "desc": "Textiles, clothing and production chains." },
+      "immobiliere": { "title": "Real estate development", "desc": "Real estate promotion and land development." },
+      "agricole": { "title": "Agricultural sector", "desc": "Farms and agri-industrial value chains." },
+      "commercial": { "title": "Commercial sector", "desc": "Retail, stores and retail outlets." },
+      "telecom": { "title": "Telecommunications sector", "desc": "Telecommunications and information technology." },
+      "hotelier": { "title": "Hotel sector", "desc": "Hotels, resorts and tourism facilities." },
+      "logistique": { "title": "Logistics sector", "desc": "Logistics, transport and supply chains." },
+      "startups": { "title": "Startups", "desc": "Startups and innovative companies." },
+      "energies": { "title": "Renewable energies", "desc": "Green energies and the energy transition." },
+      "technologies": { "title": "Technology sector", "desc": "Information technology and innovation." }
+    }
+  },
+  "societies": {
+    "kicker": "They placed their trust in us"
+  },
+  "team": {
+    "kicker": "Our Team",
+    "title": "A multidisciplinary team at the service of your performance",
+    "description": "MG & Associates brings together chartered accountants, statutory auditors and specialised advisors, able to work across all the professions of finance, audit and advisory.",
+    "clickHint": "Click to discover",
+    "founderRole": "Founder",
+    "walidRole": "Managing Partner",
+    "pools": {
+      "publics": "Public Sector Enterprises Division",
+      "residentes": "Resident Financial Institutions Division",
+      "ifrs": "Consolidation & IFRS Standards Division",
+      "nonResidentes": "Non-Resident Financial Institutions Division",
+      "industriel": "Industrial Audit Division"
+    },
+    "bios": {
+      "haythem": "With over 15 years of solid experience in auditing and statutory auditing of public enterprises and institutions, he has for many years supported organisations of various sizes and sectors of activity. His expertise covers statutory audit engagements, assessment of internal control systems, risk analysis and support for governance and transformation projects in the public sector.",
+      "salem": "He has a recognised experience of over 15 years in auditing banks and resident financial institutions. Throughout his career, he has conducted numerous engagements for banking institutions, leasing companies and other financial players. His expertise covers prudential requirements, internal control, risk management and the accounting issues specific to financial institutions.",
+      "sofiene": "A specialist in international financial reporting standards (IFRS) and the consolidation of financial statements, he supports national and international groups in their financial reporting projects. His experience covers complex consolidations, conversions to IFRS frameworks, technical assistance to finance departments as well as the handling of highly technical accounting matters.",
+      "hafedh": "He has in-depth expertise in auditing banks and non-resident financial institutions operating in Tunisia. His experience allows him to carry out engagements combining local regulatory requirements, international audit standards as well as specific issues relating to cross-border financial activities and risk management.",
+      "ayman": "He has significant experience in auditing industrial companies operating in various sectors. His expertise covers the analysis of industrial processes, the assessment of internal control systems, the management of operational risks and support for industrial groups. He works on tax advisory assignments, compliance reviews, assistance during tax inspections and tax optimisation in compliance with applicable regulations."
+    },
+    "quote": "Our strength lies in the diversity of our expertise and our collective commitment to excellence.",
+    "quoteCite": "The MG & Associates team"
+  },
+  "articles": {
+    "kicker": "Publications",
+    "title": "Articles & Analyses",
+    "viewAll": "View all articles"
+  },
+  "articlesList": {
+    "back": "Back",
+    "title": "Articles & Analyses",
+    "subtitle": "Discover our publications and analyses on tax, legal and economic news in Tunisia.",
+    "empty": "No article published for the moment."
+  },
+  "articleDetail": {
+    "back": "Back to articles",
+    "readDoc": "Read the document",
+    "downloadPdf": "Download the PDF"
+  },
+  "careers": {
+    "kicker": "Careers",
+    "title": "Join our team",
+    "description": "MG & Associates is recruiting tomorrow's talent. Discover our opportunities.",
+    "apply": "Apply",
+    "notFound": "Can't find the ideal role?",
+    "spontaneous": "Send us a spontaneous application",
+    "mailSubject": "Application"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's discuss your project",
+    "description": "Whether for an audit, tax advice or strategic support, our team is at your service.",
+    "addressLabel": "Address",
+    "address": "45 République Avenue, 2078 Marsa Safsaf, Tunis",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Hours",
+    "hours": "Mon – Fri: 08:30 – 17:30",
+    "faxLabel": "Fax",
+    "error": "An error occurred. Please try again.",
+    "sentTitle": "Message sent!",
+    "sentText": "We will get back to you as soon as possible.",
+    "sendAnother": "Send another message",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "phonePlaceholder": "+216 XX XXX XXX",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjects": {
+      "audit": "Audit & Statutory Auditing",
+      "fiscal": "Tax advisory",
+      "comptable": "Public accounting",
+      "juridique": "Legal advisory",
+      "gestion": "Management advisory",
+      "autre": "Other"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message...",
+    "submit": "Send your message"
+  },
+  "newsletter": {
+    "kicker": "Newsletter",
+    "title": "Stay informed",
+    "description": "Receive our news, analyses and publications directly in your inbox.",
+    "placeholder": "your@email.com",
+    "submit": "Subscribe",
+    "sending": "Sending...",
+    "success": "Thank you for subscribing!",
+    "error": "Error during subscription.",
+    "errorGeneric": "An error occurred."
+  },
+  "ctaBanner": {
+    "title": "Let's book an appointment",
+    "description": "Let's discuss your challenges and build tailored solutions together.",
+    "cta": "Book an appointment"
+  },
+  "footer": {
+    "navLabel": "Navigation",
+    "nav": {
+      "home": "Home",
+      "cabinet": "The Firm",
+      "expertises": "Expertise",
+      "secteurs": "Sectors",
+      "equipe": "Our team",
+      "carrieres": "Careers",
+      "contact": "Contact"
+    },
+    "tagline1": "For several decades,",
+    "tagline2": "we have supported companies,",
+    "tagline3": "institutions and leaders",
+    "tagline4": "with rigour, independence",
+    "tagline5": "and trust.",
+    "newsletterLabel": "Newsletter",
+    "newsletterSubscribe": "Subscribe",
+    "newsletterSuccess": "Thank you for subscribing!",
+    "newsletterError": "Error during subscription.",
+    "newsletterErrorGeneric": "An error occurred.",
+    "contactLabel": "Contact",
+    "country": "Tunisia",
+    "copyright": "2026 MG & Associates. All rights reserved.",
+    "motto": "Trust is built over time.",
+    "expertise": "Audit · Advisory · Public Accounting"
+  },
+  "editorialStatement": {
+    "quote": "Trust cannot be decreed.\nIt is built, year after year, in the service of our clients and of excellence.",
+    "name": "Mourad Guellaty",
+    "role": "Founder"
+  },
+  "nousRejoindre": {
+    "kicker": "Careers",
+    "title1": "Let's build together",
+    "title2": "the future of <accent>trust</accent>.",
+    "description": "MG & Associates is recruiting tomorrow's talent. Join an exceptional firm where rigour, excellence and impact come together every day.",
+    "culture": "Our culture",
+    "quote": "Joining MG & Associates means joining a demanding, human team focused on impact.",
+    "name": "Mourad Guellaty",
+    "role": "Founder",
+    "faqKicker": "FAQ",
+    "faqTitle": "Do you have questions?",
+    "faq": {
+      "q1": "How does the recruitment process work?",
+      "a1": "Our process takes place in several stages: review of your application, an interview with HR, then a meeting with the relevant team. We aim to offer you a transparent experience that respects your time.",
+      "q2": "What profiles are you looking for?",
+      "a2": "We are looking for passionate, rigorous talents driven by excellence: chartered accountants, auditors, tax advisors and lawyers, as well as junior profiles at the start of their careers.",
+      "q3": "Are internships paid?",
+      "a3": "Yes, all our internships are paid in accordance with applicable regulations. We offer an environment conducive to learning and skills development.",
+      "q4": "Where do assignments take place?",
+      "a4": "Our assignments mainly take place at our offices in La Marsa, Tunis, as well as at our clients' premises across Tunisia.",
+      "q5": "Can I send a spontaneous application?",
+      "a5": "Absolutely. We are always looking for talent. You can send your application to contact@cabinetguellaty.com and we will review it carefully."
+    }
+  },
+  "servicesData": {
+    "audit-legal": {
+      "title": "Statutory Audit",
+      "desc": "Statutory auditing and legal audit in compliance with applicable standards.",
+      "intro": "Statutory audit is the historical core of our profession. As statutory auditors, we certify the regularity and truthfulness of your financial statements in accordance with Tunisian and international standards.",
+      "points": [
+        "Certification of social and consolidated accounts",
+        "Legal and contractual statutory auditing",
+        "Audit of financial statements under IFRS",
+        "Limited reviews and examination engagements",
+        "Special reports of the statutory auditor",
+        "Assistance to governance bodies (board of directors, audit committees)"
+      ]
+    },
+    "conseil-fiscal": {
+      "title": "Tax Advisory",
+      "desc": "Tax optimisation, filings and assistance in your dealings with the tax authorities.",
+      "intro": "Our tax team supports you in securing and optimising your tax position. We act both in advisory and in disputes, with in-depth knowledge of the Tunisian tax administration.",
+      "points": [
+        "Tax optimisation and structuring of your tax position",
+        "Preparation and follow-up of filings (CIT, VAT, personal income tax)",
+        "Management of tax inspections and disputes",
+        "Applications for approvals, waivers and stays",
+        "Tax watch and impact of finance laws",
+        "International taxation and transfer pricing"
+      ]
+    },
+    "expertise-comptable": {
+      "title": "Public Accounting",
+      "desc": "Bookkeeping and accounting reviews, reliable financial statements and reporting for better decision-making.",
+      "intro": "We take care of your accounting with rigour and responsiveness, from bookkeeping to the production of financial statements, so that you can remain fully focused on your business.",
+      "points": [
+        "General and analytical bookkeeping",
+        "Preparation of annual financial statements",
+        "Accounting reviews and reconciliations",
+        "Management accounting and dashboards",
+        "Payroll and social management",
+        "Preparation of tax packages"
+      ]
+    },
+    "conseil-juridique": {
+      "title": "Legal Advisory",
+      "desc": "Legal support for companies and securing of your operations.",
+      "intro": "We secure your decisions and operations from a legal standpoint, in close collaboration with your advisors, to offer you a complete and coherent picture.",
+      "points": [
+        "Drafting and review of commercial contracts",
+        "Incorporation and restructuring of companies",
+        "Mergers, demergers and partial asset contributions",
+        "Governance and corporate law",
+        "Shareholders' agreements and partner pacts",
+        "Support in social and labour law"
+      ]
+    },
+    "conseil-en-gestion": {
+      "title": "Management Advisory",
+      "desc": "Financial analysis, dashboards and performance support.",
+      "intro": "We help you steer your company with effective management tools: financial analysis, budgeting and support for strategic decisions.",
+      "points": [
+        "Financial diagnosis and profitability analysis",
+        "Budgets, forecasts and business plans",
+        "Dashboards and performance indicators",
+        "Support in fundraising",
+        "Cost analysis and margin improvement",
+        "Restructuring and turnaround plans"
+      ]
+    },
+    "transactions-due-diligence": {
+      "title": "Transactions & Due Diligence",
+      "desc": "Valuation, acquisition audit and support for your strategic operations.",
+      "intro": "We assist you in your external growth, acquisition or disposal operations, with in-depth analysis of the risks and value of the target.",
+      "points": [
+        "Financial, tax and legal due diligence",
+        "Valuation of companies and shareholdings",
+        "Assistance in negotiating disposal terms",
+        "Structuring of acquisitions and financing",
+        "Reporting to investors and acquirers",
+        "Post-acquisition monitoring and integration"
+      ]
+    },
+    "creation-societe-tunisie": {
+      "title": "Company Incorporation in Tunisia",
+      "desc": "Complete support for your establishment project: legal form, registration and formalities.",
+      "intro": "From validating your project to its operational launch, we support you through every stage of incorporating your company in Tunisia, for both residents and foreign investors.",
+      "points": [
+        "Choice of the appropriate legal form (SARL, SA, SUARL, branch)",
+        "Drafting of articles and incorporation formalities",
+        "Registration with the National Register of Enterprises",
+        "Obtaining authorisations and activity codes",
+        "Opening of the bank account and deposit of capital",
+        "Tax registration and CNSS / social security affiliation",
+        "Advice on tax incentives (investment incentives code)"
+      ]
+    },
+    "assistance-comptable-fiscale-juridique-tunisie": {
+      "title": "Accounting, Tax & Legal Assistance",
+      "desc": "A single point of contact for the accounting, tax and legal management of your activity in Tunisia.",
+      "intro": "Our global assistance package offers you ongoing support across all your accounting, tax and legal obligations, with a single point of contact and multidisciplinary teams.",
+      "points": [
+        "Outsourced and permanent bookkeeping",
+        "Management of all tax and social deadlines",
+        "Human resources, contracts and payroll",
+        "Regulatory watch and finance laws",
+        "Representation before the administration",
+        "Support for foreign and non-resident investors"
+      ]
+    }
+  },
+  "serviceDetail": {
+    "back": "Back to services",
+    "kicker": "Our services",
+    "cta": "Let's discuss your project"
+  }
+}

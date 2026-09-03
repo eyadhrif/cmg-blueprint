@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/i18n';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40, filter: 'blur(6px)' },
@@ -10,34 +11,32 @@ const fadeUp = {
 };
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="bg-ivoire py-24 lg:py-32">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <motion.div className="lg:col-span-6" {...fadeUp}>
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-              À Propos
+              {t('about.kicker', 'À Propos')}
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark mt-6 tracking-tight">
-              Un partenaire de confiance pour des décisions éclairées
+              {t('about.title', 'Un partenaire de confiance pour des décisions éclairées')}
             </h2>
             <div className="space-y-5 text-text-dark-muted text-base sm:text-lg leading-relaxed mt-8">
               <p>
-                Le Cabinet Mourad Guellaty est un cabinet d&apos;expertise comptable, d&apos;audit et de conseil
-                établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien et premier président de l&apos;Ordre des
-                Experts Comptables de Tunisie, le cabinet accompagne les entreprises locales et
-                internationales dans leurs enjeux financiers.
+                {t('about.p1', "Le Cabinet Mourad Guellaty est un cabinet d'expertise comptable, d'audit et de conseil établi à La Marsa, Tunis. Fondé par Mourad Guellaty, ancien et premier président de l'Ordre des Experts Comptables de Tunisie, le cabinet accompagne les entreprises locales et internationales dans leurs enjeux financiers.")}
               </p>
               <p>
-                Spécialisé en commissariat aux comptes, audit financier, conseil en gestion et advisory,
-                nous mettons notre expertise au service de votre performance.
+                {t('about.p2', 'Spécialisé en commissariat aux comptes, audit financier, conseil en gestion et advisory, nous mettons notre expertise au service de votre performance.')}
               </p>
             </div>
             <a
               href="#services"
               className="inline-flex items-center gap-2 bg-accent text-white border border-accent px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 mt-10 group"
             >
-              Découvrir nos services
+              {t('about.cta', 'Découvrir nos services')}
               <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
             </a>
           </motion.div>
@@ -67,7 +66,7 @@ export default function About() {
               <div className="absolute -bottom-8 -left-12 bg-paper shadow-soft border-l-2 border-accent px-5 py-4 hidden sm:block">
                 <div className="font-serif text-3xl text-text-dark leading-none">1982</div>
                 <div className="text-[11px] tracking-[0.18em] uppercase text-text-dark-muted mt-2">
-                  La Marsa · Tunis
+                  {t('about.caption', 'La Marsa · Tunis')}
                 </div>
               </div>
             </div>

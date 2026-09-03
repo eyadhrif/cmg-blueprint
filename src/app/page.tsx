@@ -1,3 +1,4 @@
+import { prisma } from '@/lib/prisma';
 import Header from '@/components/public/Header';
 import Hero from '@/components/public/Hero';
 import StatsBar from '@/components/public/StatsBar';
@@ -16,7 +17,37 @@ import Footer from '@/components/public/Footer';
 
 export const revalidate = 60;
 
-export default function Home() {
+export default async function Home() {
+  const [articles, jobs] = await Promise.all([
+    prisma.article.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: 'desc' },
+      take: 8,
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        titleEn: true,
+        subtitle: true,
+        subtitleEn: true,
+        coverImage: true,
+      },
+    }).catch(() => []),
+    prisma.job.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        titleEn: true,
+        type: true,
+        typeEn: true,
+        location: true,
+        locationEn: true,
+      },
+    }).catch(() => []),
+  ]);
+
   return (
     <>
       <Header />
@@ -29,8 +60,8 @@ export default function Home() {
         <Secteurs />
         <Societies />
         <Team />
-        <Articles />
-        <Careers />
+        <Articles articles={articles} />
+        <Careers jobs={jobs} />
         <Contact />
         <NewsletterSection />
         <CTABanner />

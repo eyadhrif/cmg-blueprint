@@ -1,12 +1,5 @@
-import Header from '@/components/public/Header';
-import Footer from '@/components/public/Footer';
+import { ReactNode } from 'react';
 
-export default function ArticlesLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
-  );
+export default function ArticlesLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }

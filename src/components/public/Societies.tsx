@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/i18n';
 
 const logos = [
   'Abou Nawas Hotels.png',
@@ -80,12 +81,14 @@ const fadeUp = {
 };
 
 export default function Societies() {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-ivoire py-20 overflow-hidden border-b border-black/6">
       <div className="max-w-[1280px] mx-auto px-6 mb-12">
         <motion.div className="text-center" {...fadeUp}>
           <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
-            Ils nous ont fait confiance
+            {t('societies.kicker', 'Ils nous ont fait confiance')}
           </span>
           <div className="w-8 h-px bg-accent/50 mx-auto mt-4" />
         </motion.div>

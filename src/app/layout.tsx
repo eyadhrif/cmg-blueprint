@@ -4,6 +4,7 @@ import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import ScrollProgress from '@/components/ScrollProgress';
 import IntroLoader from '@/components/IntroLoader';
+import { LanguageProvider } from '@/lib/i18n';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -116,10 +117,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <IntroLoader />
-        <SmoothScroll />
-        <ScrollProgress />
-        {children}
+        <LanguageProvider>
+          <IntroLoader />
+          <SmoothScroll />
+          <ScrollProgress />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

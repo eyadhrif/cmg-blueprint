@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-
+import { useLanguage } from '@/lib/i18n';
 const stats = [
   { number: '40+', label: "Années d'expérience" },
   { number: '200+', label: 'Clients accompagnés' },
@@ -52,8 +52,16 @@ function AnimatedStat({ raw, inView: sectionInView }: { raw: string; inView: boo
 }
 
 export default function StatsBar() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
+
+  const stats = [
+    { number: '40+', label: t('stats.experience', "Années d'expérience") },
+    { number: '200+', label: t('stats.clients', 'Clients accompagnés') },
+    { number: '30+', label: t('stats.experts', 'Experts à votre service') },
+    { number: '100%', label: t('stats.quality', 'Engagement qualité') },
+  ];
 
   return (
     <section ref={ref} className="bg-gris border-t border-b border-black/10">

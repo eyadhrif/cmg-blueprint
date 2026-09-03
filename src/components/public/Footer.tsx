@@ -4,21 +4,22 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 import { subscribe } from '@/actions/subscribers';
-
-const navLinks = [
-  { label: 'Accueil', href: '/' },
-  { label: 'Le Cabinet', href: '/#about' },
-  { label: 'Expertises', href: '/#services' },
-  { label: 'Secteurs', href: '/#sectors' },
-  { label: 'Notre équipe', href: '/#team' },
-  { label: 'Carrières', href: '/#careers' },
-  { label: 'Contact', href: '/#contact' },
-];
-
+import { useLanguage } from '@/lib/i18n';
 export default function Footer() {
+  const { t } = useLanguage();
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [email, setEmail] = useState('');
   const [subscribeMsg, setSubscribeMsg] = useState('');
+
+  const navLinks = [
+    { label: t('header.nav.home', 'Accueil'), href: '/' },
+    { label: t('header.nav.about', 'Le Cabinet'), href: '/#about' },
+    { label: t('header.nav.services', 'Expertises'), href: '/#services' },
+    { label: t('header.nav.sectors', 'Secteurs'), href: '/#sectors' },
+    { label: t('header.nav.team', 'Notre équipe'), href: '/#team' },
+    { label: t('header.nav.careers', 'Carrières'), href: '/#careers' },
+    { label: t('header.nav.contact', 'Contact'), href: '/#contact' },
+  ];
 
   async function handleSubscribe(e: React.FormEvent) {
     e.preventDefault();
@@ -55,16 +56,12 @@ export default function Footer() {
               </div>
             </div>
             <div className="font-serif text-2xl sm:text-3xl lg:text-4xl text-text-dark leading-[1.3] tracking-tight max-w-md">
-              Depuis plusieurs décennies,<br />
-              nous accompagnons entreprises,<br />
-              institutions et dirigeants<br />
-              avec exigence, indépendance<br />
-              et confiance.
+              {t('footer.brandText', 'Depuis plusieurs décennies, nous accompagnons entreprises, institutions et dirigeants avec exigence, indépendance et confiance.')}
             </div>
 
             <div className="mt-12 border-t border-black/10 pt-8">
               <span className="text-text-dark-muted text-[10px] font-semibold tracking-[0.2em] uppercase">
-                Newsletter
+                {t('footer.newsletterTitle', 'Newsletter')}
               </span>
               <form onSubmit={handleSubscribe} className="flex gap-3 mt-4">
                 <input
@@ -79,7 +76,7 @@ export default function Footer() {
                   type="submit"
                   className="bg-accent text-white px-5 py-2.5 text-xs font-semibold tracking-wider uppercase hover:bg-accent/90 transition-colors shrink-0"
                 >
-                  S&apos;inscrire
+                  {t('footer.newsletterButton', "S'inscrire")}
                 </button>
               </form>
               {subscribeMsg && (
@@ -146,9 +143,9 @@ export default function Footer() {
 
         <div className="mt-32 pt-8 border-t border-black/10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-            <p className="text-text-dark-muted text-xs">&copy; 2026 MG &amp; Associés. Tous droits réservés.</p>
-            <p className="font-serif text-sm text-text-dark-muted italic">&ldquo;La confiance se construit dans la durée.&rdquo;</p>
-            <p className="text-text-dark-muted text-xs tracking-wider">Audit &middot; Conseil &middot; Expertise Comptable</p>
+            <p className="text-text-dark-muted text-xs">&copy; 2026 MG &amp; Associés. {t('footer.copyright', 'Tous droits réservés.')}</p>
+            <p className="font-serif text-sm text-text-dark-muted italic">{t('footer.quote', '“La confiance se construit dans la durée.”')}</p>
+            <p className="text-text-dark-muted text-xs tracking-wider">{t('footer.tagline', 'Audit · Conseil · Expertise Comptable')}</p>
           </div>
         </div>
       </div>

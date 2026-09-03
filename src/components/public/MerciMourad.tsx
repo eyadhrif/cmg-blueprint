@@ -26,7 +26,13 @@ const variants = {
 };
 
 /* ── Slide 1 — Présentation ─────────────────────────────────────────── */
-function Presentation({ t }: { t: (path: string, fallback?: string) => string }) {
+function Presentation({
+  t,
+  tRich,
+}: {
+  t: (path: string, fallback?: string) => string;
+  tRich: (path: string, fallback?: string) => React.ReactNode;
+}) {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       {/* portrait */}
@@ -59,7 +65,7 @@ function Presentation({ t }: { t: (path: string, fallback?: string) => string })
             className="group/name inline-flex items-center gap-2.5 hover:text-accent transition-colors"
             title="Consulter l'histoire de l'OECT"
           >
-            <span>Monsieur <span className="text-accent">Mourad</span></span>
+            <span>{tRich('merciMourad.mrTitle', 'Monsieur <accent>Mourad</accent>')}</span>
             <ArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 text-accent transition-transform duration-300 group-hover/name:translate-x-1 group-hover/name:-translate-y-1 shrink-0" />
           </a>
         </h2>
@@ -68,19 +74,19 @@ function Presentation({ t }: { t: (path: string, fallback?: string) => string })
           style={{ fontFamily: 'var(--font-signature), cursive' }}
           className="pointer-events-none select-none block text-5xl sm:text-6xl lg:text-7xl text-text-dark/[0.10] leading-[1.1] -mt-3 lg:-mt-5 pl-6"
         >
-          Mourad Guellaty
+          {t('merciMourad.signature', 'Mourad Guellaty')}
         </span>
 
         <p className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-6 max-w-xl">
-          {t('merciMourad.tagline', 'Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes et des femmes de confiance.')}
+          {tRich('merciMourad.tagline', 'Bâtir un cabinet d’excellence, c’est avant tout bâtir des hommes et des femmes de <accent>confiance</accent>.')}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.bio1', 'Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie. Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la profession avec indépendance et engagement.')}
+            {tRich('merciMourad.bio1', 'Mourad Guellaty a consacré sa vie à l’expertise comptable et à l’audit en Tunisie. Ancien et premier président de l’Ordre des Experts Comptables de Tunisie, il a porté la voix de la profession avec <strong>indépendance</strong> et <strong>engagement</strong>.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.bio2', 'Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières, accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs enjeux les plus stratégiques.')}
+            {tRich('merciMourad.bio2', 'Son leadership visionnaire a permis au cabinet de rayonner bien au-delà des frontières, accompagnant les plus grandes entreprises tunisiennes et internationales dans leurs enjeux les plus stratégiques.')}
           </p>
         </div>
       </div>
@@ -89,11 +95,16 @@ function Presentation({ t }: { t: (path: string, fallback?: string) => string })
 }
 
 /* ── Slide 2 — Parcours ─────────────────────────────────────────────── */
-function Parcours({ t }: { t: (path: string, fallback?: string) => string }) {
+function Parcours({
+  tRich,
+}: {
+  t: (path: string, fallback?: string) => string;
+  tRich: (path: string, fallback?: string) => React.ReactNode;
+}) {
   return (
     <div>
       <h2 className="font-serif text-3xl lg:text-[40px] leading-tight text-text-dark tracking-tight mb-12">
-        {t('merciMourad.parcoursTitle', 'Parcours & Engagements')}
+        {tRich('merciMourad.parcoursTitle', 'Parcours & Engagements')}
       </h2>
       <div className="relative">
         <div className="hidden lg:block absolute left-0 right-0 top-[5px] h-px bg-gold/30" />
@@ -113,7 +124,7 @@ function Parcours({ t }: { t: (path: string, fallback?: string) => string }) {
                 {m.year}
               </div>
               <p className="text-text-dark-muted text-sm leading-snug mt-2">
-                {t(`merciMourad.milestones.${m.year}`, m.text)}
+                {tRich(`merciMourad.milestones.${m.year}`, m.text)}
               </p>
             </div>
           ))}
@@ -124,7 +135,13 @@ function Parcours({ t }: { t: (path: string, fallback?: string) => string }) {
 }
 
 /* ── Slide 3 — Citation ─────────────────────────────────────────────── */
-function Citation({ t }: { t: (path: string, fallback?: string) => string }) {
+function Citation({
+  t,
+  tRich,
+}: {
+  t: (path: string, fallback?: string) => string;
+  tRich: (path: string, fallback?: string) => React.ReactNode;
+}) {
   return (
     <div className="max-w-3xl mx-auto text-center py-6 lg:py-10">
       <div className="flex items-center justify-center gap-5">
@@ -132,12 +149,12 @@ function Citation({ t }: { t: (path: string, fallback?: string) => string }) {
         <span className="font-serif text-6xl text-gold/50 leading-none -mb-6 select-none">&ldquo;</span>
         <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent to-gold/60" />
       </div>
-      <blockquote className="font-serif text-2xl sm:text-3xl lg:text-[34px] leading-[1.32] text-text-dark mt-4 tracking-tight">
-        {t('merciMourad.quote', 'La confiance ne se décrète pas. Elle se construit, année après année, au service de nos clients et de l’excellence.')}
+      <blockquote className="font-serif text-2xl sm:text-3xl lg:text-[34px] leading-[1.32] text-text-dark mt-4 tracking-tight whitespace-pre-line">
+        {tRich('merciMourad.quote', 'La confiance ne se décrète pas. Elle se construit, année après année, au service de nos clients et de l’excellence.')}
       </blockquote>
       <div className="mt-10">
         <div className="w-8 h-px bg-gold/60 mx-auto mb-4" />
-        <div className="font-serif text-lg text-text-dark">Mourad Guellaty</div>
+        <div className="font-serif text-lg text-text-dark">{t('merciMourad.signature', 'Mourad Guellaty')}</div>
         <div className="text-[10px] tracking-[0.24em] uppercase text-text-dark-muted mt-1.5">
           {t('merciMourad.founderRole', 'Fondateur')}
         </div>
@@ -147,7 +164,13 @@ function Citation({ t }: { t: (path: string, fallback?: string) => string }) {
 }
 
 /* ── Static block — Walid Moussa (below the Mourad slideshow) ──────── */
-function Walid({ t }: { t: (path: string, fallback?: string) => string }) {
+function Walid({
+  t,
+  tRich,
+}: {
+  t: (path: string, fallback?: string) => string;
+  tRich: (path: string, fallback?: string) => React.ReactNode;
+}) {
   return (
     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       {/* portrait */}
@@ -156,8 +179,10 @@ function Walid({ t }: { t: (path: string, fallback?: string) => string }) {
           <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-0 w-[118%] max-w-none aspect-square rounded-full border border-gold/20 -z-10" />
           <div className="absolute inset-x-3 top-2 bottom-0 rounded-t-full bg-[#F2F2F2]/70 -z-10" />
           <div className="absolute inset-0 rounded-t-full overflow-hidden shadow-soft-lg ring-1 ring-black/[0.04]">
-            <div className="absolute inset-0 bg-cover bg-[position:50%_8%]"
-              style={{ backgroundImage: 'url(/cabinet/Walid-Moussa.jpeg)' }} />
+            <div
+              className="absolute inset-0 bg-cover bg-[position:50%_8%]"
+              style={{ backgroundImage: 'url(/cabinet/Walid-Moussa.jpeg)' }}
+            />
           </div>
         </div>
       </div>
@@ -165,32 +190,32 @@ function Walid({ t }: { t: (path: string, fallback?: string) => string }) {
       {/* identity + bio */}
       <div className="lg:col-span-8">
         <h2 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-text-dark tracking-tight">
-          Monsieur <span className="text-accent">Walid</span>
+          {tRich('merciMourad.mrTitleName', 'Monsieur <accent>Walid</accent>')}
         </h2>
         <span
           aria-hidden
           style={{ fontFamily: 'var(--font-signature), cursive' }}
           className="pointer-events-none select-none block text-5xl sm:text-6xl lg:text-7xl text-text-dark/[0.10] leading-[1.1] -mt-3 lg:-mt-5 pl-6"
         >
-          Walid Moussa
+          {t('merciMourad.walidSignature', 'Walid Moussa')}
         </span>
 
         <p className="font-serif text-xl lg:text-2xl leading-[1.5] text-text-dark mt-6 max-w-xl">
-          {t('merciMourad.walidRoleTitle', 'Expert-comptable et commissaire aux comptes (Tunisie & France), Managing Partner.')}
+          {tRich('merciMourad.walidRoleTitle', 'Expert-comptable et commissaire aux comptes (<accent>Tunisie & France</accent>), Managing Partner.')}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-8 mt-8">
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.walidBio1', 'Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les domaines de l’audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty & Associés en Tunisie en 2014.')}
+            {tRich('merciMourad.walidBio1', 'Walid Moussa a travaillé pendant 10 ans au sein de KPMG Audit Paris (France) dans les domaines de l’audit et du conseil, avant de rejoindre le Cabinet Mourad Guellaty & Associés en Tunisie en 2014.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.walidBio2', 'Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau international que national, avec de solides connaissances des normes IFRS.')}
+            {tRich('merciMourad.walidBio2', 'Fort de 20 années d’expérience, il a une parfaite maîtrise de la conduite des missions d’audit (comptes sociaux, comptes consolidés, reporting), aussi bien au niveau international que national, avec de solides connaissances des normes IFRS.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.walidBio3', 'Il est régulièrement intervenu dans des missions de conseil et d’audit en environnement international, y compris pour des sociétés cotées, et a été en charge de la coordination de l’audit à l’international pour de grands groupes industriels étrangers.')}
+            {tRich('merciMourad.walidBio3', 'Il est régulièrement intervenu dans des missions de conseil et d’audit en environnement international, y compris pour des sociétés cotées, et a été en charge de la coordination de l’audit à l’international pour de grands groupes industriels étrangers.')}
           </p>
           <p className="text-text-dark-muted text-base sm:text-lg leading-relaxed">
-            {t('merciMourad.walidBio4', 'Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.')}
+            {tRich('merciMourad.walidBio4', 'Depuis 2014, il intervient sur l’audit de groupes internationaux et nationaux dans divers secteurs : industrie, secteur financier, pharmaceutique et technologies de l’information.')}
           </p>
         </div>
       </div>
@@ -199,7 +224,7 @@ function Walid({ t }: { t: (path: string, fallback?: string) => string }) {
 }
 
 export default function MerciMourad() {
-  const { t } = useLanguage();
+  const { t, tRich } = useLanguage();
   const [[i, dir], setState] = useState<[number, number]>([0, 0]);
 
   const slides = [
@@ -238,9 +263,9 @@ export default function MerciMourad() {
               exit="exit"
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              {i === 0 && <Presentation t={t} />}
-              {i === 1 && <Parcours t={t} />}
-              {i === 2 && <Citation t={t} />}
+              {i === 0 && <Presentation t={t} tRich={tRich} />}
+              {i === 1 && <Parcours t={t} tRich={tRich} />}
+              {i === 2 && <Citation t={t} tRich={tRich} />}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -289,7 +314,7 @@ export default function MerciMourad() {
 
         {/* Legende — Walid Moussa (static, below the slideshow) */}
         <div className="mt-16 lg:mt-20 border-t border-black/10 pt-14 lg:pt-16">
-          <Walid t={t} />
+          <Walid t={t} tRich={tRich} />
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -40,12 +41,12 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-dark flex flex-col items-center justify-center p-6 relative">
       <div className="absolute top-6 left-6">
-        <a
+        <Link
           href="/"
           className="text-xs text-text-muted hover:text-text-primary transition-colors flex items-center gap-1.5"
         >
           <span>&larr;</span> Retour au site public
-        </a>
+        </Link>
       </div>
       <Card className="w-full max-w-md border-card-border bg-card">
         <CardHeader className="text-center">

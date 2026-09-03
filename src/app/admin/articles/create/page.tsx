@@ -41,7 +41,7 @@ export default function CreateArticle() {
           <Textarea id="subtitle" name="subtitle" placeholder="Brève description..." />
         </div>
         <div className="space-y-2">
-          <Label>Fichier PDF <span className="text-text-muted text-xs">(l'aperçu est généré depuis la 1re page)</span></Label>
+          <Label>Fichier PDF <span className="text-text-muted text-xs">(l&apos;aperçu est généré depuis la 1re page)</span></Label>
           <PdfUploader />
         </div>
         <div className="flex items-center gap-4">

@@ -50,7 +50,7 @@ export function EditArticleForm({ article }: EditArticleFormProps) {
         <Textarea id="subtitle" name="subtitle" defaultValue={article.subtitle || ''} />
       </div>
       <div className="space-y-2">
-        <Label>Fichier PDF <span className="text-text-muted text-xs">(l'aperçu est généré depuis la 1re page)</span></Label>
+        <Label>Fichier PDF <span className="text-text-muted text-xs">(l&apos;aperçu est généré depuis la 1re page)</span></Label>
         <PdfUploader
           pdfValue={article.pdfUrl || ''}
           thumbValue={article.coverImage || ''}

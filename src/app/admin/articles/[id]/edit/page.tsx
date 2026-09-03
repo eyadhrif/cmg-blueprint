@@ -14,7 +14,7 @@ export default async function EditArticle({ params }: Props) {
 
   return (
     <div className="max-w-3xl">
-      <h1 className="text-2xl font-bold text-text-primary mb-8">Modifier l'article</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-8">Modifier l&apos;article</h1>
       <EditArticleForm article={article} />
     </div>
   );

@@ -103,7 +103,7 @@ export default function PdfUploader({ pdfValue, thumbValue, onChange }: PdfUploa
         {uploading ? (
           <div className="flex flex-col items-center gap-3">
             <div className="animate-spin w-8 h-8 border-2 border-accent border-t-transparent rounded-full" />
-            <p className="text-sm text-text-muted">Génération de l'aperçu...</p>
+            <p className="text-sm text-text-muted">Génération de l&apos;aperçu...</p>
           </div>
         ) : values.pdfUrl ? (
           <div className="flex items-center justify-center gap-4">
@@ -138,7 +138,7 @@ export default function PdfUploader({ pdfValue, thumbValue, onChange }: PdfUploa
                 Déposez votre fichier PDF ici
               </p>
               <p className="text-xs text-text-muted mt-1">
-                ou cliquez pour parcourir — l'aperçu est généré automatiquement
+                ou cliquez pour parcourir — l&apos;aperçu est généré automatiquement
               </p>
             </div>
           </div>

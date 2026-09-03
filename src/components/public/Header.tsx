@@ -32,15 +32,17 @@ export default function Header() {
       return;
     }
 
+    const sectionIds = ['accueil', 'fondateur', 'about', 'services', 'sectors', 'team', 'articles', 'careers', 'contact'];
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
       const offset = 150;
       let current = 'accueil';
-      for (const link of navLinks) {
-        const el = document.getElementById(link.sectionId);
+      for (const sectionId of sectionIds) {
+        const el = document.getElementById(sectionId);
         if (el && el.offsetTop <= window.scrollY + offset) {
-          current = link.sectionId;
+          current = sectionId;
         }
       }
       setActiveSection(current);
